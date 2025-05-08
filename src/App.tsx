@@ -15,7 +15,6 @@ import BulkOrders from "./pages/BulkOrders";
 import Blog from "./pages/Blog";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Reels from "./pages/Reels";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +33,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/reels" element={<Reels />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ShoppingCart, ChevronDown, QrCode } from "lucide-react";
+import { Menu, X, Search, ChevronDown, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -23,9 +23,7 @@ const navLinks = [
   { name: "Custom Orders", href: "/custom-orders" },
   { name: "Bulk Orders", href: "/bulk-orders" },
   { name: "About Us", href: "/about-us" },
-  { name: "Reels", href: "/reels" },
   { name: "FAQ", href: "/faq" },
-  { name: "Blog", href: "/blog" },
   { name: "Contact Us", href: "/contact" }
 ];
 
@@ -147,7 +145,7 @@ export default function Header() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                    src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
                     alt="Catalogue QR" 
                     className="max-w-[180px]"
                   />
@@ -157,9 +155,6 @@ export default function Header() {
           </Popover>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <ShoppingCart className="h-5 w-5" />
           </Button>
           <Button 
             variant="default" 
@@ -228,9 +223,6 @@ export default function Header() {
           <div className="mt-8 flex flex-col space-y-4">
             <Button variant="outline" className="w-full">
               <Search className="h-5 w-5 mr-2" /> Search
-            </Button>
-            <Button variant="outline" className="w-full">
-              <ShoppingCart className="h-5 w-5 mr-2" /> Cart
             </Button>
             <Button 
               className="w-full bg-[#0A4D68] hover:bg-[#0A4D68]/80"

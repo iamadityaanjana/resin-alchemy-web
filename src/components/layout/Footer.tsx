@@ -71,6 +71,9 @@ export default function Footer() {
               <li>
                 <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link>
               </li>
+              <li>
+                <Link to="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link>
+              </li>
             </ul>
           </div>
 
@@ -92,7 +95,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Guide</h4>
                 <img 
-                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  src="/lovable-uploads/0e079e63-5b8b-4caa-b566-4424ed5f344b.png" 
                   alt="Guide QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />
@@ -100,7 +103,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Catalogue</h4>
                 <img 
-                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
                   alt="Catalogue QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />

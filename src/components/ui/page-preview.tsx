@@ -10,6 +10,7 @@ interface PagePreviewProps {
   imageSrc: string;
   link: string;
   className?: string;
+  animationDelay?: string;
 }
 
 export function PagePreview({
@@ -18,13 +19,15 @@ export function PagePreview({
   imageSrc,
   link,
   className,
+  animationDelay,
 }: PagePreviewProps) {
   return (
     <div 
       className={cn(
-        "group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl",
+        "group relative overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-xl animate-fade-in-up",
         className
       )}
+      style={animationDelay ? { animationDelay } : undefined}
     >
       <div 
         className="h-48 bg-cover bg-center" 
@@ -105,8 +108,8 @@ export function PagePreviewSection() {
               description={page.description}
               imageSrc={page.imageSrc}
               link={page.link}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className=""
+              animationDelay={`${index * 0.1}s`}
             />
           ))}
         </div>

@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Youtube, Linkedin, Send, Pinterest } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin, Send } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -37,8 +37,14 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/resin-alchemy-8582bb354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Linkedin size={20} />
               </a>
+              {/* Pinterest icon replaced with an SVG */}
               <a href="https://pin.it/VCOnhjwrR" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
-                <Pinterest size={20} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                  <path d="M2 12c0 5.5 4.5 10 10 10s10 -4.5 10 -10s-4.5 -10 -10 -10s-10 4.5 -10 10" />
+                  <path d="M9 15l3 -3l3 3" />
+                  <path d="M12 9l0 6" />
+                </svg>
               </a>
             </div>
           </div>

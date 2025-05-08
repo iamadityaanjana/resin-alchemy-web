@@ -2,10 +2,12 @@
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { ProductCard } from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { PagePreviewSection } from "@/components/ui/page-preview";
+import { FAQSection } from "@/components/ui/expanded-faq";
 import {
   Carousel,
   CarouselContent,
@@ -14,7 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const featuredProducts = [
+const featuredGallery = [
   {
     id: 1,
     title: "Azure Ocean Coffee Table",
@@ -87,6 +89,10 @@ const carouselImages = [
 ];
 
 const Index = () => {
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank');
+  };
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -98,88 +104,180 @@ const Index = () => {
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
 
-      {/* Featured Projects Section */}
-      <section className="py-20 px-4 bg-gray-50">
+      {/* Main Content Section */}
+      <section className="py-20 px-4 bg-neutral-color">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-[#333333]">
+              You deserve more than just furniture. You deserve a masterpiece that reflects your unique taste and style.
+            </h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Tired of seeing the same furniture in every store? Frustrated by the lack of truly unique options? You deserve pieces that are as distinctive as your vision, crafted with care, and designed to last.
+            </p>
+            <p className="text-lg text-gray-700 mb-6">
+              At Resin Alchemy, we understand your desire for more than just furniture. We create bespoke resin tables that seamlessly blend artistry and functionality, transforming your space into a true reflection of your personality. With years of experience in crafting luxury, custom-made pieces, we are committed to delivering unparalleled quality and sustainability in every creation.
+            </p>
+          </div>
+          
+          <div className="bg-white p-8 rounded-lg shadow-md mb-10">
+            <h3 className="text-2xl font-bold mb-6 text-center font-playfair">Our Process is Simple:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-resin-blue rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                  1
+                </div>
+                <h4 className="font-bold mb-2">Consultation</h4>
+                <p className="text-gray-600">Share your vision with us, and we'll collaborate to design the perfect piece for your space.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-resin-gold rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                  2
+                </div>
+                <h4 className="font-bold mb-2">Craftsmanship</h4>
+                <p className="text-gray-600">Our skilled artisans bring your design to life using the finest sustainable materials.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-resin-blue rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                  3
+                </div>
+                <h4 className="font-bold mb-2">Delivery</h4>
+                <p className="text-gray-600">Receive your bespoke masterpiece, ready to transform your home.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <Button 
+              className="bg-resin-blue hover:bg-resin-blue/80"
+              onClick={handleWhatsAppClick}
+            >
+              Start Your Custom Order
+            </Button>
+            <Button 
+              variant="outline"
+              className="border-resin-blue text-resin-blue hover:bg-resin-blue/10"
+              asChild
+            >
+              <Link to="/gallery">Explore Our Portfolio</Link>
+            </Button>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-lg">
+              Imagine walking into your home and being greeted by a piece of furniture that's not just functional, but a true work of art. A piece that sparks conversation, inspires creativity, and elevates the aesthetic of your entire space.
+            </p>
+            <p className="text-lg font-semibold mt-4">
+              Don't settle for ordinary when your space deserves the extraordinary. Don't let your home be just another place to live—let it be a canvas that tells your story.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Preview of Website Pages */}
+      <PagePreviewSection />
+
+      {/* Gallery Section */}
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <SectionHeading 
-            title="Featured Projects" 
+            title="Gallery" 
             subtitle="Discover our most celebrated creations that blend artistry with functionality"
           />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.title}
-                description={product.description}
-                category={product.category}
-                href={product.href}
-              />
+            {featuredGallery.map((item) => (
+              <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                <div className="relative overflow-hidden h-56">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <span className="text-xs font-semibold text-resin-blue">{item.category}</span>
+                  <h3 className="font-bold text-lg mt-1">{item.title}</h3>
+                  <p className="text-gray-600 text-sm mt-2 line-clamp-2">{item.description}</p>
+                </div>
+              </div>
             ))}
           </div>
           
           <div className="text-center mt-12">
             <Button asChild variant="outline" className="group">
-              <a href="/gallery">
-                View All Projects 
+              <Link to="/gallery">
+                View Full Gallery
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* Endless Possibilities Banner */}
       <section className="relative py-24 bg-cover bg-center" style={{ backgroundImage: `url('/lovable-uploads/a867d262-7e37-4d50-9024-685ebc9b4239.png')` }}>
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto relative z-10 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Endless Possibilities</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">Endless Possibilities</h2>
           <p className="text-xl max-w-2xl mx-auto mb-8">From kitchen countertops to statement art pieces, our resin creations are limited only by imagination</p>
-          <Button asChild size="lg" className="bg-resin-amber hover:bg-resin-amber/80">
-            <a href="/custom-orders">Start Your Custom Project</a>
+          <Button 
+            size="lg" 
+            className="bg-resin-gold hover:bg-resin-gold/80"
+            onClick={handleWhatsAppClick}
+          >
+            Start Your Custom Project
           </Button>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 px-4 bg-white">
+      {/* Call to Action Panels */}
+      <section className="py-20 px-4">
         <div className="container mx-auto">
-          <SectionHeading 
-            title="Our Crafting Process" 
-            subtitle="From concept to creation, witness the journey of your bespoke resin piece"
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-resin-blue rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                1
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Custom Orders Panel */}
+            <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
+                 style={{ backgroundImage: `url('/lovable-uploads/b079772f-6257-40a4-a0c3-049875c8c287.png')` }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-resin-blue/80 to-resin-blue opacity-90 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
+                <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Custom Orders</h3>
+                <p className="mb-6 text-white">Create a one-of-a-kind piece tailored specifically to your space and style preferences.</p>
+                <Button 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-resin-blue"
+                  onClick={() => window.location.href = '/custom-orders'}
+                >
+                  Start Your Custom Order
+                </Button>
               </div>
-              <h3 className="text-xl font-bold mb-3">Consultation & Design</h3>
-              <p className="text-gray-600">We begin with understanding your vision, space constraints, and aesthetic preferences, before creating detailed design concepts.</p>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-resin-amber rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                2
+            {/* Bulk Orders Panel */}
+            <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
+                 style={{ backgroundImage: `url('/lovable-uploads/fb5ca7f3-3726-49fa-8fa8-f3923761b61d.png')` }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-resin-gold/80 to-resin-gold opacity-90 group-hover:opacity-70 transition-opacity"></div>
+              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
+                <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Bulk Orders</h3>
+                <p className="mb-6 text-white">Perfect for commercial spaces, hospitality venues, or multi-unit residential projects.</p>
+                <Button 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-resin-gold"
+                  onClick={() => window.location.href = '/bulk-orders'}
+                >
+                  Enquire About Bulk Orders
+                </Button>
               </div>
-              <h3 className="text-xl font-bold mb-3">Material Selection</h3>
-              <p className="text-gray-600">Select from premium wood types and exclusive resin colors, with our guidance on combinations that will create stunning results.</p>
-            </div>
-            
-            <div className="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-resin-green rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                3
-              </div>
-              <h3 className="text-xl font-bold mb-3">Artisan Crafting</h3>
-              <p className="text-gray-600">Our master craftsmen meticulously create your piece, sending progress updates throughout the 2-4 week production process.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Product Categories Carousel */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-neutral-color">
         <div className="container mx-auto">
           <SectionHeading
             title="Our Collection"
@@ -211,58 +309,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Call to Action Panels */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Custom Orders Panel */}
-            <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/b079772f-6257-40a4-a0c3-049875c8c287.png')` }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-resin-blue/80 to-resin-blue opacity-90 group-hover:opacity-70 transition-opacity"></div>
-              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
-                <h3 className="text-2xl font-bold mb-4 text-white">Custom Orders</h3>
-                <p className="mb-6 text-white">Create a one-of-a-kind piece tailored specifically to your space and style preferences.</p>
-                <Button 
-                  asChild
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-resin-blue"
-                >
-                  <a href="/custom-orders">Start Your Custom Order</a>
-                </Button>
-              </div>
-            </div>
-            
-            {/* Bulk Orders Panel */}
-            <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/fb5ca7f3-3726-49fa-8fa8-f3923761b61d.png')` }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-resin-amber/80 to-resin-amber opacity-90 group-hover:opacity-70 transition-opacity"></div>
-              <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
-                <h3 className="text-2xl font-bold mb-4 text-white">Bulk Orders</h3>
-                <p className="mb-6 text-white">Perfect for commercial spaces, hospitality venues, or multi-unit residential projects.</p>
-                <Button 
-                  asChild
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-resin-amber"
-                >
-                  <a href="/bulk-orders">Enquire About Bulk Orders</a>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tagline Banner */}
-      <section className="py-16 px-4 bg-resin-brown text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">You deserve more than just furniture.<br />You deserve a masterpiece.</h2>
-          <p className="text-lg max-w-3xl mx-auto">
-            Tired of seeing the same furniture in every store? Our bespoke resin tables seamlessly blend artistry and functionality, 
-            transforming your space into a true reflection of your personality.
-          </p>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto">
@@ -274,7 +320,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gray-50 p-8 rounded-lg shadow-md">
-                <div className="flex items-center justify-start gap-0 text-yellow-500 mb-4">
+                <div className="flex items-center justify-start gap-0 text-resin-gold mb-4">
                   {'★★★★★'}
                 </div>
                 <p className="text-gray-600 italic mb-4">"{testimonial.text}"</p>
@@ -305,7 +351,7 @@ const Index = () => {
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-white font-medium">@resin_alchemy</p>
+                <p className="text-white font-medium">@resin__alchemy</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
@@ -315,7 +361,7 @@ const Index = () => {
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-white font-medium">@resin_alchemy</p>
+                <p className="text-white font-medium">@resin__alchemy</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
@@ -325,7 +371,7 @@ const Index = () => {
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-white font-medium">@resin_alchemy</p>
+                <p className="text-white font-medium">@resin__alchemy</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
@@ -335,14 +381,18 @@ const Index = () => {
                 className="w-full aspect-square object-cover"
               />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <p className="text-white font-medium">@resin_alchemy</p>
+                <p className="text-white font-medium">@resin__alchemy</p>
               </div>
             </div>
           </div>
           
           <div className="text-center mt-10">
-            <Button asChild variant="outline" className="group">
-              <a href="https://instagram.com/resin_alchemy" target="_blank" rel="noopener noreferrer">
+            <Button 
+              asChild 
+              variant="outline" 
+              className="group"
+            >
+              <a href="https://www.instagram.com/resin__alchemy?igsh=MW4wdnNtaGtsY3E2ZA==" target="_blank" rel="noopener noreferrer">
                 Follow Us on Instagram
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
@@ -356,17 +406,18 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between bg-gray-100 rounded-lg p-8">
             <div className="md:w-2/3 mb-6 md:mb-0 md:pr-8">
-              <h3 className="text-2xl font-bold mb-4">Download Our Digital Catalogue</h3>
+              <h3 className="text-2xl font-bold mb-4 font-playfair">Download Our Digital Catalogue</h3>
               <p className="text-gray-600">
                 Scan the QR code to download our complete catalogue featuring all our collections, material options, and custom design possibilities.
               </p>
             </div>
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-xs text-gray-500">QR Code Placeholder</p>
-                  <p className="text-sm font-medium mt-2">Scan to Download</p>
-                </div>
+                <img 
+                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  alt="Catalogue QR Code" 
+                  className="max-w-full max-h-full"
+                />
               </div>
             </div>
           </div>

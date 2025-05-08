@@ -25,6 +25,8 @@ export default {
 		extend: {
 			fontFamily: {
 				playfair: ['Playfair Display', 'serif'],
+				opensans: ['Open Sans', 'sans-serif'],
+				raleway: ['Raleway', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
 			},
 			colors: {
@@ -72,12 +74,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				resin: {
-					blue: '#0EA5E9',
-					green: '#10B981',
-					amber: '#F97316',
-					brown: '#403E43',
-					lightbrown: '#8A898C',
-					cream: '#F6F6F7',
+					blue: '#0A4D68',
+					gold: '#D4AF37',
+					cream: '#F7F4EA',
+					charcoal: '#333333'
 				}
 			},
 			borderRadius: {
@@ -151,7 +151,7 @@ export default {
 				'flow': 'flow 15s ease infinite'
 			},
 			backgroundImage: {
-				'gradient-flow': 'linear-gradient(45deg, #0EA5E9, #10B981, #F97316)',
+				'gradient-flow': 'linear-gradient(45deg, #0A4D68, #D4AF37, #333333)',
 				'glass-morphism': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))',
 			}
 		}

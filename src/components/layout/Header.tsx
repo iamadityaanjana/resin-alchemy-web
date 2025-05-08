@@ -1,9 +1,10 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ShoppingCart, ChevronDown } from "lucide-react";
+import { Menu, X, Search, ShoppingCart, ChevronDown, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -73,7 +74,7 @@ export default function Header() {
             alt="Resin Alchemy Logo" 
             className="h-12 w-auto object-contain"
           />
-          <span className="ml-2 text-xl font-playfair font-semibold text-resin-brown">
+          <span className="ml-2 text-xl font-playfair font-semibold text-[#0A4D68]">
             Resin Alchemy
           </span>
         </Link>
@@ -88,7 +89,7 @@ export default function Header() {
                     onClick={() => toggleSubmenu(link.name)}
                     className={cn(
                       "px-3 py-2 flex items-center text-sm font-medium transition-colors",
-                      location.pathname === link.href ? "text-resin-blue" : "text-resin-brown hover:text-resin-blue"
+                      location.pathname === link.href ? "text-[#D4AF37]" : "text-[#333333] hover:text-[#0A4D68]"
                     )}
                   >
                     {link.name}
@@ -118,7 +119,7 @@ export default function Header() {
                   to={link.href} 
                   className={cn(
                     "px-3 py-2 text-sm font-medium transition-colors",
-                    location.pathname === link.href ? "text-resin-blue" : "text-resin-brown hover:text-resin-blue"
+                    location.pathname === link.href ? "text-[#D4AF37]" : "text-[#333333] hover:text-[#0A4D68]"
                   )}
                 >
                   {link.name}
@@ -130,13 +131,41 @@ export default function Header() {
         
         {/* Action Buttons */}
         <div className="hidden lg:flex items-center space-x-4">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <QrCode className="h-5 w-5" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="grid gap-4">
+                <div className="space-y-2">
+                  <h4 className="font-medium leading-none">Scan for Catalogue</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Scan this QR code to download our complete catalogue
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <img 
+                    src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                    alt="Catalogue QR" 
+                    className="max-w-[180px]"
+                  />
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
           <Button variant="ghost" size="icon">
             <Search className="h-5 w-5" />
           </Button>
           <Button variant="ghost" size="icon">
             <ShoppingCart className="h-5 w-5" />
           </Button>
-          <Button variant="default" className="bg-resin-blue hover:bg-resin-blue/80">
+          <Button 
+            variant="default" 
+            className="bg-[#0A4D68] hover:bg-[#0A4D68]/80"
+            onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
+          >
             Get a Quote
           </Button>
         </div>
@@ -163,7 +192,7 @@ export default function Header() {
                   <>
                     <button 
                       onClick={() => toggleSubmenu(link.name)}
-                      className="w-full flex justify-between items-center py-2 text-lg font-medium text-resin-brown"
+                      className="w-full flex justify-between items-center py-2 text-lg font-medium text-[#333333]"
                     >
                       {link.name}
                       <ChevronDown className="h-5 w-5" />
@@ -187,7 +216,7 @@ export default function Header() {
                     to={link.href} 
                     className={cn(
                       "block py-2 text-lg font-medium",
-                      location.pathname === link.href ? "text-resin-blue" : "text-resin-brown"
+                      location.pathname === link.href ? "text-[#D4AF37]" : "text-[#333333]"
                     )}
                   >
                     {link.name}
@@ -203,7 +232,10 @@ export default function Header() {
             <Button variant="outline" className="w-full">
               <ShoppingCart className="h-5 w-5 mr-2" /> Cart
             </Button>
-            <Button className="w-full bg-resin-blue hover:bg-resin-blue/80">
+            <Button 
+              className="w-full bg-[#0A4D68] hover:bg-[#0A4D68]/80"
+              onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
+            >
               Get a Quote
             </Button>
           </div>

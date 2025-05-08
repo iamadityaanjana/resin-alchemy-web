@@ -2,11 +2,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Instagram, Youtube, Linkedin, Send } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin, Send, Pinterest } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-resin-brown text-white">
+    <footer className="bg-[#333333] text-white">
       <div className="container mx-auto p-6 md:p-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo and About */}
@@ -22,20 +22,23 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-gray-300 text-sm">
-              Where Art Meets Functionality. Handcrafted custom resin furniture that transforms spaces with unique elegance.
+              Elegance In Every Detail
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-resin-blue transition-colors">
+              <a href="https://www.instagram.com/resin__alchemy?igsh=MW4wdnNtaGtsY3E2ZA==" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="hover:text-resin-blue transition-colors">
+              <a href="https://www.facebook.com/share/1DREGaXDYh/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="hover:text-resin-blue transition-colors">
+              <a href="https://youtube.com/@resinalchemy?si=jF08uOZB7fjMLUPz" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="hover:text-resin-blue transition-colors">
+              <a href="https://www.linkedin.com/in/resin-alchemy-8582bb354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Linkedin size={20} />
+              </a>
+              <a href="https://pin.it/VCOnhjwrR" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
+                <Pinterest size={20} />
               </a>
             </div>
           </div>
@@ -70,15 +73,33 @@ export default function Footer() {
             <h3 className="text-lg font-semibold font-playfair">Contact Us</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">
-                <span className="font-medium text-white">Email:</span> info@resinalchemy.com
+                <span className="font-medium text-white">Email:</span> resinalchemy1@gmail.com
               </li>
               <li className="text-gray-300">
-                <span className="font-medium text-white">Phone:</span> +1 (555) 123-4567
+                <span className="font-medium text-white">Phone:</span> +91 7275928964
               </li>
               <li className="text-gray-300">
-                <span className="font-medium text-white">Address:</span> 123 Artisan Way, Design District, CA 90210
+                <span className="font-medium text-white">Address:</span> Karol Bagh, Delhi, India
               </li>
             </ul>
+            <div className="grid grid-cols-2 gap-4 mt-4">
+              <div>
+                <h4 className="text-sm font-medium mb-2">Guide</h4>
+                <img 
+                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  alt="Guide QR" 
+                  className="max-w-[80px] bg-white p-1 rounded"
+                />
+              </div>
+              <div>
+                <h4 className="text-sm font-medium mb-2">Catalogue</h4>
+                <img 
+                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  alt="Catalogue QR" 
+                  className="max-w-[80px] bg-white p-1 rounded"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Newsletter */}
@@ -93,7 +114,7 @@ export default function Footer() {
                 placeholder="Your email address" 
                 className="rounded-r-none bg-white/10 border-white/20 text-white"
               />
-              <Button type="submit" className="rounded-l-none bg-resin-blue hover:bg-resin-blue/80">
+              <Button type="submit" className="rounded-l-none bg-[#D4AF37] hover:bg-[#D4AF37]/80">
                 <Send size={16} />
               </Button>
             </div>
@@ -107,8 +128,7 @@ export default function Footer() {
           </div>
           <div className="flex space-x-4 text-sm text-gray-400">
             <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link to="/returns" className="hover:text-white transition-colors">Returns & Exchanges</Link>
+            <Link to="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

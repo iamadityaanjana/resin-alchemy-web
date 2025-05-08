@@ -1,6 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,16 +19,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 196 94% 48%;
+    --primary: 196 65% 23%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 162 47% 50%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 43 73% 53%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 24 94% 53%;
+    --accent: 43 73% 53%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +36,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 196 94% 48%;
+    --ring: 196 65% 23%;
 
     --radius: 0.5rem;
 
@@ -58,16 +60,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 196 94% 48%;
+    --primary: 196 65% 23%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 162 47% 50%;
+    --secondary: 43 73% 53%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 24 94% 53%;
+    --accent: 43 73% 53%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -93,11 +95,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-opensans;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-playfair;
+  }
+  
+  .accent-text {
+    @apply font-raleway;
   }
   
   .glass-card {
@@ -107,10 +113,54 @@
   .resin-gradient {
     @apply bg-gradient-flow bg-size-200 animate-flow;
   }
+  
+  .whatsapp-btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-[#25D366] text-white hover:bg-[#25D366]/80 transition-all;
+  }
 }
 
 .bg-size-200 {
   background-size: 200% 200%;
+}
+
+.text-primary-color {
+  color: #0A4D68;
+}
+
+.text-secondary-color {
+  color: #D4AF37;
+}
+
+.bg-primary-color {
+  background-color: #0A4D68;
+}
+
+.bg-secondary-color {
+  background-color: #D4AF37;
+}
+
+.text-neutral-color {
+  color: #F7F4EA;
+}
+
+.text-dark-color {
+  color: #333333;
+}
+
+.bg-neutral-color {
+  background-color: #F7F4EA;
+}
+
+.bg-dark-color {
+  background-color: #333333;
+}
+
+.border-primary-color {
+  border-color: #0A4D68;
+}
+
+.border-secondary-color {
+  border-color: #D4AF37;
 }
 
 /* Custom scrollbar */
@@ -123,10 +173,46 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(14, 165, 233, 0.6);
+  background: rgba(10, 77, 104, 0.6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(14, 165, 233, 0.8);
+  background: rgba(10, 77, 104, 0.8);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
 }

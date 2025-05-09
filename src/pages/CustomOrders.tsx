@@ -60,14 +60,21 @@ const CustomOrders = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log("Form submitted:", data);
-    toast.success("Your custom order request has been submitted! We'll contact you soon.");
-    
-    form.reset();
-    setIsSubmitting(false);
+    try {
+      // This will be replaced with Supabase integration
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log("Form submitted:", data);
+      toast.success("Your custom order request has been submitted! We'll contact you soon.");
+      
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to submit your request. Please try again.");
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,7 +82,7 @@ const CustomOrders = () => {
       <HeroSection
         title="Custom Orders"
         subtitle="Create a unique piece of resin furniture tailored to your specifications"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
       />
 
       <section className="py-16 px-4">
@@ -91,7 +98,7 @@ const CustomOrders = () => {
               
               <div className="space-y-8 mt-8">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-resin-blue text-white flex items-center justify-center text-xl font-bold">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#0A4D68] text-white flex items-center justify-center text-xl font-bold">
                     1
                   </div>
                   <div className="ml-6">
@@ -103,7 +110,7 @@ const CustomOrders = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-resin-gold text-white flex items-center justify-center text-xl font-bold">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37] text-white flex items-center justify-center text-xl font-bold">
                     2
                   </div>
                   <div className="ml-6">
@@ -115,7 +122,7 @@ const CustomOrders = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-resin-blue text-white flex items-center justify-center text-xl font-bold">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#0A4D68] text-white flex items-center justify-center text-xl font-bold">
                     3
                   </div>
                   <div className="ml-6">
@@ -127,7 +134,7 @@ const CustomOrders = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-resin-gold text-white flex items-center justify-center text-xl font-bold">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#D4AF37] text-white flex items-center justify-center text-xl font-bold">
                     4
                   </div>
                   <div className="ml-6">
@@ -148,6 +155,20 @@ const CustomOrders = () => {
                 <p className="text-gray-600">
                   Custom pieces typically take 3-4 weeks to complete. Delivery estimates will be provided once your order is confirmed.
                 </p>
+              </div>
+              
+              <div className="mt-10 p-6 bg-gray-50 rounded-lg">
+                <h3 className="text-lg font-semibold mb-2">Digital Catalogue</h3>
+                <p className="text-gray-600 mb-4">
+                  Scan the QR code below to download our complete digital catalogue with pricing and options.
+                </p>
+                <div className="flex justify-center">
+                  <img 
+                    src="/lovable-uploads/27fce686-c32b-4aa9-bb6e-4f3b9b8ae0fe.png" 
+                    alt="Catalogue QR Code" 
+                    className="max-w-[150px] bg-white p-2 rounded"
+                  />
+                </div>
               </div>
             </div>
             
@@ -223,6 +244,7 @@ const CustomOrders = () => {
                               <SelectItem value="desk">Desk</SelectItem>
                               <SelectItem value="shelving">Shelving Unit</SelectItem>
                               <SelectItem value="side-table">Side Table</SelectItem>
+                              <SelectItem value="wall-art">Wall Art</SelectItem>
                               <SelectItem value="custom">Custom Furniture</SelectItem>
                             </SelectContent>
                           </Select>
@@ -285,7 +307,7 @@ const CustomOrders = () => {
                       <p className="text-sm text-gray-500 text-center mt-1">
                         Attach any images or videos to help us understand your vision (Max. 5 files)
                       </p>
-                      <Button type="button" variant="outline" size="sm" className="mt-4">
+                      <Button type="button" variant="outline" size="sm" className="mt-4 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white">
                         Choose Files
                       </Button>
                     </div>
@@ -312,7 +334,7 @@ const CustomOrders = () => {
                   <div className="flex justify-between items-center pt-2">
                     <Button 
                       type="submit" 
-                      className="bg-resin-blue hover:bg-resin-blue/80"
+                      className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -332,6 +354,7 @@ const CustomOrders = () => {
                       type="button" 
                       variant="outline"
                       onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
+                      className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white"
                     >
                       Chat on WhatsApp
                     </Button>
@@ -361,7 +384,7 @@ const CustomOrders = () => {
               </div>
             ))}
           </div>
-          <Button asChild className="mt-10 bg-resin-gold hover:bg-resin-gold/80">
+          <Button asChild className="mt-10 bg-[#D4AF37] hover:bg-[#D4AF37]/80">
             <a href="/gallery">View Full Gallery</a>
           </Button>
         </div>

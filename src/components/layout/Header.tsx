@@ -51,10 +51,11 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
     setActiveSubmenu(null);
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
   
   const toggleSubmenu = (name: string) => {
     if (activeSubmenu === name) {
@@ -62,6 +63,11 @@ export default function Header() {
     } else {
       setActiveSubmenu(name);
     }
+  };
+
+  // Function to close mobile menu
+  const closeMobileMenu = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -101,7 +107,7 @@ export default function Header() {
                   <div 
                     className={cn(
                       "absolute top-full right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all",
-                      activeSubmenu === link.name ? "opacity-100 visible" : "opacity-0 invisible"
+                      activeSubmenu === link.name ? "opacity-100 visible" : "opacity-0 invisible group-hover:opacity-100 group-hover:visible"
                     )}
                   >
                     <div className="py-1" role="menu" aria-orientation="vertical">
@@ -150,7 +156,7 @@ export default function Header() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
+                    src="/lovable-uploads/27fce686-c32b-4aa9-bb6e-4f3b9b8ae0fe.png" 
                     alt="Catalogue QR" 
                     className="max-w-[180px]"
                   />
@@ -171,17 +177,18 @@ export default function Header() {
         <button 
           className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Fixed positioning to ensure it stays visible */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white transform transition-transform duration-300 lg:hidden",
+        "fixed inset-x-0 top-[60px] bottom-0 z-40 bg-white transform transition-transform duration-300 overflow-y-auto lg:hidden",
         isOpen ? "translate-x-0" : "translate-x-full"
-      )} style={{ top: '60px' }}>
-        <div className="px-4 py-6 h-full overflow-y-auto">
+      )}>
+        <div className="px-4 py-6">
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <div key={link.name}>
@@ -192,21 +199,26 @@ export default function Header() {
                       className="w-full flex justify-between items-center py-2 text-lg font-medium text-[#333333]"
                     >
                       {link.name}
-                      <ChevronDown className="h-5 w-5" />
+                      <ChevronDown className={cn(
+                        "h-5 w-5 transition-transform",
+                        activeSubmenu === link.name ? "rotate-180" : ""
+                      )} />
                     </button>
-                    {activeSubmenu === link.name && (
-                      <div className="pl-4 mt-2 space-y-2">
-                        {link.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.name}
-                            to={subitem.href}
-                            className="block py-1 text-gray-600"
-                          >
-                            {subitem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
+                    <div className={cn(
+                      "pl-4 space-y-2 overflow-hidden transition-all duration-200",
+                      activeSubmenu === link.name ? "max-h-96 mt-2" : "max-h-0"
+                    )}>
+                      {link.submenu.map((subitem) => (
+                        <Link
+                          key={subitem.name}
+                          to={subitem.href}
+                          className="block py-1 text-gray-600"
+                          onClick={closeMobileMenu}
+                        >
+                          {subitem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </>
                 ) : (
                   <Link 
@@ -215,6 +227,7 @@ export default function Header() {
                       "block py-2 text-lg font-medium",
                       location.pathname === link.href ? "text-[#D4AF37]" : "text-[#333333]"
                     )}
+                    onClick={closeMobileMenu}
                   >
                     {link.name}
                   </Link>
@@ -225,7 +238,10 @@ export default function Header() {
           <div className="mt-8 flex flex-col space-y-4">
             <Button 
               className="w-full bg-[#D4AF37] hover:bg-[#D4AF37]/80"
-              onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
+              onClick={() => {
+                window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank');
+                closeMobileMenu();
+              }}
             >
               Get a Quote
             </Button>

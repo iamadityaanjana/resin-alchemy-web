@@ -50,6 +50,8 @@ export function RotatingBanner({
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            transform: "scale(1.0)", // Zoom out slightly to ensure full coverage
           }}
         />
       ))}

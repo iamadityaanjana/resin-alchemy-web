@@ -47,14 +47,21 @@ const Contact = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log("Form submitted:", data);
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    
-    form.reset();
-    setIsSubmitting(false);
+    // Will be updated with Supabase integration
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      console.log("Form submitted:", data);
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+      console.error("Error submitting form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsAppClick = () => {
@@ -66,7 +73,7 @@ const Contact = () => {
       <HeroSection
         title="Contact Us"
         subtitle="Get in touch with our team for inquiries, custom orders, or support"
-        backgroundImage="https://images.unsplash.com/photo-1486718448742-163732cd1544"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
       />
 
       <section className="py-20 px-4">
@@ -162,7 +169,7 @@ const Contact = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button 
                       type="submit" 
-                      className="bg-resin-blue hover:bg-resin-blue/80 flex-grow"
+                      className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 flex-grow"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (
@@ -197,27 +204,27 @@ const Contact = () => {
                 
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <Mail className="h-5 w-5 text-resin-blue mr-4 mt-0.5" />
+                    <Mail className="h-5 w-5 text-[#0A4D68] mr-4 mt-0.5" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:resinalchemy1@gmail.com" className="text-gray-600 hover:text-resin-blue">
+                      <a href="mailto:resinalchemy1@gmail.com" className="text-gray-600 hover:text-[#0A4D68]">
                         resinalchemy1@gmail.com
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <Phone className="h-5 w-5 text-resin-blue mr-4 mt-0.5" />
+                    <Phone className="h-5 w-5 text-[#0A4D68] mr-4 mt-0.5" />
                     <div>
                       <p className="font-medium">Phone</p>
-                      <a href="tel:+917275928964" className="text-gray-600 hover:text-resin-blue">
+                      <a href="tel:+917275928964" className="text-gray-600 hover:text-[#0A4D68]">
                         +91 7275928964
                       </a>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <MapPin className="h-5 w-5 text-resin-blue mr-4 mt-0.5" />
+                    <MapPin className="h-5 w-5 text-[#0A4D68] mr-4 mt-0.5" />
                     <div>
                       <p className="font-medium">Address</p>
                       <p className="text-gray-600">
@@ -228,7 +235,7 @@ const Contact = () => {
                   </div>
                   
                   <div className="flex items-start">
-                    <Clock className="h-5 w-5 text-resin-blue mr-4 mt-0.5" />
+                    <Clock className="h-5 w-5 text-[#0A4D68] mr-4 mt-0.5" />
                     <div>
                       <p className="font-medium">Business Hours</p>
                       <p className="text-gray-600">
@@ -320,6 +327,7 @@ const Contact = () => {
           <Button 
             asChild
             variant="outline"
+            className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white"
           >
             <a href="/faq">Visit FAQ Page</a>
           </Button>

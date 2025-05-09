@@ -3,8 +3,25 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Instagram, Youtube, Linkedin, Send } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+    
+    // This will be replaced with Supabase integration later
+    toast.success("Thank you for subscribing to our newsletter!");
+    setEmail("");
+  };
+
   return (
     <footer className="bg-[#333333] text-white">
       <div className="container mx-auto p-6 md:p-10">
@@ -95,7 +112,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Guide</h4>
                 <img 
-                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
+                  src="/lovable-uploads/27fce686-c32b-4aa9-bb6e-4f3b9b8ae0fe.png" 
                   alt="Guide QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />
@@ -103,7 +120,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Catalogue</h4>
                 <img 
-                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
+                  src="/lovable-uploads/27fce686-c32b-4aa9-bb6e-4f3b9b8ae0fe.png" 
                   alt="Catalogue QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />
@@ -117,16 +134,18 @@ export default function Footer() {
             <p className="text-gray-300 text-sm">
               Subscribe to our newsletter for exclusive offers, design inspiration, and updates.
             </p>
-            <div className="flex">
+            <form onSubmit={handleNewsletterSubmit} className="flex">
               <Input 
                 type="email" 
                 placeholder="Your email address" 
                 className="rounded-r-none bg-white/10 border-white/20 text-white"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Button type="submit" className="rounded-l-none bg-[#D4AF37] hover:bg-[#D4AF37]/80">
                 <Send size={16} />
               </Button>
-            </div>
+            </form>
           </div>
         </div>
 

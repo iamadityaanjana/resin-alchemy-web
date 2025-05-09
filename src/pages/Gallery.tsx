@@ -17,6 +17,12 @@ interface Product {
   href: string;
 }
 
+interface CategoryDescription {
+  id: string;
+  title: string;
+  description: string;
+}
+
 const products: Product[] = [
   {
     id: 1,
@@ -111,11 +117,55 @@ const categories = [
   { id: "wall-art", label: "Resin Wall Art" },
 ];
 
+const categoryDescriptions: CategoryDescription[] = [
+  {
+    id: "all",
+    title: "All Resin Furniture Projects",
+    description: "Explore our complete collection of handcrafted resin furniture pieces, each one uniquely designed to bring elegance and character to your space. From tables to wall art, discover the perfect addition for your home or office."
+  },
+  {
+    id: "rectangle-tables",
+    title: "Rectangle Resin Tables",
+    description: "Our rectangular tables combine solid wood with stunning resin inlays to create functional art pieces for your dining room, conference room, or workspace. Each table is meticulously crafted to ensure strength and longevity while showcasing the natural beauty of wood and resin."
+  },
+  {
+    id: "coffee-tables",
+    title: "Coffee Tables",
+    description: "Make a statement in your living room with our eye-catching resin coffee tables. These conversation pieces feature unique designs ranging from riverbed patterns to ocean waves, all crafted to be the perfect centerpiece for your seating area."
+  },
+  {
+    id: "dining-sets",
+    title: "Dining & Outdoor Sets",
+    description: "Transform your dining experience with our complete dining sets that include matching tables and chairs. Our outdoor sets are specially crafted to withstand the elements while maintaining their stunning appearance for years to come."
+  },
+  {
+    id: "bar-tables",
+    title: "Bar Tables",
+    description: "Elevate your entertaining space with our custom bar tables and counters. These showstopping pieces can be designed to fit your specific measurements and style preferences, creating the perfect spot for gatherings and celebrations."
+  },
+  {
+    id: "workspace-tables",
+    title: "Workspace Tables",
+    description: "Find inspiration every day with our designer workspace tables. Combining functionality with artistic design, these desks and tables create a productive environment that reflects your personal style and creativity."
+  },
+  {
+    id: "kitchen-units",
+    title: "Kitchen Units",
+    description: "Add a touch of luxury to your kitchen with our resin countertops, islands, and cabinetry accents. These durable, food-safe surfaces are as practical as they are beautiful, making meal preparation a joy."
+  },
+  {
+    id: "wall-art",
+    title: "Resin Wall Art",
+    description: "Make a bold statement with our striking resin wall art pieces. From abstract designs to nature-inspired scenes, our wall art adds dimension, color, and texture to any room. Each piece is a unique creation that captures light and imagination."
+  },
+];
+
 const Gallery = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
+  const [currentCategoryDesc, setCurrentCategoryDesc] = useState(categoryDescriptions[0]);
   
   useEffect(() => {
     // Get category from URL query parameter
@@ -136,6 +186,10 @@ const Gallery = () => {
     } else {
       setFilteredProducts(products.filter(product => product.category === activeCategory));
     }
+    
+    // Set current category description
+    const categoryDesc = categoryDescriptions.find(cat => cat.id === activeCategory) || categoryDescriptions[0];
+    setCurrentCategoryDesc(categoryDesc);
   }, [activeCategory]);
   
   const handleCategoryChange = (category: string) => {
@@ -176,6 +230,12 @@ const Gallery = () => {
                   </TabsTrigger>
                 ))}
               </TabsList>
+            </div>
+            
+            {/* Category Description */}
+            <div className="bg-gray-50 p-6 rounded-lg mb-10">
+              <h3 className="text-2xl font-bold font-playfair mb-3">{currentCategoryDesc.title}</h3>
+              <p className="text-gray-700">{currentCategoryDesc.description}</p>
             </div>
             
             {categories.map((category) => (
@@ -220,7 +280,7 @@ const Gallery = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Don't See What You're Looking For?</h2>
+          <h2 className="text-3xl font-bold mb-6 font-playfair">Don't See What You're Looking For?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             We specialize in custom designs tailored to your specific needs and preferences.
           </p>

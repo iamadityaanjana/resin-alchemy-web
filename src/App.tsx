@@ -14,6 +14,7 @@ import CustomOrders from "./pages/CustomOrders";
 import BulkOrders from "./pages/BulkOrders";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import { WhatsAppFloatingButton } from "./components/ui/whatsapp-floating-button";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <WhatsAppFloatingButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about-us" element={<AboutUs />} />

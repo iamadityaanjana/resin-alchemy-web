@@ -82,6 +82,22 @@ const products: Product[] = [
     category: "rectangle-tables",
     href: "/gallery/forest-stream-conference-table",
   },
+  {
+    id: 9,
+    title: "Ocean Waves Wall Art",
+    description: "Stunning resin wall art with ocean wave patterns in deep blue and teal colors.",
+    image: "/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png",
+    category: "wall-art",
+    href: "/gallery/ocean-waves-wall-art",
+  },
+  {
+    id: 10,
+    title: "Autumn Forest Wall Panel",
+    description: "Beautiful wall art capturing the essence of autumn forests with amber and gold resin details.",
+    image: "/lovable-uploads/a0f11d4b-2456-4b53-98a9-0a35db5d8172.png",
+    category: "wall-art",
+    href: "/gallery/autumn-forest-wall-panel",
+  },
 ];
 
 const categories = [
@@ -92,6 +108,7 @@ const categories = [
   { id: "bar-tables", label: "Bar Tables" },
   { id: "workspace-tables", label: "Workspace Tables" },
   { id: "kitchen-units", label: "Kitchen Units" },
+  { id: "wall-art", label: "Resin Wall Art" },
 ];
 
 const Gallery = () => {
@@ -131,7 +148,7 @@ const Gallery = () => {
       <HeroSection
         title="Our Gallery"
         subtitle="Explore our collection of custom resin furniture creations"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
       />
 
       <section className="py-20 px-4">
@@ -188,7 +205,7 @@ const Gallery = () => {
                     </p>
                     <Button 
                       onClick={() => handleCategoryChange("all")}
-                      className="bg-resin-blue hover:bg-resin-blue/80"
+                      className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
                     >
                       View All Projects
                     </Button>
@@ -210,13 +227,14 @@ const Gallery = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               asChild
-              className="bg-resin-blue hover:bg-resin-blue/80"
+              className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
             >
               <a href="/custom-orders">Request Custom Design</a>
             </Button>
             <Button 
               asChild
               variant="outline"
+              className="border-[#D4AF37] text-[#D4AF37]"
             >
               <a href="/contact">Contact Us</a>
             </Button>

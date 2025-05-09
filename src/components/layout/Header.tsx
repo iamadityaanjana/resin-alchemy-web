@@ -44,6 +44,10 @@ export default function Header() {
     };
     
     window.addEventListener('scroll', handleScroll);
+    
+    // Check scroll position on mount
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
@@ -146,7 +150,7 @@ export default function Header() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
+                    src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
                     alt="Catalogue QR" 
                     className="max-w-[180px]"
                   />

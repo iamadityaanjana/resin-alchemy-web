@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { PagePreviewSection } from "@/components/ui/page-preview";
 import { FAQSection } from "@/components/ui/expanded-faq";
 import { ImageBanner } from "@/components/ui/image-banner";
+import { RotatingBanner } from "@/components/ui/rotating-banner";
 import {
   Carousel,
   CarouselContent,
@@ -89,6 +90,21 @@ const carouselImages = [
   }
 ];
 
+const bannerImages = [
+  "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
+  "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
+  "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png",
+  "/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png",
+  "/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png",
+  "/lovable-uploads/28af10e0-deca-4df4-804a-b96d16b5f8fa.png",
+  "/lovable-uploads/659610e2-2f31-40bb-a5d6-8d533426f182.png",
+  "/lovable-uploads/a0f11d4b-2456-4b53-98a9-0a35db5d8172.png",
+  "/lovable-uploads/bc99bb56-5d72-4d99-8d2a-45df1c8346c4.png",
+  "/lovable-uploads/47d79c43-7423-4451-8570-e22efd02f8db.png",
+  "/lovable-uploads/672400ea-3b8f-415f-9b96-9f9411df920e.png",
+  "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
+];
+
 const Index = () => {
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank');
@@ -105,11 +121,18 @@ const Index = () => {
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
 
+      {/* Rotating Banner */}
+      <RotatingBanner 
+        images={bannerImages} 
+        interval={5000} 
+        height="60vh"
+      />
+
       {/* Main Content Section */}
       <section className="py-20 px-4 bg-neutral-color">
         <div className="container mx-auto max-w-4xl">
           <ImageBanner 
-            imageSrc="/lovable-uploads/c5f2f8d3-bdbc-4b42-a0b4-db92455e837f.png" 
+            imageSrc="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" 
             alt="Beautiful Resin Furniture" 
             className="mb-10"
           />
@@ -255,7 +278,7 @@ const Index = () => {
                 <p className="mb-6 text-white">Create a one-of-a-kind piece tailored specifically to your space and style preferences.</p>
                 <Button 
                   variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-resin-blue"
+                  className="border-[#D4AF37] bg-[#D4AF37] text-white hover:bg-[#D4AF37]/80"
                   onClick={() => window.location.href = '/custom-orders'}
                 >
                   Start Your Custom Order
@@ -272,7 +295,7 @@ const Index = () => {
                 <p className="mb-6 text-white">Perfect for commercial spaces, hospitality venues, or multi-unit residential projects.</p>
                 <Button 
                   variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-resin-gold"
+                  className="border-[#D4AF37] bg-[#D4AF37] text-white hover:bg-[#D4AF37]/80"
                   onClick={() => window.location.href = '/bulk-orders'}
                 >
                   Enquire About Bulk Orders
@@ -421,7 +444,7 @@ const Index = () => {
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
+                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
                   alt="Catalogue QR Code" 
                   className="max-w-full max-h-full"
                 />

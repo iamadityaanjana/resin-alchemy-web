@@ -95,7 +95,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Guide</h4>
                 <img 
-                  src="/lovable-uploads/0e079e63-5b8b-4caa-b566-4424ed5f344b.png" 
+                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
                   alt="Guide QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />
@@ -103,7 +103,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Catalogue</h4>
                 <img 
-                  src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
+                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
                   alt="Catalogue QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />

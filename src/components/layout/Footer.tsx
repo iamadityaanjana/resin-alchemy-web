@@ -37,7 +37,7 @@ export default function Footer() {
               <a href="https://www.linkedin.com/in/resin-alchemy-8582bb354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Linkedin size={20} />
               </a>
-              {/* Pinterest icon replaced with an SVG */}
+              {/* Pinterest icon with SVG */}
               <a href="https://pin.it/VCOnhjwrR" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />

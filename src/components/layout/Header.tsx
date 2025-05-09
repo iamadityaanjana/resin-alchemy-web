@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ChevronDown, QrCode } from "lucide-react";
+import { Menu, X, ChevronDown, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -17,7 +17,8 @@ const navLinks = [
       { name: "Dining & Outdoor Sets", href: "/gallery?category=dining-sets" },
       { name: "Bar Tables", href: "/gallery?category=bar-tables" },
       { name: "Workspace Tables", href: "/gallery?category=workspace-tables" },
-      { name: "Kitchen Slabs & Units", href: "/gallery?category=kitchen-units" }
+      { name: "Kitchen Slabs & Units", href: "/gallery?category=kitchen-units" },
+      { name: "Resin Wall Art", href: "/gallery?category=wall-art" }
     ]
   },
   { name: "Custom Orders", href: "/custom-orders" },
@@ -153,12 +154,9 @@ export default function Header() {
               </div>
             </PopoverContent>
           </Popover>
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-          </Button>
           <Button 
             variant="default" 
-            className="bg-[#0A4D68] hover:bg-[#0A4D68]/80"
+            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
             onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
           >
             Get a Quote
@@ -221,11 +219,8 @@ export default function Header() {
             ))}
           </nav>
           <div className="mt-8 flex flex-col space-y-4">
-            <Button variant="outline" className="w-full">
-              <Search className="h-5 w-5 mr-2" /> Search
-            </Button>
             <Button 
-              className="w-full bg-[#0A4D68] hover:bg-[#0A4D68]/80"
+              className="w-full bg-[#D4AF37] hover:bg-[#D4AF37]/80"
               onClick={() => window.open('https://wa.me/message/S5YOTMXSYWR7N1', '_blank')}
             >
               Get a Quote

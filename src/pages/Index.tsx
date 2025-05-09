@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PagePreviewSection } from "@/components/ui/page-preview";
 import { FAQSection } from "@/components/ui/expanded-faq";
+import { ImageBanner } from "@/components/ui/image-banner";
 import {
   Carousel,
   CarouselContent,
@@ -54,17 +55,17 @@ const featuredGallery = [
 const testimonials = [
   {
     text: "The coffee table I commissioned has become the centerpiece of my living room. The craftsmanship is impeccable and the colors are even more vibrant in person.",
-    name: "Sarah Johnson",
+    name: "David Jones",
     title: "Interior Designer"
   },
   {
     text: "We ordered custom dining tables for our restaurant, and they've completely transformed the space. Our customers constantly ask about them. Worth every penny.",
-    name: "Michael Chen",
+    name: "Mohit Aggarwal",
     title: "Restaurant Owner"
   },
   {
     text: "From the consultation to delivery, the entire process was smooth and professional. The final product exceeded all expectations. Truly a work of art.",
-    name: "Emma Thompson",
+    name: "Ritu Malhotra",
     title: "Homeowner"
   }
 ];
@@ -107,6 +108,12 @@ const Index = () => {
       {/* Main Content Section */}
       <section className="py-20 px-4 bg-neutral-color">
         <div className="container mx-auto max-w-4xl">
+          <ImageBanner 
+            imageSrc="/lovable-uploads/c5f2f8d3-bdbc-4b42-a0b4-db92455e837f.png" 
+            alt="Beautiful Resin Furniture" 
+            className="mb-10"
+          />
+          
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-playfair text-[#333333]">
               You deserve more than just furniture. You deserve a masterpiece that reflects your unique taste and style.
@@ -150,14 +157,14 @@ const Index = () => {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Button 
-              className="bg-resin-blue hover:bg-resin-blue/80"
+              className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
               onClick={handleWhatsAppClick}
             >
               Start Your Custom Order
             </Button>
             <Button 
               variant="outline"
-              className="border-resin-blue text-resin-blue hover:bg-resin-blue/10"
+              className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
               asChild
             >
               <Link to="/gallery">Explore Our Portfolio</Link>
@@ -206,7 +213,7 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="group">
+            <Button asChild variant="outline" className="group border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10">
               <Link to="/gallery">
                 View Full Gallery
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -227,7 +234,7 @@ const Index = () => {
           <p className="text-xl max-w-2xl mx-auto mb-8">From kitchen countertops to statement art pieces, our resin creations are limited only by imagination</p>
           <Button 
             size="lg" 
-            className="bg-resin-gold hover:bg-resin-gold/80"
+            className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
             onClick={handleWhatsAppClick}
           >
             Start Your Custom Project
@@ -390,7 +397,7 @@ const Index = () => {
             <Button 
               asChild 
               variant="outline" 
-              className="group"
+              className="group border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10"
             >
               <a href="https://www.instagram.com/resin__alchemy?igsh=MW4wdnNtaGtsY3E2ZA==" target="_blank" rel="noopener noreferrer">
                 Follow Us on Instagram
@@ -414,7 +421,7 @@ const Index = () => {
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
+                  src="/lovable-uploads/092c2c14-590f-4928-80c9-2fd4e2092f0c.png" 
                   alt="Catalogue QR Code" 
                   className="max-w-full max-h-full"
                 />

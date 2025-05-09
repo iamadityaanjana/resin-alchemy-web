@@ -1,5 +1,5 @@
 
-import { WhatsApp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function WhatsAppFloatingButton() {
@@ -10,7 +10,7 @@ export function WhatsAppFloatingButton() {
       size="icon"
       aria-label="Chat on WhatsApp"
     >
-      <WhatsApp className="h-7 w-7 text-white" />
+      <MessageCircle className="h-7 w-7 text-white" />
     </Button>
   );
 }

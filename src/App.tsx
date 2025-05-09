@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import CustomOrders from "./pages/CustomOrders";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/custom-orders" element={<CustomOrders />} />
           <Route path="/bulk-orders" element={<BulkOrders />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />

@@ -51,13 +51,10 @@ export function RotatingBanner({
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            transform: "scale(1.0)", // Zoom out slightly to ensure full coverage
+            transform: "scale(1.05)", // Zoom out slightly more to ensure full coverage
           }}
         />
       ))}
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-20"></div>
     </div>
   );
 }

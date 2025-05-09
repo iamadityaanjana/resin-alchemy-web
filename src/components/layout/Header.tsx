@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, QrCode } from "lucide-react";
@@ -24,6 +23,7 @@ const navLinks = [
   { name: "Custom Orders", href: "/custom-orders" },
   { name: "Bulk Orders", href: "/bulk-orders" },
   { name: "About Us", href: "/about-us" },
+  { name: "Blog", href: "/blog" },
   { name: "FAQ", href: "/faq" },
   { name: "Contact Us", href: "/contact" }
 ];
@@ -156,7 +156,7 @@ export default function Header() {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/lovable-uploads/27fce686-c32b-4aa9-bb6e-4f3b9b8ae0fe.png" 
+                    src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
                     alt="Catalogue QR" 
                     className="max-w-[180px]"
                   />

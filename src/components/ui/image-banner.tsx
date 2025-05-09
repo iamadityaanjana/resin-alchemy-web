@@ -13,7 +13,8 @@ export function ImageBanner({ imageSrc, className, alt = "Banner Image" }: Image
       <img 
         src={imageSrc} 
         alt={alt} 
-        className="w-full h-auto object-cover rounded-lg shadow-md"
+        className="w-full h-auto object-cover object-center rounded-lg shadow-md"
+        style={{ maxHeight: "60vh", objectPosition: "center" }}
       />
     </div>
   );

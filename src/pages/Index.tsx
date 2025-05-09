@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -18,83 +17,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const featuredGallery = [
-  {
-    id: 1,
-    title: "Azure Ocean Coffee Table",
-    description: "A stunning piece featuring deep blue resin waves reminiscent of ocean depths.",
-    image: "/lovable-uploads/3b797268-7f27-4b5a-b801-bc1e74c3531d.png",
-    category: "Coffee Tables",
-    href: "/gallery/azure-ocean-coffee-table",
-  },
-  {
-    id: 2,
-    title: "Black Elegance Dining Table",
-    description: "Sophisticated dining table with black resin inlays creating a bold statement piece.",
-    image: "/lovable-uploads/f9f7b58e-6521-43a1-8887-b01a01caadf0.png",
-    category: "Dining Tables",
-    href: "/gallery/black-elegance-dining-table",
-  },
-  {
-    id: 3,
-    title: "Turquoise L-Shaped Kitchen Counter",
-    description: "Custom kitchen counter with vibrant turquoise resin that brings life to any kitchen space.",
-    image: "/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png",
-    category: "Kitchen Units",
-    href: "/gallery/turquoise-kitchen-counter",
-  },
-  {
-    id: 4,
-    title: "Live Edge River Coffee Table",
-    description: "Natural wood with flowing turquoise resin creating a river-like effect through the center.",
-    image: "/lovable-uploads/70b91f96-438e-4e5e-9bc4-0599f1d248ed.png",
-    category: "Coffee Tables",
-    href: "/gallery/river-coffee-table",
-  },
-];
-
-const testimonials = [
-  {
-    text: "The coffee table I commissioned has become the centerpiece of my living room. The craftsmanship is impeccable and the colors are even more vibrant in person.",
-    name: "David Jones",
-    title: "Interior Designer"
-  },
-  {
-    text: "We ordered custom dining tables for our restaurant, and they've completely transformed the space. Our customers constantly ask about them. Worth every penny.",
-    name: "Mohit Aggarwal",
-    title: "Restaurant Owner"
-  },
-  {
-    text: "From the consultation to delivery, the entire process was smooth and professional. The final product exceeded all expectations. Truly a work of art.",
-    name: "Ritu Malhotra",
-    title: "Homeowner"
-  }
-];
-
-const carouselImages = [
-  {
-    src: "/lovable-uploads/3bd16592-ae95-45f8-85da-a60b35e9a0fc.png",
-    alt: "Modern resin coffee table"
-  },
-  {
-    src: "/lovable-uploads/8b964770-b7ba-48c0-9ab9-d6dc666dc145.png",
-    alt: "Elegant resin dining table"
-  },
-  {
-    src: "/lovable-uploads/b5aee2ad-1a45-40bf-8e18-8ecfc2a6e2bc.png",
-    alt: "Contemporary resin table design"
-  },
-  {
-    src: "/lovable-uploads/26314bbf-c88a-411c-9f99-766b5c4b5244.png",
-    alt: "Unique resin furniture piece"
-  }
-];
-
 const bannerImages = [
   "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
   "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
   "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png",
-  "/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png",
   "/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png",
   "/lovable-uploads/28af10e0-deca-4df4-804a-b96d16b5f8fa.png",
   "/lovable-uploads/659610e2-2f31-40bb-a5d6-8d533426f182.png",
@@ -216,6 +142,14 @@ const Index = () => {
             subtitle="Discover our most celebrated creations that blend artistry with functionality"
           />
           
+          <div className="mb-12 flex justify-center">
+            <img 
+              src="/lovable-uploads/11e819c6-06bf-483e-83c0-1ab5a80281c9.png"
+              alt="Gallery"
+              className="max-w-full md:max-w-lg rounded-lg shadow-lg"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredGallery.map((item) => (
               <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
@@ -271,7 +205,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Custom Orders Panel */}
             <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/b079772f-6257-40a4-a0c3-049875c8c287.png')` }}>
+                 style={{ backgroundImage: `url('/lovable-uploads/5ca2b50e-80a1-4682-8723-1939d0448c2e.png')` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-resin-blue/80 to-resin-blue opacity-90 group-hover:opacity-70 transition-opacity"></div>
               <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
                 <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Custom Orders</h3>
@@ -288,7 +222,7 @@ const Index = () => {
             
             {/* Bulk Orders Panel */}
             <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/fb5ca7f3-3726-49fa-8fa8-f3923761b61d.png')` }}>
+                 style={{ backgroundImage: `url('/lovable-uploads/b07860e4-dc0e-4ce8-8685-08e8989f11b6.png')` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-resin-gold/80 to-resin-gold opacity-90 group-hover:opacity-70 transition-opacity"></div>
               <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
                 <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Bulk Orders</h3>
@@ -444,7 +378,7 @@ const Index = () => {
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png" 
+                  src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
                   alt="Catalogue QR Code" 
                   className="max-w-full max-h-full"
                 />

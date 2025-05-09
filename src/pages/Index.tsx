@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -32,7 +31,6 @@ const bannerImages = [
   "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
 ];
 
-// Add the missing data for featuredGallery, carouselImages, and testimonials
 const featuredGallery = [
   {
     id: 1,
@@ -130,6 +128,7 @@ const Index = () => {
         images={bannerImages} 
         interval={5000} 
         height="60vh"
+        objectPosition="center top"
       />
 
       {/* Main Content Section */}
@@ -456,7 +455,7 @@ const Index = () => {
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
+                  src="/lovable-uploads/e3b10619-5439-427f-af6b-af27fa880e3b.png" 
                   alt="Catalogue QR Code" 
                   className="max-w-full max-h-full"
                 />

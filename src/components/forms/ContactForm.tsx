@@ -43,7 +43,12 @@ export function ContactForm() {
       // Submit to Supabase
       const { error } = await supabase
         .from('contact_submissions')
-        .insert(validData); // Changed to pass a single object instead of array
+        .insert({
+          name: validData.name,
+          email: validData.email,
+          subject: validData.subject,
+          message: validData.message
+        });
       
       if (error) {
         console.error("Error submitting contact form:", error);

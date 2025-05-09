@@ -25,7 +25,9 @@ export function NewsletterForm() {
       // Send to Supabase
       const { error } = await supabase
         .from('newsletter_subscriptions')
-        .insert([{ email: validEmail }]);
+        .insert({
+          email: validEmail
+        });
       
       if (error) {
         console.error("Error subscribing to newsletter:", error);

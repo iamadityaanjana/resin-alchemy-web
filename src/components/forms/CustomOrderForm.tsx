@@ -73,16 +73,20 @@ export function CustomOrderForm() {
         }
       }
       
-      // Include file info in the submission
-      const submissionData = {
-        ...validData,
-        files_info: filesInfo.length > 0 ? filesInfo : null
-      };
-      
-      // Submit to Supabase - changed to pass a single object instead of an array
+      // Submit to Supabase with properly defined required fields
       const { error } = await supabase
         .from('custom_orders')
-        .insert(submissionData);
+        .insert({
+          name: validData.name,
+          email: validData.email,
+          phone: validData.phone,
+          product_type: validData.product_type,
+          dimensions: validData.dimensions,
+          color_preferences: validData.color_preferences,
+          design_ideas: validData.design_ideas,
+          additional_comments: validData.additional_comments,
+          files_info: filesInfo.length > 0 ? filesInfo : null
+        });
       
       if (error) {
         console.error("Error submitting custom order:", error);

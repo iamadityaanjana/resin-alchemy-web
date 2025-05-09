@@ -38,9 +38,9 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               {/* Blog icon with SVG */}
-              <a href="/blog" className="hover:text-[#D4AF37] transition-colors">
+              <Link to="/blog" className="hover:text-[#D4AF37] transition-colors">
                 <BookOpen size={20} />
-              </a>
+              </Link>
               {/* Pinterest icon with SVG */}
               <a href="https://pin.it/VCOnhjwrR" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -102,7 +102,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Guide</h4>
                 <img 
-                  src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
+                  src="/lovable-uploads/707da0f9-2e78-49e4-8a9d-bb2182102b1e.png" 
                   alt="Guide QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />
@@ -110,7 +110,7 @@ export default function Footer() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Catalogue</h4>
                 <img 
-                  src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
+                  src="/lovable-uploads/e3b10619-5439-427f-af6b-af27fa880e3b.png" 
                   alt="Catalogue QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
                 />

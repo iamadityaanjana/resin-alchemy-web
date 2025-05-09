@@ -7,13 +7,15 @@ interface RotatingBannerProps {
   interval?: number;
   className?: string;
   height?: string;
+  objectPosition?: string;
 }
 
 export function RotatingBanner({
   images,
   interval = 5000,
   className,
-  height = "70vh"
+  height = "70vh",
+  objectPosition = "center top"
 }: RotatingBannerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,9 +51,9 @@ export function RotatingBanner({
           style={{
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
-            backgroundPosition: "center center", // Changed to center center for better positioning
+            backgroundPosition: objectPosition,
             backgroundRepeat: "no-repeat",
-            transform: "scale(1.02)", // Slightly reduced scale for better fit
+            transform: "scale(1.02)",
           }}
         />
       ))}

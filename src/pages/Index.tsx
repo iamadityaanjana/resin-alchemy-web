@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -29,6 +30,83 @@ const bannerImages = [
   "/lovable-uploads/47d79c43-7423-4451-8570-e22efd02f8db.png",
   "/lovable-uploads/672400ea-3b8f-415f-9b96-9f9411df920e.png",
   "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
+];
+
+// Add the missing data for featuredGallery, carouselImages, and testimonials
+const featuredGallery = [
+  {
+    id: 1,
+    title: "Ocean Blue Coffee Table",
+    description: "A stunning coffee table with ocean-inspired resin design",
+    image: "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
+    category: "Coffee Tables"
+  },
+  {
+    id: 2,
+    title: "Golden Geode Dining Table",
+    description: "Elegant dining table with geode resin art in gold tones",
+    image: "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
+    category: "Dining Tables"
+  },
+  {
+    id: 3,
+    title: "Emerald River Console",
+    description: "Beautiful console with flowing emerald river design",
+    image: "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png",
+    category: "Console Tables"
+  },
+  {
+    id: 4,
+    title: "Cosmic Night Side Table",
+    description: "Side table with cosmic night sky design in deep blue and purple",
+    image: "/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png",
+    category: "Side Tables"
+  }
+];
+
+const carouselImages = [
+  {
+    src: "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
+    alt: "Coffee Tables"
+  },
+  {
+    src: "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
+    alt: "Dining Tables"
+  },
+  {
+    src: "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png", 
+    alt: "Console Tables"
+  },
+  {
+    src: "/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png",
+    alt: "Side Tables"
+  },
+  {
+    src: "/lovable-uploads/28af10e0-deca-4df4-804a-b96d16b5f8fa.png",
+    alt: "Countertops"
+  },
+  {
+    src: "/lovable-uploads/659610e2-2f31-40bb-a5d6-8d533426f182.png",
+    alt: "Wall Art"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Rahul Sharma",
+    title: "Interior Designer, Delhi",
+    text: "The quality of craftsmanship in the resin tables is unmatched. My clients love the unique designs and the way they transform their spaces."
+  },
+  {
+    name: "Priya Patel",
+    title: "Home Owner, Mumbai",
+    text: "I ordered a custom dining table, and it's now the centerpiece of my home. The resin work is beautiful and the table is incredibly sturdy."
+  },
+  {
+    name: "Vikram Singh",
+    title: "Restaurant Owner, Bangalore",
+    text: "We furnished our entire restaurant with resin tables from Resin Alchemy. The tables are not only aesthetically pleasing but also very durable, perfect for heavy use."
+  }
 ];
 
 const Index = () => {

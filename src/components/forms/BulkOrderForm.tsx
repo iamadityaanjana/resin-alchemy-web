@@ -94,10 +94,10 @@ export function BulkOrderForm() {
         files_info: filesInfo.length > 0 ? filesInfo : null
       };
       
-      // Submit to Supabase
+      // Submit to Supabase - changed to pass a single object instead of an array
       const { error } = await supabase
         .from('bulk_orders')
-        .insert([submissionData]);
+        .insert(submissionData);
       
       if (error) {
         console.error("Error submitting bulk order:", error);

@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Facebook, Instagram, Youtube, Linkedin, Blog } from "lucide-react";
+import { Facebook, Instagram, Youtube, Linkedin, BookOpen } from "lucide-react";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 
 export default function Footer() {
@@ -36,6 +36,10 @@ export default function Footer() {
               </a>
               <a href="https://www.linkedin.com/in/resin-alchemy-8582bb354?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
                 <Linkedin size={20} />
+              </a>
+              {/* Blog icon with SVG */}
+              <a href="/blog" className="hover:text-[#D4AF37] transition-colors">
+                <BookOpen size={20} />
               </a>
               {/* Pinterest icon with SVG */}
               <a href="https://pin.it/VCOnhjwrR" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">

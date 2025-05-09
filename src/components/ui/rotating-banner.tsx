@@ -49,9 +49,9 @@ export function RotatingBanner({
           style={{
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center center", // Changed to center center for better positioning
             backgroundRepeat: "no-repeat",
-            transform: "scale(1.05)", // Zoom out slightly more to ensure full coverage
+            transform: "scale(1.02)", // Slightly reduced scale for better fit
           }}
         />
       ))}

@@ -15,7 +15,7 @@ export function RotatingBanner({
   interval = 5000,
   className,
   height = "70vh",
-  objectPosition = "center center" // Default to center position for better visibility
+  objectPosition = "center 30%" // Default to more visible position
 }: RotatingBannerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 

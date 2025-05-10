@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, QrCode } from "lucide-react";
@@ -185,9 +186,13 @@ export default function Header() {
       
       {/* Mobile Menu - Fixed positioning to ensure it stays visible */}
       <div className={cn(
-        "fixed inset-x-0 top-[60px] bottom-0 z-40 bg-white transform transition-transform duration-300 overflow-y-auto lg:hidden",
+        "fixed inset-x-0 top-[60px] bg-white transform transition-transform duration-300 overflow-y-auto lg:hidden z-50",
         isOpen ? "translate-x-0" : "translate-x-full"
-      )}>
+      )}
+      style={{ 
+        maxHeight: "calc(100vh - 60px)",
+        overflowY: "auto"
+      }}>
         <div className="px-4 py-6">
           <nav className="flex flex-col space-y-4">
             {navLinks.map((link) => (

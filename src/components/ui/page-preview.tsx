@@ -57,7 +57,7 @@ export function PagePreview({
 }
 
 export function PagePreviewSection() {
-  // Updated with new contextual images
+  // Reverted to previous contextual images
   const pages = [
     {
       title: "Gallery",

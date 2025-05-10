@@ -12,7 +12,7 @@ const BulkOrders = () => {
       <HeroSection
         title="Bulk Orders"
         subtitle="Premium resin furniture solutions for commercial spaces, hospitality venues, and residential projects"
-        backgroundImage="/lovable-uploads/b07860e4-dc0e-4ce8-8685-08e8989f11b6.png"
+        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
       />
 
       <section className="py-16 px-4">
@@ -122,7 +122,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" 
+                    src="/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png" 
                     alt="Luxury Hotel Project" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -140,7 +140,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png" 
+                    src="/lovable-uploads/28af10e0-deca-4df4-804a-b96d16b5f8fa.png" 
                     alt="Corporate Office" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -158,7 +158,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png" 
+                    src="/lovable-uploads/bc99bb56-5d72-4d99-8d2a-45df1c8346c4.png" 
                     alt="Residential Complex" 
                     className="w-full h-48 object-cover rounded-md"
                   />

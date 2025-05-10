@@ -11,7 +11,7 @@ const CustomOrders = () => {
       <HeroSection
         title="Custom Orders"
         subtitle="Create your own unique resin furniture piece tailored specifically for your space"
-        backgroundImage="/lovable-uploads/5ca2b50e-80a1-4682-8723-1939d0448c2e.png"
+        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
       />
 
       <section className="py-16 px-4">
@@ -96,18 +96,18 @@ const CustomOrders = () => {
             <h2 className="text-2xl font-bold mb-8 font-playfair text-center">Inspiration Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <img 
-                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" 
-                alt="Segmented Resin Table" 
+                src="/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png" 
+                alt="River-Inspired Dining Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" 
-                alt="Ocean-Inspired Side Table" 
+                src="/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png" 
+                alt="Golden Geode Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" 
-                alt="Wood and Resin Dining Table" 
+                src="/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png" 
+                alt="Ocean Blue Coffee Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
             </div>

@@ -32,37 +32,39 @@ const bannerImages = [
   "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
 ];
 
+// Updated gallery with images from inspiration gallery and matching names
 const featuredGallery = [
   {
     id: 1,
-    title: "Ocean Blue Coffee Table",
-    description: "A stunning coffee table with ocean-inspired resin design",
-    image: "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
-    category: "Coffee Tables"
-  },
-  {
-    id: 2,
-    title: "Golden Geode Dining Table",
-    description: "Elegant dining table with geode resin art in gold tones",
-    image: "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
+    title: "Emerald River Dining Table",
+    description: "A stunning dining table with flowing river-inspired resin design",
+    image: "/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png",
     category: "Dining Tables"
   },
   {
+    id: 2,
+    title: "Ocean Blue Coffee Table",
+    description: "Elegant coffee table with deep blue ocean resin patterns",
+    image: "/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png",
+    category: "Coffee Tables"
+  },
+  {
     id: 3,
-    title: "Emerald River Console",
-    description: "Beautiful console with flowing emerald river design",
-    image: "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png",
-    category: "Console Tables"
+    title: "Golden Sunset Dining Set",
+    description: "Beautiful dining set with warm golden sunset resin flow",
+    image: "/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png",
+    category: "Dining Sets"
   },
   {
     id: 4,
-    title: "Cosmic Night Side Table",
-    description: "Side table with cosmic night sky design in deep blue and purple",
-    image: "/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png",
+    title: "Turquoise Paradise Side Table",
+    description: "Side table with vibrant turquoise paradise design",
+    image: "/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png",
     category: "Side Tables"
   }
 ];
 
+// Keep the carousel images same as before
 const carouselImages = [
   {
     src: "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
@@ -119,7 +121,7 @@ const Index = () => {
       <HeroSection
         title="Crafted Elegance for Your Space"
         subtitle="Bespoke resin furniture handcrafted to transform your spaces with unique elegance"
-        backgroundImage="/lovable-uploads/b7a8cbed-92a4-4709-9b0f-9b83579944ab.png"
+        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
         primaryCta={{ text: "Explore Our Collection", href: "/gallery" }}
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
@@ -210,10 +212,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Preview of Website Pages with updated images */}
+      {/* Preview of Website Pages with original images */}
       <PagePreviewSection />
 
-      {/* Gallery Section */}
+      {/* Gallery Section - Updated with new images and titles */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <SectionHeading 
@@ -262,7 +264,7 @@ const Index = () => {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Endless Possibilities Banner - Updated with new dining table image */}
+      {/* Endless Possibilities Banner - Updated with new image */}
       <section 
         className="relative py-24 bg-cover bg-center" 
         style={{ 

@@ -3,12 +3,11 @@ import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { CustomOrderForm } from "@/components/forms/CustomOrderForm";
 import { Separator } from "@/components/ui/separator";
-import { ImageBanner } from "@/components/ui/image-banner";
 
 const CustomOrders = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section without QR code overlay */}
       <HeroSection
         title="Custom Orders"
         subtitle="Create your own unique resin furniture piece tailored specifically for your space"
@@ -99,17 +98,17 @@ const CustomOrders = () => {
               <img 
                 src="/lovable-uploads/3b797268-7f27-4b5a-b801-bc1e74c3531d.png" 
                 alt="Inspiration 1" 
-                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover"
+                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
                 src="/lovable-uploads/f9f7b58e-6521-43a1-8887-b01a01caadf0.png" 
                 alt="Inspiration 2" 
-                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover"
+                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
                 src="/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png" 
                 alt="Inspiration 3" 
-                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover"
+                className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
             </div>
           </div>

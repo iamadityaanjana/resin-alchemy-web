@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Contact = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section without QR code */}
       <HeroSection
         title="Contact Us"
         subtitle="Get in touch with our team for inquiries, quotes, or custom design consultations"

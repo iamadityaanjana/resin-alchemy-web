@@ -17,18 +17,18 @@ export function ImageBanner({
   objectPosition = "center center" 
 }: ImageBannerProps) {
   return (
-    <div className={cn("w-full overflow-hidden mb-8", className)}>
+    <div className={cn("w-full overflow-hidden mb-8 relative", className)}>
       <img 
         src={imageSrc} 
         alt={alt} 
-        className="w-full h-auto object-cover rounded-lg shadow-md"
+        className="w-full h-full object-cover rounded-lg shadow-md"
         style={{ 
-          height, 
-          maxHeight: height, 
+          maxHeight: height,
           objectFit: "cover", 
           objectPosition 
         }}
       />
+      <div className="absolute inset-0 bg-black/20 z-[1]"></div>
     </div>
   );
 }

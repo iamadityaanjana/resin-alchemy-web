@@ -73,18 +73,18 @@ export function CustomOrderForm() {
         }
       }
       
-      // Submit to Supabase with properly defined required fields
+      // Submit to Supabase with properly defined fields
       const { error } = await supabase
         .from('custom_orders')
         .insert({
           name: validData.name,
           email: validData.email,
-          phone: validData.phone,
-          product_type: validData.product_type,
-          dimensions: validData.dimensions,
-          color_preferences: validData.color_preferences,
-          design_ideas: validData.design_ideas,
-          additional_comments: validData.additional_comments,
+          phone: validData.phone || null,
+          product_type: validData.product_type || null,
+          dimensions: validData.dimensions || null,
+          color_preferences: validData.color_preferences || null,
+          design_ideas: validData.design_ideas || null,
+          additional_comments: validData.additional_comments || null,
           files_info: filesInfo.length > 0 ? filesInfo : null
         });
       

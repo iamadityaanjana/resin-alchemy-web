@@ -87,14 +87,28 @@ export function BulkOrderForm() {
         }
       }
       
-      // Include file info and project deadline in the submission
+      // Make sure required fields are provided
+      if (!validData.name || !validData.email) {
+        toast.error("Name and email are required");
+        return;
+      }
+      
+      // Submit to Supabase with properly typed data
       const submissionData = {
-        ...validData,
+        name: validData.name,
+        email: validData.email,
+        phone: validData.phone || null,
+        company_name: validData.company_name || null,
+        product_type: validData.product_type || null,
+        quantity: validData.quantity || null,
+        dimensions: validData.dimensions || null,
+        design_ideas: validData.design_ideas || null,
+        additional_comments: validData.additional_comments || null,
         project_deadline: projectDeadline ? format(projectDeadline, 'yyyy-MM-dd') : null,
         files_info: filesInfo.length > 0 ? filesInfo : null
       };
       
-      // Submit to Supabase - changed to pass a single object instead of an array
+      // Submit to Supabase
       const { error } = await supabase
         .from('bulk_orders')
         .insert(submissionData);

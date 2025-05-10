@@ -8,7 +8,7 @@ import { Check } from "lucide-react";
 const BulkOrders = () => {
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section without QR code */}
       <HeroSection
         title="Bulk Orders"
         subtitle="Premium resin furniture solutions for commercial spaces, hospitality venues, and residential projects"

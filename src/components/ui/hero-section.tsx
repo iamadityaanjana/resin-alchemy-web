@@ -33,17 +33,15 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        "relative flex items-center justify-center w-full min-h-[70vh] py-20 px-4",
+        "relative flex items-center justify-center w-full min-h-[70vh] py-20 px-4 bg-cover bg-center",
         className
       )}
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       {overlay && backgroundImage && (
-        <div className="absolute inset-0 bg-black/40 z-[1]"></div>
+        <div className="absolute inset-0 bg-black/50 z-[1]"></div>
       )}
 
       <div className="container mx-auto relative z-[2] text-center">

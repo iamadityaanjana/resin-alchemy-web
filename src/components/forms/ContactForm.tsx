@@ -46,7 +46,7 @@ export function ContactForm() {
         .insert({
           name: validData.name,
           email: validData.email,
-          subject: validData.subject,
+          subject: validData.subject || null,
           message: validData.message
         });
       

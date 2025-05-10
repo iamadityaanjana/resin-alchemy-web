@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -17,6 +18,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+// Define data arrays
 const bannerImages = [
   "/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png",
   "/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png",
@@ -118,7 +120,7 @@ const Index = () => {
       <HeroSection
         title="Crafted Elegance for Your Space"
         subtitle="Bespoke resin furniture handcrafted to transform your spaces with unique elegance"
-        backgroundImage="/lovable-uploads/c5f2f8d3-bdbc-4b42-a0b4-db92455e837f.png"
+        backgroundImage="/lovable-uploads/b7a8cbed-92a4-4709-9b0f-9b83579944ab.png"
         primaryCta={{ text: "Explore Our Collection", href: "/gallery" }}
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
@@ -128,7 +130,7 @@ const Index = () => {
         images={bannerImages} 
         interval={5000} 
         height="60vh"
-        objectPosition="center top"
+        objectPosition="center 20%"
       />
 
       {/* Main Content Section */}
@@ -138,6 +140,7 @@ const Index = () => {
             imageSrc="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" 
             alt="Beautiful Resin Furniture" 
             className="mb-10"
+            objectPosition="center 30%"
           />
           
           <div className="text-center mb-10">
@@ -221,7 +224,7 @@ const Index = () => {
           
           <div className="mb-12 flex justify-center">
             <img 
-              src="/lovable-uploads/11e819c6-06bf-483e-83c0-1ab5a80281c9.png"
+              src="/lovable-uploads/22f3d297-f4cd-4644-9055-cbcbb559b907.png"
               alt="Gallery"
               className="max-w-full md:max-w-lg rounded-lg shadow-lg"
             />
@@ -260,8 +263,14 @@ const Index = () => {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Endless Possibilities Banner */}
-      <section className="relative py-24 bg-cover bg-center" style={{ backgroundImage: `url('/lovable-uploads/a867d262-7e37-4d50-9024-685ebc9b4239.png')` }}>
+      {/* Endless Possibilities Banner - Using the dining table image */}
+      <section 
+        className="relative py-24 bg-cover bg-center" 
+        style={{ 
+          backgroundImage: `url('/lovable-uploads/f0751df1-fe20-4572-8ce6-6474a1c9ea3e.png')`, 
+          backgroundPosition: "center 40%" 
+        }}
+      >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto relative z-10 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">Endless Possibilities</h2>
@@ -282,7 +291,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Custom Orders Panel */}
             <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/5ca2b50e-80a1-4682-8723-1939d0448c2e.png')` }}>
+                 style={{ backgroundImage: `url('/lovable-uploads/23387a9e-efe9-44c2-a089-6d7ec1424cad.png')` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-resin-blue/80 to-resin-blue opacity-90 group-hover:opacity-70 transition-opacity"></div>
               <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
                 <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Custom Orders</h3>
@@ -299,7 +308,7 @@ const Index = () => {
             
             {/* Bulk Orders Panel */}
             <div className="bg-cover bg-center rounded-lg relative overflow-hidden group h-80" 
-                 style={{ backgroundImage: `url('/lovable-uploads/b07860e4-dc0e-4ce8-8685-08e8989f11b6.png')` }}>
+                 style={{ backgroundImage: `url('/lovable-uploads/4f27e518-67de-4d86-bd7f-10dbcb3a381b.png')` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-resin-gold/80 to-resin-gold opacity-90 group-hover:opacity-70 transition-opacity"></div>
               <div className="relative z-10 h-full flex flex-col justify-center items-center text-center p-10">
                 <h3 className="text-2xl font-bold mb-4 text-white font-playfair">Bulk Orders</h3>
@@ -460,6 +469,33 @@ const Index = () => {
                   className="max-w-full max-h-full"
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Add Contact section with image */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <img 
+                src="/lovable-uploads/6a54bace-3fbe-4d1c-9fbd-4e646db962a5.png"
+                alt="Contact Us"
+                className="rounded-lg shadow-lg w-full h-auto"
+              />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4 font-playfair">Get In Touch</h2>
+              <p className="mb-6 text-gray-600">
+                Have questions or ready to start your custom order? Contact our team for personalized assistance with your resin furniture needs.
+              </p>
+              <Button 
+                asChild
+                className="bg-resin-blue hover:bg-resin-blue/80"
+              >
+                <Link to="/contact">Contact Us</Link>
+              </Button>
             </div>
           </div>
         </div>

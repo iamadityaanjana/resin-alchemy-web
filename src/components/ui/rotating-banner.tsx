@@ -35,10 +35,13 @@ export function RotatingBanner({
   return (
     <div 
       className={cn(
-        "relative w-full overflow-hidden", 
+        "relative w-full overflow-hidden rounded-lg", 
         className
       )}
-      style={{ height }}
+      style={{ 
+        height: height,
+        minHeight: "350px" // Ensure minimum height on mobile
+      }}
     >
       {/* All images are in the DOM but only the current one is visible */}
       {images.map((image, index) => (
@@ -53,10 +56,9 @@ export function RotatingBanner({
             backgroundSize: "cover",
             backgroundPosition: objectPosition,
             backgroundRepeat: "no-repeat",
-            transform: "scale(1.02)",
           }}
         >
-          <div className="absolute inset-0 bg-black/30 z-[1]"></div>
+          <div className="absolute inset-0 bg-black/40 z-[1]"></div>
         </div>
       ))}
     </div>

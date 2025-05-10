@@ -18,17 +18,19 @@ export function ImageBanner({
 }: ImageBannerProps) {
   return (
     <div className={cn("w-full overflow-hidden mb-8 relative", className)}>
-      <img 
-        src={imageSrc} 
-        alt={alt} 
-        className="w-full h-full object-cover rounded-lg shadow-md"
+      <div 
+        className="w-full h-full rounded-lg shadow-md relative"
         style={{ 
           maxHeight: height,
-          objectFit: "cover", 
-          objectPosition 
+          backgroundImage: `url(${imageSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: objectPosition,
+          aspectRatio: "21/9"
         }}
-      />
-      <div className="absolute inset-0 bg-black/20 z-[1]"></div>
+      >
+        {/* Using a div with background image instead of img for better control */}
+        <div className="absolute inset-0 bg-black/20 z-[1] rounded-lg"></div>
+      </div>
     </div>
   );
 }

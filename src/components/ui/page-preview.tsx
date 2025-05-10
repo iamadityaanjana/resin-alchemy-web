@@ -61,37 +61,37 @@ export function PagePreviewSection() {
     {
       title: "Gallery",
       description: "Explore our collection of custom resin furniture",
-      imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      imageSrc: "/lovable-uploads/22f3d297-f4cd-4644-9055-cbcbb559b907.png",
       link: "/gallery"
     },
     {
       title: "Custom Orders",
       description: "Create your own unique piece of resin furniture",
-      imageSrc: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
+      imageSrc: "/lovable-uploads/23387a9e-efe9-44c2-a089-6d7ec1424cad.png",
       link: "/custom-orders"
     },
     {
       title: "Bulk Orders",
       description: "Special pricing for commercial and larger orders",
-      imageSrc: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
+      imageSrc: "/lovable-uploads/4f27e518-67de-4d86-bd7f-10dbcb3a381b.png",
       link: "/bulk-orders"
     },
     {
       title: "About Us",
       description: "Learn about our craftsmanship and commitment to quality",
-      imageSrc: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+      imageSrc: "/lovable-uploads/b7a8cbed-92a4-4709-9b0f-9b83579944ab.png",
       link: "/about-us"
     },
     {
       title: "FAQ",
       description: "Find answers to common questions about our products",
-      imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      imageSrc: "/lovable-uploads/43281c7b-9159-428d-8cdd-04e20884fed4.png",
       link: "/faq"
     },
     {
       title: "Blog",
       description: "Read about latest trends and tips in resin furniture",
-      imageSrc: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
+      imageSrc: "/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png",
       link: "/blog"
     }
   ];

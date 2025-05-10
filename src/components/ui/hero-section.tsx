@@ -38,19 +38,20 @@ export function HeroSection({
       )}
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+        minHeight: "450px" // Ensure minimum height on mobile
       }}
     >
       {overlay && backgroundImage && (
-        <div className="absolute inset-0 bg-black/50 z-[1]"></div>
+        <div className="absolute inset-0 bg-black/60 z-[1]"></div>
       )}
 
-      <div className="container mx-auto relative z-[2] text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
+      <div className="container mx-auto relative z-[2] text-center py-8 md:py-16">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white animate-fade-in">
           {title}
         </h1>
         
         {subtitle && (
-          <p className="max-w-3xl mx-auto text-lg md:text-xl text-white/90 mb-8 animate-fade-in" 
+          <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-white/90 mb-8 animate-fade-in px-4" 
              style={{ animationDelay: "200ms" }}>
             {subtitle}
           </p>
@@ -63,7 +64,7 @@ export function HeroSection({
               <Button
                 asChild
                 size="lg"
-                className="bg-resin-blue hover:bg-resin-blue/80 text-white px-8"
+                className="bg-resin-blue hover:bg-resin-blue/80 text-white px-6 sm:px-8 whitespace-normal h-auto py-3"
               >
                 <a href={primaryCta.href}>{primaryCta.text}</a>
               </Button>
@@ -74,7 +75,7 @@ export function HeroSection({
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white/20"
+                className="border-white text-white hover:bg-white/20 whitespace-normal h-auto py-3"
               >
                 <a href={secondaryCta.href}>{secondaryCta.text}</a>
               </Button>

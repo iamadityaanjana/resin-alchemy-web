@@ -15,6 +15,7 @@ interface HeroSectionProps {
   primaryCta?: CallToAction;
   secondaryCta?: CallToAction;
   showQrCode?: boolean;
+  overlay?: boolean;
   className?: string;
 }
 
@@ -24,6 +25,7 @@ export function HeroSection({
   backgroundImage = "/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png", // Default to the specified image
   primaryCta,
   secondaryCta,
+  overlay = true,
   className
 }: HeroSectionProps) {
   return (
@@ -38,7 +40,7 @@ export function HeroSection({
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      {overlay && <div className="absolute inset-0 bg-black/50"></div>}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center text-white">

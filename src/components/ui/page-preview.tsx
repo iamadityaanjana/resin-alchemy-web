@@ -57,42 +57,42 @@ export function PagePreview({
 }
 
 export function PagePreviewSection() {
-  // Reverted to previous contextual images
+  // Updated with the contextual images provided by the user
   const pages = [
     {
       title: "Gallery",
       description: "Explore our collection of custom resin furniture",
-      imageSrc: "/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png",
+      imageSrc: "/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png", // 1st image for Gallery
       link: "/gallery"
     },
     {
       title: "Custom Orders",
       description: "Create your own unique piece of resin furniture",
-      imageSrc: "/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png",
+      imageSrc: "/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png", // 2nd image for Custom Order
       link: "/custom-orders"
     },
     {
       title: "Bulk Orders",
       description: "Special pricing for commercial and larger orders",
-      imageSrc: "/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png",
+      imageSrc: "/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png", // 3rd image for Bulk Order
       link: "/bulk-orders"
     },
     {
       title: "About Us",
       description: "Learn about our craftsmanship and commitment to quality",
-      imageSrc: "/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png",
+      imageSrc: "/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png", // 4th image for About Us
       link: "/about-us"
     },
     {
       title: "FAQ",
       description: "Find answers to common questions about our products",
-      imageSrc: "/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png",
+      imageSrc: "/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png", // 5th image for FAQ
       link: "/faq"
     },
     {
       title: "Blog",
       description: "Read about latest trends and tips in resin furniture",
-      imageSrc: "/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png",
+      imageSrc: "/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png", // 6th image for Blog
       link: "/blog"
     }
   ];

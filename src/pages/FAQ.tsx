@@ -116,7 +116,7 @@ const FAQ = () => {
       <HeroSection
         title="Frequently Asked Questions"
         subtitle="Find answers to common questions about our products, processes, and services"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       <section className="py-20 px-4">
@@ -126,7 +126,14 @@ const FAQ = () => {
             subtitle="Browse our comprehensive FAQ section or contact us if you can't find what you're looking for"
           />
           
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto mb-12">
+            {/* Add contextual image for FAQ page */}
+            <img 
+              src="/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png" // 5th image for FAQ
+              alt="FAQ Contextual Image"
+              className="w-full h-auto rounded-lg shadow-lg mb-10"
+            />
+            
             {faqItems.map((category, index) => (
               <div key={index} className="mb-10">
                 <h2 className="text-2xl font-bold mb-4">{category.category}</h2>

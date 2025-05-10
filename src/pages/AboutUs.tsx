@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -10,8 +9,7 @@ const AboutUs = () => {
       <HeroSection
         title="About Resin Alchemy"
         subtitle="Where Art Meets Functionality"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-        overlay={true}
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       {/* Welcome Section */}
@@ -50,7 +48,7 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" 
+                src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" // 4th image for About Us content
                 alt="Craftsman working on resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />

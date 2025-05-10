@@ -11,11 +11,20 @@ const Contact = () => {
       <HeroSection
         title="Contact Us"
         subtitle="Get in touch with our team for inquiries, quotes, or custom design consultations"
-        backgroundImage="/lovable-uploads/d75d879d-b7b9-45a3-9396-bb3cf88b29c3.png"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       <section className="py-16 px-4">
         <div className="container mx-auto">
+          {/* Add contextual image for Contact */}
+          <div className="mb-10 max-w-4xl mx-auto">
+            <img 
+              src="/lovable-uploads/de6da137-a790-4b37-8359-c385e19bb3ee.png" // 7th image for Contact
+              alt="Contact Us"
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="lg:col-span-1">

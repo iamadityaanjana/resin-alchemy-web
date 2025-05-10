@@ -8,11 +8,11 @@ import { Check } from "lucide-react";
 const BulkOrders = () => {
   return (
     <Layout>
-      {/* Hero Section without QR code */}
+      {/* Hero Section with last image */}
       <HeroSection
         title="Bulk Orders"
         subtitle="Premium resin furniture solutions for commercial spaces, hospitality venues, and residential projects"
-        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       <section className="py-16 px-4">
@@ -111,7 +111,7 @@ const BulkOrders = () => {
             </div>
           </div>
           
-          {/* Case Studies - Updated with new images */}
+          {/* Case Studies - Updated with contextual images */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-6 font-playfair text-center">Our Bulk Order Projects</h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-center mb-10">
@@ -122,7 +122,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/8acf3a45-a618-431e-a42c-d19485156034.png" 
+                    src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" // 3rd image for Bulk Order
                     alt="Luxury Hotel Project" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -140,7 +140,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/28af10e0-deca-4df4-804a-b96d16b5f8fa.png" 
+                    src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" // 2nd image from Custom Order
                     alt="Corporate Office" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -158,7 +158,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/bc99bb56-5d72-4d99-8d2a-45df1c8346c4.png" 
+                    src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" // 1st image from Gallery
                     alt="Residential Complex" 
                     className="w-full h-48 object-cover rounded-md"
                   />

@@ -7,11 +7,11 @@ import { Separator } from "@/components/ui/separator";
 const CustomOrders = () => {
   return (
     <Layout>
-      {/* Hero Section without QR code overlay */}
+      {/* Hero Section with last image */}
       <HeroSection
         title="Custom Orders"
         subtitle="Create your own unique resin furniture piece tailored specifically for your space"
-        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       <section className="py-16 px-4">
@@ -91,22 +91,22 @@ const CustomOrders = () => {
             </div>
           </div>
           
-          {/* Inspiration Gallery - Updated with new images */}
+          {/* Inspiration Gallery - Updated with contextual images */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-8 font-playfair text-center">Inspiration Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <img 
-                src="/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png" 
+                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" // 2nd image for Custom Order
                 alt="River-Inspired Dining Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png" 
+                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" // 3rd image (Bulk Order) for variety
                 alt="Golden Geode Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png" 
+                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" // 1st image (Gallery) for variety
                 alt="Ocean Blue Coffee Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />

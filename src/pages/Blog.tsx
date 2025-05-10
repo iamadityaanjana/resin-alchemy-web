@@ -102,7 +102,7 @@ const Blog = () => {
       <HeroSection
         title="Blog"
         subtitle="Insights, tips, and stories about resin furniture craftsmanship"
-        backgroundImage="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
       <section className="py-16 px-4">
@@ -111,6 +111,15 @@ const Blog = () => {
             title="Latest Articles" 
             subtitle="Stay informed about the latest trends, care tips, and inspiration for resin furniture"
           />
+          
+          {/* Add contextual image for Blog */}
+          <div className="mb-10">
+            <img 
+              src="/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png" // 6th image for Blog
+              alt="Blog Contextual Image"
+              className="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
+            />
+          </div>
           
           <div className="flex flex-col md:flex-row justify-between items-center mb-10">
             {/* Category Filter */}

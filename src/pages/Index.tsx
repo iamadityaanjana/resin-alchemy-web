@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -125,12 +124,12 @@ const Index = () => {
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
 
-      {/* Rotating Banner */}
+      {/* Rotating Banner with better positioning for mobile */}
       <RotatingBanner 
         images={bannerImages} 
         interval={5000} 
         height="60vh"
-        objectPosition="center 20%"
+        objectPosition="center 30%" // Improved position to show key content
       />
 
       {/* Main Content Section */}
@@ -211,7 +210,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Preview of Website Pages */}
+      {/* Preview of Website Pages with updated images */}
       <PagePreviewSection />
 
       {/* Gallery Section */}
@@ -263,11 +262,11 @@ const Index = () => {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Endless Possibilities Banner - Using the dining table image */}
+      {/* Endless Possibilities Banner - Updated with new dining table image */}
       <section 
         className="relative py-24 bg-cover bg-center" 
         style={{ 
-          backgroundImage: `url('/lovable-uploads/f0751df1-fe20-4572-8ce6-6474a1c9ea3e.png')`, 
+          backgroundImage: `url('/lovable-uploads/a16cace1-30a1-4dfa-812f-17845ad55681.png')`, 
           backgroundPosition: "center 40%" 
         }}
       >

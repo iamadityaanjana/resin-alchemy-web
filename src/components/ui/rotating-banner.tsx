@@ -15,7 +15,7 @@ export function RotatingBanner({
   interval = 5000,
   className,
   height = "70vh",
-  objectPosition = "center 30%" // Adjusted to show more of the top
+  objectPosition = "center center" // Default to center position for better visibility
 }: RotatingBannerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -58,6 +58,7 @@ export function RotatingBanner({
             backgroundRepeat: "no-repeat",
           }}
         >
+          {/* Improved overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/40 z-[1]"></div>
         </div>
       ))}

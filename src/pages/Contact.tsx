@@ -7,11 +7,11 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const Contact = () => {
   return (
     <Layout>
-      {/* Hero Section without QR code */}
+      {/* Hero Section with updated image */}
       <HeroSection
         title="Contact Us"
         subtitle="Get in touch with our team for inquiries, quotes, or custom design consultations"
-        backgroundImage="/lovable-uploads/99e43581-6c8f-40ba-88b3-d7a76dc0195f.png"
+        backgroundImage="/lovable-uploads/d75d879d-b7b9-45a3-9396-bb3cf88b29c3.png"
       />
 
       <section className="py-16 px-4">

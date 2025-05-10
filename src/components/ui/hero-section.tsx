@@ -38,9 +38,11 @@ export function HeroSection({
       )}
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-        minHeight: "450px" // Ensure minimum height on mobile
+        minHeight: "450px", // Ensure minimum height on mobile
+        backgroundPosition: "center center" // Ensure image is centered
       }}
     >
+      {/* Enhanced overlay for better text visibility */}
       {overlay && backgroundImage && (
         <div className="absolute inset-0 bg-black/60 z-[1]"></div>
       )}

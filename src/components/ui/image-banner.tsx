@@ -28,7 +28,7 @@ export function ImageBanner({
           aspectRatio: "21/9"
         }}
       >
-        {/* Using a div with background image instead of img for better control */}
+        {/* Background overlay to improve text visibility */}
         <div className="absolute inset-0 bg-black/20 z-[1] rounded-lg"></div>
       </div>
     </div>

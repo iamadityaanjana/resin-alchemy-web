@@ -91,23 +91,23 @@ const CustomOrders = () => {
             </div>
           </div>
           
-          {/* Inspiration Gallery */}
+          {/* Inspiration Gallery - Updated with new images */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-8 font-playfair text-center">Inspiration Gallery</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <img 
-                src="/lovable-uploads/3b797268-7f27-4b5a-b801-bc1e74c3531d.png" 
-                alt="Inspiration 1" 
+                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" 
+                alt="Segmented Resin Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/f9f7b58e-6521-43a1-8887-b01a01caadf0.png" 
-                alt="Inspiration 2" 
+                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" 
+                alt="Ocean-Inspired Side Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png" 
-                alt="Inspiration 3" 
+                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" 
+                alt="Wood and Resin Dining Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
             </div>

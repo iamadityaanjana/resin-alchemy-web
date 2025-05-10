@@ -111,7 +111,7 @@ const BulkOrders = () => {
             </div>
           </div>
           
-          {/* Case Studies */}
+          {/* Case Studies - Updated with new images */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-6 font-playfair text-center">Our Bulk Order Projects</h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-center mb-10">
@@ -122,7 +122,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/70b91f96-438e-4e5e-9bc4-0599f1d248ed.png" 
+                    src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" 
                     alt="Luxury Hotel Project" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -140,7 +140,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png" 
+                    src="/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png" 
                     alt="Corporate Office" 
                     className="w-full h-48 object-cover rounded-md"
                   />
@@ -158,7 +158,7 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/f9f7b58e-6521-43a1-8887-b01a01caadf0.png" 
+                    src="/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png" 
                     alt="Residential Complex" 
                     className="w-full h-48 object-cover rounded-md"
                   />

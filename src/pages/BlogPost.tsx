@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ImageBanner } from "@/components/ui/image-banner";
 import { ArrowLeft, Calendar, User, Clock, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
-import { getPostBySlug, getRecentPosts, getRelatedPosts } from "@/data/blogPosts";
+import { getPostBySlug, getRecentPosts, getFeaturedPosts } from "@/data/blogPosts";
 import Markdown from "react-markdown";
 import { Helmet } from "react-helmet";
 
@@ -29,7 +29,7 @@ const BlogPost = () => {
   }
 
   const recentPosts = getRecentPosts(3).filter(p => p.slug !== slug);
-  const relatedPosts = getRelatedPosts(post, 3).filter(p => p.slug !== slug);
+  const relatedPosts = getFeaturedPosts(3).filter(p => p.slug !== slug && p.category === post.category);
 
   // Format content for better readability
   const formattedContent = post.content.replace(/\n\n/g, '\n\n');

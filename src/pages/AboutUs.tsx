@@ -49,7 +49,7 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
+                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" 
                 alt="Craftsman working on resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
@@ -64,7 +64,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb" 
+                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" 
                 alt="Sustainable materials for resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
@@ -111,7 +111,7 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1498936178812-4b2e558d2937" 
+                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" 
                 alt="Satisfied client with resin table"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />

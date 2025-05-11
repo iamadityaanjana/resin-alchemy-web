@@ -117,21 +117,21 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
+      {/* Hero Section with updated image */}
       <HeroSection
         title="Crafted Elegance for Your Space"
         subtitle="Bespoke resin furniture handcrafted to transform your spaces with unique elegance"
-        backgroundImage="/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png"
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
         primaryCta={{ text: "Explore Our Collection", href: "/gallery" }}
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
 
-      {/* Rotating Banner with better positioning for mobile */}
+      {/* Rotating Banner with reduced height for mobile */}
       <RotatingBanner 
         images={bannerImages} 
         interval={5000} 
-        height="60vh"
-        objectPosition="center 30%" // Improved position to show key content
+        height="30vh"  // Reduced from 60vh to 30vh (half in size)
+        objectPosition="center 30%" 
       />
 
       {/* Main Content Section */}
@@ -141,6 +141,7 @@ const Index = () => {
             imageSrc="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" 
             alt="Beautiful Resin Furniture" 
             className="mb-10"
+            height="10vh" // Reduced from 12vh to 10vh (smaller size)
             objectPosition="center 30%"
           />
           
@@ -212,7 +213,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Preview of Website Pages with original images */}
+      {/* Preview of Website Pages with updated images */}
       <PagePreviewSection />
 
       {/* Gallery Section - Updated with new images and titles */}

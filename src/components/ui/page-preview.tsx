@@ -57,42 +57,42 @@ export function PagePreview({
 }
 
 export function PagePreviewSection() {
-  // Updated with the contextual images provided by the user
+  // Updated with the new contextual images provided by the user
   const pages = [
     {
       title: "Gallery",
       description: "Explore our collection of custom resin furniture",
-      imageSrc: "/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png", // 1st image for Gallery
+      imageSrc: "/lovable-uploads/80c11314-acb5-43ee-b322-af58e7456bc0.png", // Gallery image
       link: "/gallery"
     },
     {
       title: "Custom Orders",
       description: "Create your own unique piece of resin furniture",
-      imageSrc: "/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png", // 2nd image for Custom Order
+      imageSrc: "/lovable-uploads/6a327655-e4d2-4a4e-b9ef-a28275b3faba.png", // Custom Orders image
       link: "/custom-orders"
     },
     {
       title: "Bulk Orders",
       description: "Special pricing for commercial and larger orders",
-      imageSrc: "/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png", // 3rd image for Bulk Order
+      imageSrc: "/lovable-uploads/ef48942c-59fd-47db-be16-cfa98c0db444.png", // Bulk Orders image
       link: "/bulk-orders"
     },
     {
       title: "About Us",
       description: "Learn about our craftsmanship and commitment to quality",
-      imageSrc: "/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png", // 4th image for About Us
+      imageSrc: "/lovable-uploads/a857819f-4cd6-4096-adc5-60e65135771a.png", // About Us image
       link: "/about-us"
     },
     {
       title: "FAQ",
       description: "Find answers to common questions about our products",
-      imageSrc: "/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png", // 5th image for FAQ
+      imageSrc: "/lovable-uploads/ed7b37e5-1e55-41fd-8843-4adcc7f0bc91.png", // FAQ image
       link: "/faq"
     },
     {
       title: "Blog",
       description: "Read about latest trends and tips in resin furniture",
-      imageSrc: "/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png", // 6th image for Blog
+      imageSrc: "/lovable-uploads/ade7342b-98fd-49d6-ae1c-1f9761f88201.png", // Blog image
       link: "/blog"
     }
   ];

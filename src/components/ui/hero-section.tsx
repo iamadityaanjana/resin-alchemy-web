@@ -22,7 +22,7 @@ interface HeroSectionProps {
 export function HeroSection({
   title,
   subtitle,
-  backgroundImage = "/lovable-uploads/a0316765-b5d1-44f5-a3cb-cec183618c6c.png", // Default to the specified image
+  backgroundImage = "/lovable-uploads/8e853f09-f459-484b-ba3b-360a73565bc0.png", // Updated to the new image
   primaryCta,
   secondaryCta,
   overlay = true,
@@ -31,7 +31,7 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        "relative min-h-screen flex items-center justify-center pt-16 bg-cover bg-center",
+        "relative min-h-[50vh] flex items-center justify-center pt-16 bg-cover bg-center", // Reduced height from min-h-screen to min-h-[50vh]
         className
       )}
       style={{

@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import CustomOrders from "./pages/CustomOrders";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/custom-orders" element={<CustomOrders />} />
           <Route path="/bulk-orders" element={<BulkOrders />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} /> {/* Add route for individual blog posts */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />

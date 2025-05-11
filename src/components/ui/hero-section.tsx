@@ -31,7 +31,7 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        "relative min-h-[50vh] flex items-center justify-center pt-16 bg-cover bg-center", // Reduced height from min-h-screen to min-h-[50vh]
+        "relative min-h-[25vh] flex items-center justify-center pt-16 bg-cover bg-center", // Reduced height from min-h-[50vh] to min-h-[25vh]
         className
       )}
       style={{

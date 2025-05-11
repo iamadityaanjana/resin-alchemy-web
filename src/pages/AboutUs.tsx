@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -48,7 +49,7 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" // 4th image for About Us content
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027" 
                 alt="Craftsman working on resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
@@ -110,7 +111,7 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="https://images.unsplash.com/photo-1486718448742-163732cd1544" 
+                src="https://images.unsplash.com/photo-1498936178812-4b2e558d2937" 
                 alt="Satisfied client with resin table"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />

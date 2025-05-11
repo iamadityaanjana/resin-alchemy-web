@@ -14,7 +14,7 @@ export function RotatingBanner({
   images,
   interval = 5000,
   className,
-  height = "15vh", // Reduced from 25vh to 15vh (even smaller size)
+  height = "12vh", // Reduced from 15vh to 12vh (smaller size)
   objectPosition = "center 30%" // Default to more visible position
 }: RotatingBannerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,7 +40,7 @@ export function RotatingBanner({
       )}
       style={{ 
         height: height,
-        minHeight: "150px" // Reduced from 200px to ensure it's not too tall on mobile
+        minHeight: "120px" // Reduced from 150px to ensure it's not too tall on mobile
       }}
     >
       {/* All images are in the DOM but only the current one is visible */}

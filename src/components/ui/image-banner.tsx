@@ -13,11 +13,11 @@ export function ImageBanner({
   imageSrc, 
   className, 
   alt = "Banner Image", 
-  height = "15vh", // Reduced from 20vh to 15vh (even smaller size)
+  height = "12vh", // Reduced from 15vh to 12vh (smaller size)
   objectPosition = "center 30%" 
 }: ImageBannerProps) {
   return (
-    <div className={cn("w-full overflow-hidden mb-8 relative", className)}>
+    <div className={cn("w-full overflow-hidden mb-6 relative", className)}>
       <div 
         className="w-full h-full rounded-lg shadow-md relative"
         style={{ 

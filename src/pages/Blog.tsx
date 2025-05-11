@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Clock, User, ArrowRight } from "lucide-react";
 import { blogPosts, getCategories } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -32,7 +33,8 @@ const Blog = () => {
         post.title.toLowerCase().includes(query) || 
         post.excerpt.toLowerCase().includes(query) ||
         post.category.toLowerCase().includes(query) ||
-        post.author.toLowerCase().includes(query)
+        post.author.toLowerCase().includes(query) ||
+        (post.tags && post.tags.some(tag => tag.toLowerCase().includes(query)))
       );
     }
     
@@ -41,13 +43,19 @@ const Blog = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Blog - Insights on Resin Furniture Design and Craftsmanship</title>
+        <meta name="description" content="Explore our blog for the latest insights, tips, and stories about resin furniture craftsmanship, design trends, and sustainable luxury." />
+        <meta name="keywords" content="resin furniture blog, custom resin tables, resin art, furniture design, sustainable luxury, interior design tips" />
+      </Helmet>
+
       <HeroSection
         title="Blog"
         subtitle="Insights, tips, and stories about resin furniture craftsmanship"
         backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
       />
 
-      <section className="py-16 px-4">
+      <section className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <SectionHeading 
             title="Latest Articles" 
@@ -55,15 +63,15 @@ const Blog = () => {
           />
           
           {/* Add contextual image for Blog */}
-          <div className="mb-10">
+          <div className="mb-8">
             <img 
               src="/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png" // 6th image for Blog
               alt="Blog Contextual Image"
-              className="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
+              className="w-full h-auto max-h-72 object-cover rounded-lg shadow-lg"
             />
           </div>
           
-          <div className="flex flex-col md:flex-row justify-between items-center mb-10">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             {/* Category Filter */}
             <div className="flex flex-wrap gap-2 mb-6 md:mb-0">
               {categories.map((category) => (
@@ -91,36 +99,41 @@ const Blog = () => {
             </div>
           </div>
           
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Blog Posts Grid with improved layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPosts.length > 0 ? (
               filteredPosts.map((post) => (
-                <div key={post.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 overflow-hidden">
+                <div key={post.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                  <div className="relative h-44 overflow-hidden">
                     <img
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute top-3 left-3">
                       <Badge className="bg-resin-blue hover:bg-resin-blue">{post.category}</Badge>
                     </div>
+                    {post.featured && (
+                      <div className="absolute top-3 right-3">
+                        <Badge variant="outline" className="bg-amber-100 text-amber-800 border-amber-300 hover:bg-amber-200">Featured</Badge>
+                      </div>
+                    )}
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <div className="p-5">
+                    <div className="flex items-center text-sm text-gray-500 mb-2">
                       <User className="h-3 w-3 mr-1" />
                       <span>{post.author}</span>
                       <span className="mx-2">•</span>
                       <Clock className="h-3 w-3 mr-1" />
                       <span>{post.readTime} min read</span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 font-playfair">{post.title}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                    <h3 className="text-lg font-bold mb-2 line-clamp-2 font-playfair">{post.title}</h3>
+                    <p className="text-gray-600 mb-4 line-clamp-3 text-sm">{post.excerpt}</p>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-500">{post.date}</span>
+                      <span className="text-xs text-gray-500">{post.date}</span>
                       <Button variant="link" className="text-resin-blue p-0 h-auto font-medium" asChild>
                         <Link to={`/blog/${post.slug}`}>
-                          Read More <ArrowRight className="ml-2 h-3 w-3" />
+                          Read More <ArrowRight className="ml-1 h-3 w-3" />
                         </Link>
                       </Button>
                     </div>
@@ -140,6 +153,19 @@ const Blog = () => {
               </div>
             )}
           </div>
+          
+          {/* Show pagination if there are many posts */}
+          {filteredPosts.length > 9 && (
+            <div className="flex justify-center mt-10">
+              <div className="flex space-x-2">
+                <Button variant="outline" size="sm" disabled>Previous</Button>
+                <Button variant="default" size="sm" className="bg-resin-blue">1</Button>
+                <Button variant="outline" size="sm">2</Button>
+                <Button variant="outline" size="sm">3</Button>
+                <Button variant="outline" size="sm">Next</Button>
+              </div>
+            </div>
+          )}
           
           {/* Newsletter Section */}
           <div className="mt-16 bg-neutral-color p-8 rounded-lg">

@@ -10,7 +10,7 @@ const AboutUs = () => {
       <HeroSection
         title="About Resin Alchemy"
         subtitle="Where Art Meets Functionality"
-        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
       />
 
       {/* Welcome Section */}
@@ -49,8 +49,8 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" 
-                alt="Craftsman working on resin furniture"
+                src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" 
+                alt="Craftsmanship in resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
             </div>
@@ -64,7 +64,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" 
+                src="/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png" 
                 alt="Sustainable materials for resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
@@ -111,8 +111,8 @@ const AboutUs = () => {
             
             <div className="order-1 md:order-2">
               <img 
-                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" 
-                alt="Satisfied client with resin table"
+                src="/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png" 
+                alt="Elegant resin dining table"
                 className="rounded-lg shadow-lg w-full h-auto" 
               />
             </div>

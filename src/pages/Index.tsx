@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -117,6 +118,15 @@ const Index = () => {
 
   return (
     <Layout>
+      {/* Top Banner with new uploaded image */}
+      <div className="w-full">
+        <img 
+          src="/lovable-uploads/dc52b9cf-689c-421c-8d41-65b42b2543cb.png" 
+          alt="Resin Alchemy - Crafted Elegance for Your Space" 
+          className="w-full max-h-[300px] object-cover object-center"
+        />
+      </div>
+      
       {/* Hero Section with updated image */}
       <HeroSection
         title="Crafted Elegance for Your Space"
@@ -130,7 +140,7 @@ const Index = () => {
       <RotatingBanner 
         images={bannerImages} 
         interval={5000} 
-        height="30vh"  // Reduced from 60vh to 30vh (half in size)
+        height="30vh"
         objectPosition="center 30%" 
       />
 

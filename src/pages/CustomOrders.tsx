@@ -96,17 +96,17 @@ const CustomOrders = () => {
             <h2 className="text-2xl font-bold mb-8 font-playfair text-center">Inspiration Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <img 
-                src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" // 2nd image for Custom Order
+                src="/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png" // Updated with new image
                 alt="River-Inspired Dining Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" // 3rd image (Bulk Order) for variety
+                src="/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png" // Updated with new image
                 alt="Golden Geode Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" // 1st image (Gallery) for variety
+                src="/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png" // Updated with new image
                 alt="Ocean Blue Coffee Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />

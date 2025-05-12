@@ -7,11 +7,11 @@ import { Separator } from "@/components/ui/separator";
 const CustomOrders = () => {
   return (
     <Layout>
-      {/* Hero Section with last image */}
+      {/* Hero Section with updated image */}
       <HeroSection
         title="Custom Orders"
         subtitle="Create your own unique resin furniture piece tailored specifically for your space"
-        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
+        backgroundImage="/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png" // Updated image
       />
 
       <section className="py-16 px-4">
@@ -96,17 +96,17 @@ const CustomOrders = () => {
             <h2 className="text-2xl font-bold mb-8 font-playfair text-center">Inspiration Gallery</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <img 
-                src="/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png" // Updated with new image
+                src="/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png" // Updated image
                 alt="River-Inspired Dining Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png" // Updated with new image
+                src="/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png" // Updated image
                 alt="Golden Geode Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />
               <img 
-                src="/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png" // Updated with new image
+                src="/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png" // Updated image
                 alt="Ocean Blue Coffee Table" 
                 className="rounded-lg shadow-md hover:shadow-lg transition-shadow w-full h-auto object-cover aspect-square"
               />

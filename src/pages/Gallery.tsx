@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
@@ -28,7 +27,7 @@ const products: Product[] = [
     id: 1,
     title: "Azure Ocean Coffee Table",
     description: "A stunning piece featuring deep blue resin waves reminiscent of ocean depths.",
-    image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", // Updated to new image
+    image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png",
     category: "coffee-tables",
     href: "/gallery/azure-ocean-coffee-table",
   },
@@ -36,7 +35,7 @@ const products: Product[] = [
     id: 2,
     title: "Emerald Forest Dining Table",
     description: "8-seater rectangular dining table with emerald resin inlays mimicking a forest stream.",
-    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb",
+    image: "/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png",
     category: "rectangle-tables",
     href: "/gallery/emerald-forest-dining-table",
   },
@@ -60,7 +59,7 @@ const products: Product[] = [
     id: 5,
     title: "Turquoise Dream End Table",
     description: "Compact end table with vibrant turquoise resin detail perfect for small spaces.",
-    image: "/lovable-uploads/cc142cbd-7f4a-45cb-94e9-0f954f7284ed.png", // Updated to new image
+    image: "/lovable-uploads/cc142cbd-7f4a-45cb-94e9-0f954f7284ed.png",
     category: "coffee-tables",
     href: "/gallery/turquoise-dream-end-table",
   },
@@ -84,7 +83,7 @@ const products: Product[] = [
     id: 8,
     title: "Forest Stream Conference Table",
     description: "Large conference table with green and blue resin mimicking a forest stream.",
-    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
+    image: "/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png",
     category: "rectangle-tables",
     href: "/gallery/forest-stream-conference-table",
   },
@@ -151,6 +150,22 @@ const products: Product[] = [
     image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", 
     category: "coffee-tables",
     href: "/gallery/coastal-paradise-side-table",
+  },
+  {
+    id: 17,
+    title: "Royal Blue Dining Table",
+    description: "Elegant rectangular dining table with deep blue resin flowing through natural wood grains.",
+    image: "/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png",
+    category: "rectangle-tables",
+    href: "/gallery/royal-blue-dining-table",
+  },
+  {
+    id: 18,
+    title: "Golden River Executive Desk",
+    description: "Luxurious executive desk with golden resin river flowing through exotic hardwood.",
+    image: "/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png",
+    category: "rectangle-tables",
+    href: "/gallery/golden-river-executive-desk",
   },
 ];
 

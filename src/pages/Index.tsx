@@ -1,3 +1,4 @@
+
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -117,7 +118,16 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Top Banner - New uploaded image from prompt */}
+      {/* New Top Banner - Image from the new prompt */}
+      <div className="w-full">
+        <img 
+          src="/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png" 
+          alt="Resin Furniture Masterpiece" 
+          className="w-full max-h-[400px] object-cover object-center"
+        />
+      </div>
+      
+      {/* Top Banner - From previous prompt */}
       <div className="w-full">
         <img 
           src="/lovable-uploads/ee127b92-6d5a-420f-9b63-d41eab79a54a.png" 

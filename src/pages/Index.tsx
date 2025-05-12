@@ -117,14 +117,7 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Display only top image from turquoise tables - removing the top two banner images as requested */}
-      <div className="w-full">
-        <img 
-          src="/lovable-uploads/e135c701-eaea-44b6-97bc-4d25368f02c5.png" 
-          alt="Resin Furniture Masterpiece" 
-          className="w-full max-h-[500px] object-cover object-center"
-        />
-      </div>
+      {/* Removed the top image that was here */}
       
       {/* Hero Section with updated image */}
       <HeroSection

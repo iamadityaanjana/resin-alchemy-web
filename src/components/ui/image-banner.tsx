@@ -13,7 +13,7 @@ export function ImageBanner({
   imageSrc, 
   className, 
   alt = "Banner Image", 
-  height = "12vh", // Reduced from 15vh to 12vh (smaller size)
+  height = "10vh", // Reduced from 12vh to 10vh (even smaller size)
   objectPosition = "center 30%" 
 }: ImageBannerProps) {
   return (

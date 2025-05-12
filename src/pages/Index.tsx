@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -118,7 +117,16 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Top Banner with new uploaded image */}
+      {/* Top Banner - New uploaded image from prompt */}
+      <div className="w-full">
+        <img 
+          src="/lovable-uploads/ee127b92-6d5a-420f-9b63-d41eab79a54a.png" 
+          alt="Resin Alchemy - Crafted Elegance for Your Space" 
+          className="w-full max-h-[300px] object-cover object-center"
+        />
+      </div>
+      
+      {/* Old Banner - keep it */}
       <div className="w-full">
         <img 
           src="/lovable-uploads/dc52b9cf-689c-421c-8d41-65b42b2543cb.png" 

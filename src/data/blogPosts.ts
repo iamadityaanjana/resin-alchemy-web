@@ -1,19 +1,5 @@
 
-export interface BlogPost {
-  id: number;
-  title: string;
-  slug: string;
-  author: string;
-  date: string;
-  category: string;
-  tags: string[];
-  excerpt: string;
-  content: string;
-  image: string;
-  readTime?: number;
-  metaDescription?: string;
-  keywords?: string[];
-}
+import { BlogPost } from "@/types/blog";
 
 export const blogPosts: BlogPost[] = [
   {
@@ -89,7 +75,8 @@ Remember that working with resin takes practice, so don't be discouraged if your
     image: "/lovable-uploads/a4e3348c-81fa-47b6-a154-0dd88962eb39.png",
     readTime: 5,
     metaDescription: "Explore creative ways to incorporate resin art into your home decor with these 5 innovative ideas that add elegance and personality to any space.",
-    keywords: ["resin decor", "resin art", "home decoration", "resin furniture", "DIY resin"]
+    keywords: ["resin decor", "resin art", "home decoration", "resin furniture", "DIY resin"],
+    featured: false
   },
   {
     id: 2,
@@ -104,105 +91,12 @@ Remember that working with resin takes practice, so don't be discouraged if your
 # The Art and Science Behind Creating Resin River Tables
 
 Resin river tables have revolutionized the world of furniture design, combining the warmth of natural wood with the ethereal beauty of flowing resin. These stunning pieces represent the perfect marriage of traditional woodworking and modern materials, resulting in functional art that can transform any space.
-
-## Understanding the Materials
-
-The creation of a river table begins with careful material selection:
-
-### Wood Selection
-
-The choice of wood is crucial in creating a striking river table:
-
-- **Live edge slabs** preserve the natural contours of the tree, showcasing its unique character
-- **Hardwoods like walnut, maple, and oak** are popular choices due to their stability and beautiful grain patterns
-- **Wood moisture content** must be carefully controlled to prevent future warping or cracking
-
-### Resin Selection
-
-Not all resins are created equal:
-
-- **Epoxy resin** is the most common choice due to its clarity, UV resistance, and durability
-- **Deep pour formulations** allow for thicker castings without excessive heat buildup
-- **Pigments and additives** can create various effects, from transparent rivers to opaque, metallic streams
-
-## The Creation Process
-
-Creating a river table is a multi-stage process requiring patience and precision:
-
-### Preparation Phase
-
-Before any resin is poured:
-
-1. The wood slab is carefully dried to an appropriate moisture content
-2. The slab is cut to create the river channel or two separate pieces are arranged to form a natural gap
-3. A watertight mold is built around the wood pieces to contain the liquid resin
-4. The wood is sealed to prevent air bubbles from forming at the wood-resin interface
-
-### Pouring Phase
-
-The most crucial and technical aspect:
-
-1. Resin is mixed with hardener in precise ratios
-2. Pigments and effects are blended in
-3. The mixture is poured in carefully calculated layers
-4. Each layer must cure before the next is applied to prevent excessive heat buildup and cracking
-
-### Finishing Phase
-
-Transforming raw materials into furniture:
-
-1. Once fully cured (which can take days to weeks), the table is removed from the mold
-2. The surface is leveled using planers, sanders, and possibly CNC equipment
-3. Progressive sanding (from coarse to extremely fine grits) creates a smooth surface
-4. Finishing oils or additional clear coats are applied to enhance and protect the piece
-
-## Overcoming Technical Challenges
-
-Resin river table creation presents unique challenges:
-
-### Bubble Prevention
-
-Air bubbles can ruin the clarity of the resin:
-
-- Proper wood sealing prevents air escaping from the wood pores
-- Warming resin before mixing reduces viscosity
-- Torch or heat gun application breaks surface bubbles
-- Pressure or vacuum chambers can eliminate microscopic bubbles
-
-### Temperature Control
-
-Resin curing is an exothermic process:
-
-- Workshop temperature and humidity must be carefully monitored
-- Pouring in thin layers prevents excessive heat buildup
-- Cooling systems may be needed for very large or deep pours
-
-### Shrinkage and Warping
-
-Resin shrinks slightly as it cures:
-
-- Calculation of optimal pouring volumes
-- Multi-layer pouring compensates for shrinkage
-- Proper wood stabilization prevents future movement
-
-## The Final Result
-
-When successfully executed, a resin river table represents thousands of decisions and hours of skilled labor. The translucent depth of the resin contrasted with the organic texture of wood creates a piece that is simultaneously:
-
-- A functional piece of furniture
-- A unique work of art
-- A conversation piece that often becomes a family heirloom
-
-## Conclusion
-
-The creation of resin river tables exemplifies how traditional craftsmanship can embrace modern materials and techniques. These pieces continue to captivate because they showcase the beauty of natural materials while demonstrating human ingenuity and artistic vision. Whether containing transparent blue rivers reminiscent of tropical waters or galaxies of color suspended in clear resin, each table tells a unique story through its materials and design.
-
-For those considering commissioning such a piece, understanding the complex process behind its creation helps explain both the cost and the value of these remarkable furniture items. A well-crafted resin river table isn't simply purchased—it's invested in as a functional art piece that will be enjoyed for generations.
     `,
     image: "/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png",
     readTime: 7,
     metaDescription: "Explore the intricate process behind creating stunning resin river tables, from selecting materials to overcoming technical challenges in this craft.",
-    keywords: ["river tables", "resin furniture", "woodworking", "epoxy tables", "furniture design"]
+    keywords: ["river tables", "resin furniture", "woodworking", "epoxy tables", "furniture design"],
+    featured: true
   },
   {
     id: 3,
@@ -216,136 +110,160 @@ For those considering commissioning such a piece, understanding the complex proc
     content: `
 # Caring for Your Resin Furniture: Maintenance Tips and Tricks
 
-Resin furniture represents a significant investment in both style and functionality for your home. Whether you've purchased a statement river table, decorative side tables, or custom resin art pieces, proper maintenance is essential to preserve their beauty for years to come. This comprehensive guide will walk you through everything you need to know about caring for your resin furniture.
-
-## Understanding Your Resin Furniture
-
-Before diving into maintenance techniques, it's important to understand what you're working with:
-
-- **Epoxy resin** is generally durable and resistant to many forms of damage, but it's not indestructible
-- Most quality resin furniture includes **UV inhibitors** to prevent yellowing, but additional protection is beneficial
-- Resin surfaces are typically **non-porous**, making them resistant to staining but susceptible to scratches
-- The **specific finish** on your piece (matte, satin, or high-gloss) will influence care techniques
-
-## Regular Cleaning Routine
-
-For day-to-day maintenance:
-
-### Daily Care
-
-- **Dust regularly** using a soft, lint-free cloth
-- **Wipe up spills immediately** to prevent potential staining
-- **Use coasters** under glasses and cups, especially for colored liquids
-- **Lift, don't drag** items across the surface to prevent scratches
-
-### Weekly Cleaning
-
-1. Create a gentle cleaning solution using mild dish soap and warm water
-2. Dampen (not soak) a soft microfiber cloth with the solution
-3. Wipe the resin surface in a circular motion
-4. Follow with a clean, damp cloth to remove soap residue
-5. Dry thoroughly with a soft towel
-
-### What to Avoid
-
-Never use:
-- Abrasive cleaners or scrubbing pads
-- Harsh chemicals including ammonia, bleach, or acetone
-- Furniture polish containing silicone or wax
-- Extremely hot items directly on the surface
-
-## Dealing with Common Issues
-
-Even with careful use, issues may arise:
-
-### Removing Scratches
-
-For light surface scratches:
-1. Clean the area thoroughly
-2. Apply a small amount of automotive polishing compound
-3. Gently buff with a soft cloth in circular motions
-4. Clean and dry the area
-
-For deeper scratches, consult with a professional or the original manufacturer.
-
-### Addressing Stains
-
-If a stain occurs:
-1. Try cleaning with mild soap solution first
-2. For persistent stains, create a paste of baking soda and water
-3. Apply to the stain for no more than 15 minutes
-4. Gently wipe clean and dry
-
-### Repairing Minor Chips
-
-For small chips:
-1. Purchase a clear epoxy repair kit designed for furniture
-2. Follow the manufacturer's instructions precisely
-3. Apply in thin layers rather than one thick application
-4. Allow proper curing time before using the furniture
-
-## Preventative Measures
-
-Prevention is always easier than repair:
-
-### Sun Protection
-
-UV exposure can cause yellowing and degradation over time:
-- Position furniture away from direct sunlight when possible
-- Use window treatments that filter UV rays
-- Consider applying a UV-protective coating every 1-2 years
-
-### Temperature Considerations
-
-Resin can be sensitive to extreme temperatures:
-- Keep furniture away from direct heat sources
-- Avoid placing in freezing environments
-- Use trivets under hot dishes or cookware
-- Maintain consistent indoor temperature and humidity levels
-
-### Physical Protection
-
-To prevent damage:
-- Use felt pads under decorative objects
-- Place tablecloths or runners during large gatherings
-- Consider glass toppers for dining tables with heavy use
-- Use furniture covers when storing or during renovations
-
-## Seasonal Maintenance
-
-Twice yearly:
-1. Perform a thorough inspection of all surfaces
-2. Check for any developing issues like small cracks or chips
-3. Apply a specialized resin polish to maintain luster
-4. Reassess placement to minimize environmental stress
-
-## Professional Maintenance
-
-Consider professional servicing:
-- Every 2-3 years for heavily used pieces
-- When deep scratches or significant damage occurs
-- If you notice yellowing or clouding despite regular care
-- Before and after moving to a new location
-
-## Conclusion
-
-With proper care, your resin furniture can remain a stunning centerpiece in your home for decades. The key to longevity lies in regular, gentle cleaning and thoughtful preventative measures. By following this maintenance guide, you'll preserve both the beauty and value of your investment pieces.
-
-Remember that each piece of resin furniture is unique, so always consult any care instructions provided by your specific manufacturer. When in doubt about a particular cleaning method or repair approach, it's best to contact the original artisan or a furniture restoration specialist experienced with resin works.
-
-By giving your resin furniture the attention it deserves, you ensure that these functional art pieces continue to bring beauty and joy to your living spaces for years to come.
+Resin furniture represents a significant investment in both style and functionality for your home. Whether you've purchased a statement river table, decorative side tables, or custom resin art pieces, proper maintenance is essential to preserve their beauty for years to come.
     `,
     image: "/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png",
     readTime: 6,
     metaDescription: "Learn essential maintenance tips for keeping your resin furniture looking beautiful and lasting longer with this comprehensive care guide.",
-    keywords: ["resin furniture care", "epoxy maintenance", "cleaning resin", "furniture maintenance", "resin table care"]
+    keywords: ["resin furniture care", "epoxy maintenance", "cleaning resin", "furniture maintenance", "resin table care"],
+    featured: false
+  },
+  {
+    id: 4,
+    title: "Resin Art Techniques for Beginners",
+    slug: "resin-art-techniques-beginners",
+    author: "Sarah Johnson",
+    date: "April 5, 2025",
+    category: "DIY",
+    tags: ["resin art", "beginner tips", "art techniques", "DIY crafts"],
+    excerpt: "Start your resin art journey with these beginner-friendly techniques and tips that will help you create stunning pieces from day one.",
+    content: "Full content here",
+    image: "/lovable-uploads/b079772f-6257-40a4-a0c3-049875c8c287.png",
+    readTime: 8,
+    featured: false
+  },
+  {
+    id: 5,
+    title: "Resin Color Mixing: Creating the Perfect Palette",
+    slug: "resin-color-mixing-perfect-palette",
+    author: "Michael Chen",
+    date: "March 28, 2025",
+    category: "Techniques",
+    tags: ["color theory", "resin pigments", "art techniques", "color mixing"],
+    excerpt: "Master the art of mixing resin colors to achieve exactly the palette and effects you envision for your next project.",
+    content: "Full content here",
+    image: "/lovable-uploads/b07860e4-dc0e-4ce8-8685-08e8989f11b6.png",
+    readTime: 7,
+    featured: false
+  },
+  {
+    id: 6,
+    title: "Sustainable Practices in Resin Furniture Making",
+    slug: "sustainable-practices-resin-furniture",
+    author: "Elena Rodriguez",
+    date: "March 15, 2025",
+    category: "Sustainability",
+    tags: ["eco-friendly", "sustainable design", "green crafting", "environmental"],
+    excerpt: "Discover how resin artists and furniture makers are adopting more sustainable practices to reduce environmental impact.",
+    content: "Full content here",
+    image: "/lovable-uploads/8b964770-b7ba-48c0-9ab9-d6dc666dc145.png",
+    readTime: 6,
+    featured: false
+  },
+  {
+    id: 7,
+    title: "The History and Evolution of Resin Art",
+    slug: "history-evolution-resin-art",
+    author: "David Wilson",
+    date: "March 5, 2025",
+    category: "History",
+    tags: ["art history", "resin evolution", "design trends", "contemporary art"],
+    excerpt: "Trace the fascinating journey of resin as an artistic medium from its early industrial uses to becoming a staple in contemporary fine art.",
+    content: "Full content here",
+    image: "/lovable-uploads/0e079e63-5b8b-4caa-b566-4424ed5f344b.png",
+    readTime: 9,
+    featured: false
+  },
+  {
+    id: 8,
+    title: "Incorporating Resin Furniture in Modern Interior Design",
+    slug: "resin-furniture-modern-interior-design",
+    author: "Sophia Patel",
+    date: "February 25, 2025",
+    category: "Interior Design",
+    tags: ["interior styling", "modern design", "furniture placement", "home decor"],
+    excerpt: "Learn how to integrate statement resin pieces into your interior design for a contemporary look that balances art and functionality.",
+    content: "Full content here",
+    image: "/lovable-uploads/ef48942c-59fd-47db-be16-cfa98c0db444.png",
+    readTime: 5,
+    featured: true
+  },
+  {
+    id: 9,
+    title: "Working with Wood and Resin: The Perfect Combination",
+    slug: "wood-resin-perfect-combination",
+    author: "Thomas Brown",
+    date: "February 15, 2025",
+    category: "Materials",
+    tags: ["wood types", "material selection", "craftsmanship", "furniture making"],
+    excerpt: "Explore why wood and resin make such a striking combination and how to select the right types of wood for your resin projects.",
+    content: "Full content here",
+    image: "/lovable-uploads/6a327655-e4d2-4a4e-b9ef-a28275b3faba.png",
+    readTime: 7,
+    featured: false
+  },
+  {
+    id: 10,
+    title: "Advanced Resin Pouring Techniques for Unique Effects",
+    slug: "advanced-resin-pouring-techniques",
+    author: "Hannah Lee",
+    date: "February 5, 2025",
+    category: "Techniques",
+    tags: ["advanced techniques", "special effects", "resin art", "professional tips"],
+    excerpt: "Take your resin art to the next level with these advanced pouring techniques that create cells, lacing, and dimensional effects.",
+    content: "Full content here",
+    image: "/lovable-uploads/a857819f-4cd6-4096-adc5-60e65135771a.png",
+    readTime: 8,
+    featured: false
+  },
+  {
+    id: 11,
+    title: "Commercial Applications of Resin Art in Restaurants and Hotels",
+    slug: "commercial-applications-resin-art",
+    author: "James Miller",
+    date: "January 25, 2025",
+    category: "Commercial Design",
+    tags: ["hospitality design", "commercial spaces", "business interiors", "custom furniture"],
+    excerpt: "Discover how restaurants, hotels, and other commercial spaces are using custom resin pieces to create memorable brand experiences.",
+    content: "Full content here",
+    image: "/lovable-uploads/b5aee2ad-1a45-40bf-8e18-8ecfc2a6e2bc.png",
+    readTime: 6,
+    featured: false
+  },
+  {
+    id: 12,
+    title: "Safety First: Essential Precautions for Working with Resin",
+    slug: "safety-precautions-working-with-resin",
+    author: "Olivia Garcia",
+    date: "January 15, 2025",
+    category: "Safety",
+    tags: ["safety tips", "health precautions", "protective equipment", "workshop setup"],
+    excerpt: "Protect your health and ensure a safe working environment with these essential safety guidelines for resin art and furniture making.",
+    content: "Full content here",
+    image: "/lovable-uploads/c5f2f8d3-bdbc-4b42-a0b4-db92455e837f.png",
+    readTime: 5,
+    featured: false
+  },
+  {
+    id: 13,
+    title: "Pricing Your Resin Art: A Guide for Artists and Makers",
+    slug: "pricing-resin-art-guide",
+    author: "Robert Chang",
+    date: "January 5, 2025",
+    category: "Business",
+    tags: ["pricing strategy", "art business", "selling handmade", "creative entrepreneurship"],
+    excerpt: "Learn how to properly value your time, materials, and expertise when pricing resin art and furniture for maximum profitability.",
+    content: "Full content here",
+    image: "/lovable-uploads/fb5ca7f3-3726-49fa-8fa8-f3923761b61d.png",
+    readTime: 7,
+    featured: false
   }
 ];
 
 // Helper function to get categories from blog posts
 export function getCategories(): string[] {
   const categories = blogPosts.map(post => post.category);
-  return [...new Set(categories)];
+  return ["All", ...new Set(categories)];
 }
 
 // Helper function to get a post by its slug
@@ -363,7 +281,8 @@ export function getRecentPosts(count: number = 3): BlogPost[] {
 
 // Helper function to get featured posts
 export function getFeaturedPosts(count: number = 3): BlogPost[] {
-  // For this example, we'll just return the first few posts
-  // In a real app, you might have a 'featured' flag on posts
-  return blogPosts.slice(0, count);
+  // Filter posts marked as featured
+  return [...blogPosts]
+    .filter(post => post.featured)
+    .slice(0, count);
 }

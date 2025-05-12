@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -118,30 +117,12 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* New Top Banner - Image from the new prompt */}
+      {/* Display only top image from turquoise tables - removing the top two banner images as requested */}
       <div className="w-full">
         <img 
-          src="/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png" 
+          src="/lovable-uploads/e135c701-eaea-44b6-97bc-4d25368f02c5.png" 
           alt="Resin Furniture Masterpiece" 
-          className="w-full max-h-[400px] object-cover object-center"
-        />
-      </div>
-      
-      {/* Top Banner - From previous prompt */}
-      <div className="w-full">
-        <img 
-          src="/lovable-uploads/ee127b92-6d5a-420f-9b63-d41eab79a54a.png" 
-          alt="Resin Alchemy - Crafted Elegance for Your Space" 
-          className="w-full max-h-[300px] object-cover object-center"
-        />
-      </div>
-      
-      {/* Old Banner - keep it */}
-      <div className="w-full">
-        <img 
-          src="/lovable-uploads/dc52b9cf-689c-421c-8d41-65b42b2543cb.png" 
-          alt="Resin Alchemy - Crafted Elegance for Your Space" 
-          className="w-full max-h-[300px] object-cover object-center"
+          className="w-full max-h-[500px] object-cover object-center"
         />
       </div>
       
@@ -241,10 +222,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Preview of Website Pages with updated images */}
+      {/* Preview of Website Pages */}
       <PagePreviewSection />
 
-      {/* Gallery Section - Updated with new images and titles */}
+      {/* Gallery Section */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto">
           <SectionHeading 
@@ -293,7 +274,7 @@ const Index = () => {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Endless Possibilities Banner - Updated with new image */}
+      {/* Endless Possibilities Banner */}
       <section 
         className="relative py-24 bg-cover bg-center" 
         style={{ 

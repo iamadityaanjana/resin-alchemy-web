@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
@@ -87,40 +88,73 @@ const products: Product[] = [
     category: "rectangle-tables",
     href: "/gallery/forest-stream-conference-table",
   },
+  // New wall art entries from the uploaded images
   {
     id: 9,
-    title: "Ocean Waves Wall Art",
-    description: "Stunning resin wall art with ocean wave patterns in deep blue and teal colors.",
-    image: "/lovable-uploads/11abd606-210d-445f-b44d-1015f0be9069.png",
+    title: "Golden Waves Wall Art",
+    description: "Stunning resin wall art with golden wave patterns in warm brown and white colors.",
+    image: "/lovable-uploads/fa145c3c-bea1-4a78-a6bf-9dc6d72d5abc.png",
     category: "wall-art",
-    href: "/gallery/ocean-waves-wall-art",
+    href: "/gallery/golden-waves-wall-art",
   },
   {
     id: 10,
-    title: "Autumn Forest Wall Panel",
-    description: "Beautiful wall art capturing the essence of autumn forests with amber and gold resin details.",
-    image: "/lovable-uploads/a0f11d4b-2456-4b53-98a9-0a35db5d8172.png",
+    title: "Gold Crystal Geode Wall Panel",
+    description: "Beautiful wall art capturing the essence of geodes with gold and crystal resin details.",
+    image: "/lovable-uploads/b4033e46-655e-4288-b5cc-43a0ff560249.png",
     category: "wall-art",
-    href: "/gallery/autumn-forest-wall-panel",
+    href: "/gallery/gold-crystal-geode-wall-panel",
   },
   {
     id: 11,
-    title: "Ruby & Cedar Side Table",
-    description: "Circular coffee table with vibrant red resin and cedar wood slices in a stunning arrangement.",
-    image: "/lovable-uploads/bd247dcf-3dcd-444f-bff4-81199eaa1a36.png",
-    category: "coffee-tables",
-    href: "/gallery/ruby-cedar-side-table",
+    title: "Crystalline Diptych Panel",
+    description: "Two-piece wall art with striking black and white design featuring crystal embellishments.",
+    image: "/lovable-uploads/9cd32064-d572-4f9a-98c0-620e725c317d.png",
+    category: "wall-art",
+    href: "/gallery/crystalline-diptych-panel",
   },
   {
     id: 12,
-    title: "Purple & Gold Accent Table",
-    description: "Modern accent table with striking purple and yellow resin complementing natural wood discs.",
-    image: "/lovable-uploads/9c4bbdee-6b81-428a-a8f8-486bd34af9dc.png",
-    category: "coffee-tables",
-    href: "/gallery/purple-gold-accent-table",
+    title: "Onyx & Crystal Wall Art",
+    description: "Modern wall art with deep black resin complemented by crystal and gold accents.",
+    image: "/lovable-uploads/17c8daac-9845-4292-8272-5c4e56373151.png",
+    category: "wall-art",
+    href: "/gallery/onyx-crystal-wall-art",
   },
   {
     id: 13,
+    title: "Arabic Calligraphy Resin Art",
+    description: "Elegant black and gold calligraphy art featuring crystal embellishments and intricate details.",
+    image: "/lovable-uploads/d6d5efab-e76e-4a45-8e85-3fe0bcb34ae4.png",
+    category: "wall-art",
+    href: "/gallery/arabic-calligraphy-resin-art",
+  },
+  {
+    id: 14,
+    title: "Blue Waves Calligraphy Panel",
+    description: "Contemporary calligraphy art with blue resin waves and elegant gold detailing.",
+    image: "/lovable-uploads/b7ce7c71-672b-41a4-a0b8-335b5811324a.png",
+    category: "wall-art",
+    href: "/gallery/blue-waves-calligraphy-panel",
+  },
+  {
+    id: 15,
+    title: "Marble & Gold Scripture Art",
+    description: "Round scripture art with stunning white marble effect and gold crystal accents.",
+    image: "/lovable-uploads/48ea1a3c-ba41-47a1-8413-50d3a06a781f.png",
+    category: "wall-art",
+    href: "/gallery/marble-gold-scripture-art",
+  },
+  {
+    id: 16,
+    title: "Teal & Gold Calligraphy Collection",
+    description: "Set of elegant calligraphy pieces with teal resin, gold accents and crystal details.",
+    image: "/lovable-uploads/9ce6f34b-2701-49f0-bffb-352e1be7e5dc.png",
+    category: "wall-art",
+    href: "/gallery/teal-gold-calligraphy-collection",
+  },
+  {
+    id: 17,
     title: "Lime Leaf Coffee Table",
     description: "Small creative table with transparent green resin featuring preserved leaves and natural wood edges.",
     image: "/lovable-uploads/e292399d-3418-4202-93fe-de8e0fe52439.png",
@@ -128,7 +162,7 @@ const products: Product[] = [
     href: "/gallery/lime-leaf-coffee-table",
   },
   {
-    id: 14,
+    id: 18,
     title: "Ebony River Coffee Table",
     description: "Contemporary black resin table with natural wood grain and streamlined metal frame.",
     image: "/lovable-uploads/583ddc28-bd66-477a-9f4a-cfb511b0c735.png",
@@ -136,7 +170,7 @@ const products: Product[] = [
     href: "/gallery/ebony-river-coffee-table",
   },
   {
-    id: 15,
+    id: 19,
     title: "Aqua Lagoon Center Table",
     description: "Round coffee table with striking teal resin and natural wood pattern reminiscent of a lagoon.",
     image: "/lovable-uploads/8ac60485-ec45-48b5-a00d-95ba57095d24.png",
@@ -144,7 +178,7 @@ const products: Product[] = [
     href: "/gallery/aqua-lagoon-center-table",
   },
   {
-    id: 16,
+    id: 20,
     title: "Coastal Paradise Side Table",
     description: "Beach-inspired side table with stunning turquoise resin resembling ocean waves meeting the shore.",
     image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", 
@@ -152,7 +186,7 @@ const products: Product[] = [
     href: "/gallery/coastal-paradise-side-table",
   },
   {
-    id: 17,
+    id: 21,
     title: "Royal Blue Dining Table",
     description: "Elegant rectangular dining table with deep blue resin flowing through natural wood grains.",
     image: "/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png",
@@ -160,12 +194,20 @@ const products: Product[] = [
     href: "/gallery/royal-blue-dining-table",
   },
   {
-    id: 18,
+    id: 22,
     title: "Golden River Executive Desk",
     description: "Luxurious executive desk with golden resin river flowing through exotic hardwood.",
     image: "/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png",
     category: "rectangle-tables",
     href: "/gallery/golden-river-executive-desk",
+  },
+  {
+    id: 23,
+    title: "Turquoise Collection",
+    description: "Set of turquoise resin tables with natural wood, perfect for modern interiors.",
+    image: "/lovable-uploads/e135c701-eaea-44b6-97bc-4d25368f02c5.png",
+    category: "coffee-tables",
+    href: "/gallery/turquoise-collection",
   },
 ];
 
@@ -219,7 +261,7 @@ const categoryDescriptions: CategoryDescription[] = [
   {
     id: "wall-art",
     title: "Resin Wall Art",
-    description: "Make a bold statement with our striking resin wall art pieces. From abstract designs to nature-inspired scenes, our wall art adds dimension, color, and texture to any room. Each piece is a unique creation that captures light and imagination."
+    description: "Make a bold statement with our striking resin wall art pieces. From abstract designs to calligraphy-inspired pieces with gold and crystal embellishments, our wall art adds dimension, color, and texture to any room. Each piece is a unique creation that captures light and imagination."
   },
 ];
 

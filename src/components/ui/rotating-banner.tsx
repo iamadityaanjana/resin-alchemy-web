@@ -14,10 +14,30 @@ export function RotatingBanner({
   images,
   interval = 5000,
   className,
-  height = "40vh", // Increased from 12vh to 40vh for better visibility
-  objectPosition = "center 30%" // Default to more visible position
+  height = "40vh", // Maintained at 40vh for visibility
+  objectPosition = "center 30%" // Default position
 }: RotatingBannerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoaded, setIsLoaded] = useState<boolean[]>([]);
+
+  // Handle image preloading
+  useEffect(() => {
+    // Initialize loading state for all images
+    setIsLoaded(images.map(() => false));
+    
+    // Preload all images
+    images.forEach((src, index) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        setIsLoaded(prev => {
+          const newState = [...prev];
+          newState[index] = true;
+          return newState;
+        });
+      };
+    });
+  }, [images]);
 
   useEffect(() => {
     // Only setup rotation if there's more than one image
@@ -35,12 +55,12 @@ export function RotatingBanner({
   return (
     <div 
       className={cn(
-        "relative w-full overflow-hidden rounded-lg", 
+        "relative w-full overflow-hidden rounded-lg shadow-lg", 
         className
       )}
       style={{ 
         height: height,
-        minHeight: "300px" // Increased from 120px to ensure it's tall enough for impact
+        minHeight: "300px" // Maintained for impact
       }}
     >
       {/* All images are in the DOM but only the current one is visible */}
@@ -57,11 +77,32 @@ export function RotatingBanner({
             backgroundPosition: objectPosition,
             backgroundRepeat: "no-repeat",
           }}
+          role="img"
+          aria-hidden={currentIndex !== index}
         >
           {/* Improved overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/40 z-[1]"></div>
         </div>
       ))}
+      
+      {/* Optional: Add dots for navigation */}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center z-20">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={cn(
+                "w-2 h-2 mx-1 rounded-full transition-all",
+                currentIndex === index 
+                  ? "bg-white w-4" 
+                  : "bg-white/50 hover:bg-white/80"
+              )}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,75 +1,80 @@
 
-import { useState } from 'react';
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+  handleFormSubmit
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Send } from "lucide-react";
-import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { z } from "zod";
 
-const emailSchema = z.string().email("Please enter a valid email address");
+const formSchema = z.object({
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+});
 
-export function NewsletterForm() {
-  const [email, setEmail] = useState("");
+export const NewsletterForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
     
     try {
-      setIsSubmitting(true);
-      
-      // Validate email
-      const validEmail = emailSchema.parse(email);
-      
-      // Send to Supabase
-      const { error } = await supabase
-        .from('newsletter_subscriptions')
-        .insert({
-          email: validEmail
-        });
-      
-      if (error) {
-        console.error("Error subscribing to newsletter:", error);
-        if (error.code === '23505') {
-          toast.info("You're already subscribed to our newsletter!");
-        } else {
-          toast.error("Failed to subscribe. Please try again later.");
-        }
-        return;
-      }
-      
-      toast.success("Thank you for subscribing to our newsletter!");
-      setEmail("");
+      await handleFormSubmit(values, () => {
+        // Reset form on success
+        form.reset();
+      });
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        toast.error("Please enter a valid email address");
-      } else {
-        console.error("Newsletter submission error:", error);
-        toast.error("Something went wrong. Please try again later.");
-      }
+      console.error("Error submitting newsletter form:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleNewsletterSubmit} className="flex">
-      <Input 
-        type="email" 
-        placeholder="Your email address" 
-        className="rounded-r-none bg-white/10 border-white/20 text-white"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        disabled={isSubmitting}
-      />
-      <Button 
-        type="submit" 
-        className="rounded-l-none bg-[#D4AF37] hover:bg-[#D4AF37]/80"
-        disabled={isSubmitting}
-      >
-        <Send size={16} />
-      </Button>
-    </form>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col sm:flex-row gap-3">
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem className="flex-1">
+              <FormControl>
+                <Input 
+                  placeholder="your@email.com" 
+                  type="email" 
+                  className="bg-white/10 border-white/30 text-white placeholder:text-white/60"
+                  {...field} 
+                />
+              </FormControl>
+              <FormMessage className="text-white/80" />
+            </FormItem>
+          )}
+        />
+        
+        <Button 
+          type="submit" 
+          variant="secondary"
+          className="bg-white text-gray-800 hover:bg-white/90" 
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Subscribing..." : "Subscribe"}
+        </Button>
+      </form>
+    </Form>
   );
-}
+};

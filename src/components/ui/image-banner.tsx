@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 interface ImageBannerProps {
   imageSrc: string;
@@ -13,13 +14,25 @@ export function ImageBanner({
   imageSrc, 
   className, 
   alt = "Banner Image", 
-  height = "10vh", // Reduced from 12vh to 10vh (even smaller size)
+  height = "10vh",
   objectPosition = "center 30%" 
 }: ImageBannerProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Preload image
+    const img = new Image();
+    img.src = imageSrc;
+    img.onload = () => setImageLoaded(true);
+  }, [imageSrc]);
+
   return (
     <div className={cn("w-full overflow-hidden mb-6 relative", className)}>
       <div 
-        className="w-full h-full rounded-lg shadow-md relative"
+        className={cn(
+          "w-full h-full rounded-lg shadow-md relative transition-opacity duration-500",
+          imageLoaded ? "opacity-100" : "opacity-0"
+        )}
         style={{ 
           maxHeight: height,
           backgroundImage: `url(${imageSrc})`,

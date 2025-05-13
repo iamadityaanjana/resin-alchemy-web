@@ -1,281 +1,339 @@
 
 import { useState } from "react";
-import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  handleFormSubmit
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { 
+  Select, 
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
 
-const customOrderSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email"),
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
   phone: z.string().optional(),
-  product_type: z.string().optional(),
-  dimensions: z.string().optional(),
-  color_preferences: z.string().optional(),
-  design_ideas: z.string().optional(),
-  additional_comments: z.string().optional()
+  projectType: z.string({
+    required_error: "Please select a project type.",
+  }),
+  dimensions: z.string().min(2, {
+    message: "Please provide approximate dimensions.",
+  }),
+  budget: z.string({
+    required_error: "Please select a budget range.",
+  }),
+  timeline: z.string({
+    required_error: "Please select a timeline.",
+  }),
+  description: z.string().min(10, {
+    message: "Description must be at least 10 characters.",
+  }),
+  attachDesign: z.boolean().optional(),
+  inspiration: z.string().optional(),
 });
 
-type CustomOrderFormData = z.infer<typeof customOrderSchema>;
-
-export function CustomOrderForm() {
-  const [formData, setFormData] = useState<CustomOrderFormData>({
-    name: '',
-    email: '',
-    phone: '',
-    product_type: '',
-    dimensions: '',
-    color_preferences: '',
-    design_ideas: '',
-    additional_comments: ''
-  });
-  
+export const CustomOrderForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [files, setFiles] = useState<FileList | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      projectType: "",
+      dimensions: "",
+      budget: "",
+      timeline: "",
+      description: "",
+      attachDesign: false,
+      inspiration: "",
+    },
+  });
 
-  const handleSelectChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFiles(e.target.files);
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
     
     try {
-      setIsSubmitting(true);
-      
-      // Validate the form data
-      const validData = customOrderSchema.parse(formData);
-      
-      // Process files if any
-      const filesInfo = [];
-      if (files && files.length > 0) {
-        for (let i = 0; i < files.length; i++) {
-          const file = files[i];
-          filesInfo.push({
-            name: file.name,
-            size: file.size,
-            type: file.type
-          });
-        }
-      }
-      
-      // Submit to Supabase with properly defined fields
-      const { error } = await supabase
-        .from('custom_orders')
-        .insert({
-          name: validData.name,
-          email: validData.email,
-          phone: validData.phone || null,
-          product_type: validData.product_type || null,
-          dimensions: validData.dimensions || null,
-          color_preferences: validData.color_preferences || null,
-          design_ideas: validData.design_ideas || null,
-          additional_comments: validData.additional_comments || null,
-          files_info: filesInfo.length > 0 ? filesInfo : null
-        });
-      
-      if (error) {
-        console.error("Error submitting custom order:", error);
-        toast.error("Something went wrong. Please try again later.");
-        return;
-      }
-      
-      toast.success("Your custom order request has been submitted successfully!");
-      
-      // Reset the form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        product_type: '',
-        dimensions: '',
-        color_preferences: '',
-        design_ideas: '',
-        additional_comments: ''
+      await handleFormSubmit(values, () => {
+        // Reset form on success
+        form.reset();
       });
-      setFiles(null);
-      
-      // Reset file input
-      const fileInput = document.getElementById('file-upload') as HTMLInputElement;
-      if (fileInput) fileInput.value = '';
-      
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        // Handle validation errors
-        error.errors.forEach(err => {
-          toast.error(err.message);
-        });
-      } else {
-        console.error("Custom order form error:", error);
-        toast.error("Something went wrong. Please try again later.");
-      }
+      console.error("Error submitting custom order form:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const productTypes = [
-    "Coffee Table",
-    "Dining Table",
-    "Kitchen Countertop",
-    "Bar Table",
-    "Desk",
-    "Wall Art",
-    "Other"
-  ];
-
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">Name *</label>
-          <Input
-            id="name"
-            name="name"
-            placeholder="Your name"
-            value={formData.name}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            required
-          />
-        </div>
-        
-        <div className="space-y-2">
-          <label htmlFor="email" className="text-sm font-medium">Email *</label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="your.email@example.com"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={isSubmitting}
-            required
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium">Phone Number</label>
-          <Input
-            id="phone"
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-lg font-medium">Contact Information</h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Full Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="John Doe" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input type="email" placeholder="johndoe@example.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          
+          <FormField
+            control={form.control}
             name="phone"
-            placeholder="Your phone number"
-            value={formData.phone || ''}
-            onChange={handleChange}
-            disabled={isSubmitting}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Phone Number (Optional)</FormLabel>
+                <FormControl>
+                  <Input placeholder="+1 (234) 567-8901" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
           />
         </div>
         
-        <div className="space-y-2">
-          <label htmlFor="product_type" className="text-sm font-medium">Product Type</label>
-          <Select
-            value={formData.product_type || ''}
-            onValueChange={(value) => handleSelectChange('product_type', value)}
-            disabled={isSubmitting}
-          >
-            <SelectTrigger>
-              <SelectValue placeholder="Select product type" />
-            </SelectTrigger>
-            <SelectContent>
-              {productTypes.map((type) => (
-                <SelectItem key={type} value={type}>{type}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+        <div className="space-y-4 pt-4 border-t border-gray-200">
+          <h3 className="text-lg font-medium">Project Details</h3>
+          
+          <FormField
+            control={form.control}
+            name="projectType"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Project Type</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select project type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="coffee-table">Coffee Table</SelectItem>
+                    <SelectItem value="dining-table">Dining Table</SelectItem>
+                    <SelectItem value="conference-table">Conference Table</SelectItem>
+                    <SelectItem value="desk">Desk</SelectItem>
+                    <SelectItem value="kitchen-unit">Kitchen Unit/Countertop</SelectItem>
+                    <SelectItem value="wall-art">Wall Art</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="dimensions"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Approximate Dimensions</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="e.g., 60in x 36in (L x W) or as detailed as possible" 
+                    {...field} 
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FormField
+              control={form.control}
+              name="budget"
+              render={({ field }) => (
+                <FormItem className="space-y-3">
+                  <FormLabel>Budget Range</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="under-1000" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Under ₹50,000</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="1000-3000" />
+                        </FormControl>
+                        <FormLabel className="font-normal">₹50,000 - ₹1,00,000</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="3000-5000" />
+                        </FormControl>
+                        <FormLabel className="font-normal">₹1,00,000 - ₹2,00,000</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="5000-plus" />
+                        </FormControl>
+                        <FormLabel className="font-normal">₹2,00,000+</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="timeline"
+              render={({ field }) => (
+                <FormItem className="space-y-3">
+                  <FormLabel>Desired Timeline</FormLabel>
+                  <FormControl>
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                      className="flex flex-col space-y-1"
+                    >
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="asap" />
+                        </FormControl>
+                        <FormLabel className="font-normal">As soon as possible</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="1-3-months" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Within 1-3 months</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="3-6-months" />
+                        </FormControl>
+                        <FormLabel className="font-normal">3-6 months</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center space-x-3 space-y-0">
+                        <FormControl>
+                          <RadioGroupItem value="flexible" />
+                        </FormControl>
+                        <FormLabel className="font-normal">Flexible</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Project Description</FormLabel>
+                <FormControl>
+                  <Textarea 
+                    placeholder="Please describe your project, including any specific colors, styles, or features you'd like." 
+                    className="resize-none min-h-[120px]"
+                    {...field} 
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="attachDesign"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>I would like to upload design ideas later</FormLabel>
+                </div>
+              </FormItem>
+            )}
+          />
+          
+          <FormField
+            control={form.control}
+            name="inspiration"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Inspiration URLs (Optional)</FormLabel>
+                <FormControl>
+                  <Input 
+                    placeholder="Links to Pinterest boards, Instagram posts, etc." 
+                    {...field} 
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
-      </div>
-      
-      <div className="space-y-2">
-        <label htmlFor="dimensions" className="text-sm font-medium">Dimensions</label>
-        <Input
-          id="dimensions"
-          name="dimensions"
-          placeholder="Approximate dimensions (e.g., 120cm x 80cm x 45cm)"
-          value={formData.dimensions || ''}
-          onChange={handleChange}
+        
+        <Button 
+          type="submit" 
+          className="w-full md:w-auto bg-[#D4AF37] hover:bg-[#D4AF37]/80 text-white" 
           disabled={isSubmitting}
-        />
-      </div>
-      
-      <div className="space-y-2">
-        <label htmlFor="color_preferences" className="text-sm font-medium">Color Preferences</label>
-        <Input
-          id="color_preferences"
-          name="color_preferences"
-          placeholder="Your color preferences"
-          value={formData.color_preferences || ''}
-          onChange={handleChange}
-          disabled={isSubmitting}
-        />
-      </div>
-      
-      <div className="space-y-2">
-        <label htmlFor="design_ideas" className="text-sm font-medium">Design Ideas</label>
-        <Textarea
-          id="design_ideas"
-          name="design_ideas"
-          placeholder="Share your design ideas or inspirations..."
-          value={formData.design_ideas || ''}
-          onChange={handleChange}
-          disabled={isSubmitting}
-          rows={4}
-        />
-      </div>
-
-      <div className="space-y-2">
-        <label htmlFor="file-upload" className="text-sm font-medium">Upload Reference Images</label>
-        <Input
-          id="file-upload"
-          type="file"
-          multiple
-          onChange={handleFileChange}
-          disabled={isSubmitting}
-          className="file:mr-4 file:py-2 file:px-4
-                    file:rounded-md file:border-0
-                    file:text-sm file:font-semibold
-                    file:bg-[#D4AF37] file:text-white
-                    hover:file:bg-[#D4AF37]/80"
-        />
-        <p className="text-xs text-gray-500">You can upload multiple reference images (optional)</p>
-      </div>
-      
-      <div className="space-y-2">
-        <label htmlFor="additional_comments" className="text-sm font-medium">Additional Comments</label>
-        <Textarea
-          id="additional_comments"
-          name="additional_comments"
-          placeholder="Any additional information or requirements..."
-          value={formData.additional_comments || ''}
-          onChange={handleChange}
-          disabled={isSubmitting}
-          rows={4}
-        />
-      </div>
-      
-      <Button 
-        type="submit" 
-        size="lg" 
-        className="bg-[#D4AF37] hover:bg-[#D4AF37]/80 w-full md:w-auto"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? "Submitting..." : "Submit Custom Order Request"}
-      </Button>
-    </form>
+        >
+          {isSubmitting ? "Submitting..." : "Submit Custom Order Request"}
+        </Button>
+      </form>
+    </Form>
   );
-}
+};

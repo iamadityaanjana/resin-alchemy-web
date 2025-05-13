@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
@@ -12,6 +13,7 @@ import {
 
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { toast } from "sonner"
 
 const Form = FormProvider
 
@@ -164,6 +166,30 @@ const FormMessage = React.forwardRef<
 })
 FormMessage.displayName = "FormMessage"
 
+// Handle form submissions with a simulated API call
+const handleFormSubmit = (data: any, onSuccess?: () => void): Promise<any> => {
+  // Simulate API call
+  return new Promise((resolve) => {
+    // Simulate network delay
+    setTimeout(() => {
+      console.log("Form submitted successfully:", data);
+      
+      // Show success message
+      toast.success("Form submitted successfully!", {
+        description: "We'll get back to you soon.",
+        duration: 5000,
+      });
+      
+      // Call success callback if provided
+      if (onSuccess) {
+        onSuccess();
+      }
+      
+      resolve({ success: true });
+    }, 1000);
+  });
+};
+
 export {
   useFormField,
   Form,
@@ -173,4 +199,5 @@ export {
   FormDescription,
   FormMessage,
   FormField,
+  handleFormSubmit,
 }

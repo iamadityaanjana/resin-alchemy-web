@@ -14,7 +14,7 @@ export function ImageBanner({
   imageSrc, 
   className, 
   alt = "Banner Image", 
-  height = "10vh",
+  height = "15vh", // Increased from 10vh to 15vh
   objectPosition = "center 30%" 
 }: ImageBannerProps) {
   const [imageLoaded, setImageLoaded] = useState(false);

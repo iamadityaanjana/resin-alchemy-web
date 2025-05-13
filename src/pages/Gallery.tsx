@@ -407,6 +407,111 @@ const products: Product[] = [
     category: "dining-sets",
     href: "/gallery/blue-channel-dining-set",
   },
+  // Updated kitchen units section with new images
+  {
+    id: 201,
+    title: "Black Resin Kitchen Countertop",
+    description: "Modern kitchen countertop with black resin flowing through natural wood creating a striking contrast.",
+    image: "/lovable-uploads/0a23fd41-9891-47d5-a827-2c2a74fb3944.png",
+    category: "kitchen-units",
+    href: "/gallery/black-resin-kitchen-countertop",
+  },
+  {
+    id: 202,
+    title: "Amber Flow Kitchen Counter",
+    description: "Elegant kitchen counter featuring warm amber resin flowing through natural wood grain.",
+    image: "/lovable-uploads/71ca9be2-06bf-46dc-bcd8-675f9da37282.png",
+    category: "kitchen-units",
+    href: "/gallery/amber-flow-kitchen-counter",
+  },
+  {
+    id: 203,
+    title: "Gold Wave Kitchen Cabinetry",
+    description: "Complete kitchen cabinet set with stunning gold resin wave patterns throughout the wood.",
+    image: "/lovable-uploads/511b8022-7425-401d-a905-7401d58edd01.png",
+    category: "kitchen-units",
+    href: "/gallery/gold-wave-kitchen-cabinetry",
+  },
+  {
+    id: 204,
+    title: "Illuminated Wood & Resin Kitchen",
+    description: "Modern kitchen unit with backlit wood and black resin combination creating a dramatic effect.",
+    image: "/lovable-uploads/55cedf1f-9dd3-4b9b-9ccd-31cdf770ea12.png",
+    category: "kitchen-units",
+    href: "/gallery/illuminated-wood-resin-kitchen",
+  },
+  {
+    id: 205,
+    title: "Turquoise River Breakfast Bar",
+    description: "L-shaped breakfast bar with stunning turquoise resin river flowing through natural wood.",
+    image: "/lovable-uploads/12f98c8a-0537-4552-8f6c-242107ab67ee.png",
+    category: "kitchen-units",
+    href: "/gallery/turquoise-river-breakfast-bar",
+  },
+  {
+    id: 9,
+    title: "Golden Waves Wall Art",
+    description: "Stunning resin wall art with golden wave patterns in warm brown and white colors.",
+    image: "/lovable-uploads/fa145c3c-bea1-4a78-a6bf-9dc6d72d5abc.png",
+    category: "wall-art",
+    href: "/gallery/golden-waves-wall-art",
+  },
+  {
+    id: 10,
+    title: "Gold Crystal Geode Wall Panel",
+    description: "Beautiful wall art capturing the essence of geodes with gold and crystal resin details.",
+    image: "/lovable-uploads/b4033e46-655e-4288-b5cc-43a0ff560249.png",
+    category: "wall-art",
+    href: "/gallery/gold-crystal-geode-wall-panel",
+  },
+  {
+    id: 11,
+    title: "Crystalline Diptych Panel",
+    description: "Two-piece wall art with striking black and white design featuring crystal embellishments.",
+    image: "/lovable-uploads/9cd32064-d572-4f9a-98c0-620e725c317d.png",
+    category: "wall-art",
+    href: "/gallery/crystalline-diptych-panel",
+  },
+  {
+    id: 12,
+    title: "Onyx & Crystal Wall Art",
+    description: "Modern wall art with deep black resin complemented by crystal and gold accents.",
+    image: "/lovable-uploads/17c8daac-9845-4292-8272-5c4e56373151.png",
+    category: "wall-art",
+    href: "/gallery/onyx-crystal-wall-art",
+  },
+  {
+    id: 13,
+    title: "Arabic Calligraphy Resin Art",
+    description: "Elegant black and gold calligraphy art featuring crystal embellishments and intricate details.",
+    image: "/lovable-uploads/d6d5efab-e76e-4a45-8e85-3fe0bcb34ae4.png",
+    category: "wall-art",
+    href: "/gallery/arabic-calligraphy-resin-art",
+  },
+  {
+    id: 14,
+    title: "Blue Waves Calligraphy Panel",
+    description: "Contemporary calligraphy art with blue resin waves and elegant gold detailing.",
+    image: "/lovable-uploads/b7ce7c71-672b-41a4-a0b8-335b5811324a.png",
+    category: "wall-art",
+    href: "/gallery/blue-waves-calligraphy-panel",
+  },
+  {
+    id: 15,
+    title: "Marble & Gold Scripture Art",
+    description: "Round scripture art with stunning white marble effect and gold crystal accents.",
+    image: "/lovable-uploads/48ea1a3c-ba41-47a1-8413-50d3a06a781f.png",
+    category: "wall-art",
+    href: "/gallery/marble-gold-scripture-art",
+  },
+  {
+    id: 16,
+    title: "Teal & Gold Calligraphy Collection",
+    description: "Set of elegant calligraphy pieces with teal resin, gold accents and crystal details.",
+    image: "/lovable-uploads/9ce6f34b-2701-49f0-bffb-352e1be7e5dc.png",
+    category: "wall-art",
+    href: "/gallery/teal-gold-calligraphy-collection",
+  },
 ];
 
 const categories = [
@@ -495,117 +600,4 @@ const Gallery = () => {
     setCurrentCategoryDesc(categoryDesc);
   }, [activeCategory]);
   
-  const handleCategoryChange = (category: string) => {
-    // Update URL with new category
-    navigate(`/gallery${category === "all" ? "" : `?category=${category}`}`);
-  };
-
-  return (
-    <Layout>
-      <HeroSection
-        title="Our Gallery"
-        subtitle="Explore our collection of custom resin furniture creations"
-        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
-      />
-
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <SectionHeading 
-            title="Browse Our Collection" 
-            subtitle="Filter by category to find the perfect inspiration for your custom piece"
-          />
-          
-          <Tabs 
-            defaultValue={activeCategory} 
-            value={activeCategory}
-            onValueChange={handleCategoryChange}
-            className="w-full"
-          >
-            <div className="mb-8 overflow-x-auto pb-4">
-              <TabsList className="h-auto flex flex-nowrap min-w-max mx-auto">
-                {categories.map((category) => (
-                  <TabsTrigger 
-                    key={category.id} 
-                    value={category.id}
-                    className="px-4 py-2 whitespace-nowrap"
-                  >
-                    {category.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
-            
-            {/* Category Description */}
-            <div className="bg-gray-50 p-6 rounded-lg mb-10">
-              <h3 className="text-2xl font-bold font-playfair mb-3">{currentCategoryDesc.title}</h3>
-              <p className="text-gray-700">{currentCategoryDesc.description}</p>
-            </div>
-            
-            {categories.map((category) => (
-              <TabsContent 
-                key={category.id} 
-                value={category.id}
-                className="mt-0 animate-fade-in"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredProducts.map((product) => (
-                    <ProductCard
-                      key={product.id}
-                      image={product.image}
-                      title={product.title}
-                      description={product.description}
-                      category={categories.find(cat => cat.id === product.category)?.label}
-                      href={product.href}
-                    />
-                  ))}
-                </div>
-                
-                {filteredProducts.length === 0 && (
-                  <div className="text-center py-20">
-                    <h3 className="text-2xl font-bold mb-4">No products found</h3>
-                    <p className="text-gray-600 mb-8">
-                      We couldn't find any products in this category. Please try another category or contact us for custom requests.
-                    </p>
-                    <Button 
-                      onClick={() => handleCategoryChange("all")}
-                      className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
-                    >
-                      View All Projects
-                    </Button>
-                  </div>
-                )}
-              </TabsContent>
-            ))}
-          </Tabs>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 font-playfair">Don't See What You're Looking For?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            We specialize in custom designs tailored to your specific needs and preferences.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              asChild
-              className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
-            >
-              <a href="/custom-orders">Request Custom Design</a>
-            </Button>
-            <Button 
-              asChild
-              variant="outline"
-              className="border-[#D4AF37] text-[#D4AF37]"
-            >
-              <a href="/contact">Contact Us</a>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-};
-
-export default Gallery;
+  const handleCategoryChange = (category

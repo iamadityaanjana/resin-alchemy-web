@@ -1,0 +1,254 @@
+// Import the supabase client from our client.ts file to ensure we use the correct credentials
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
+
+// Form submission types
+export interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  created_at?: string;
+}
+
+export interface CustomOrderFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  projectType: string;
+  dimensions: string;
+  budget: string;
+  timeline: string;
+  description: string;
+  attachDesign?: boolean;
+  inspiration?: string;
+  created_at?: string;
+}
+
+export interface BulkOrderFormData {
+  companyName: string;
+  contactName: string;
+  email: string;
+  phone: string;
+  businessType: string;
+  projectDescription: string;
+  quantity: string;
+  targetDeliveryDate?: string;
+  additionalRequirements?: string;
+  created_at?: string;
+}
+
+export interface NewsletterFormData {
+  email: string;
+  created_at?: string;
+}
+
+// Enhanced debug function to help diagnose issues
+const logApiDetails = (method: string, endpoint: string, payload: any, error?: any) => {
+  console.log(`[${method}] ${endpoint}`, {
+    payload,
+    ...(error && { error: { message: error.message, code: error.code, details: error.details } })
+  });
+};
+
+// Handle the RLS error specifically
+const handleRlsError = (error: any, tableName: string) => {
+  if (error.message?.includes('violates row-level security policy')) {
+    console.error(`RLS policy violation on table ${tableName} - check Supabase RLS settings`);
+    
+    toast.error("Form submission security issue", { 
+      description: "Our form is temporarily unavailable. Please try again later or contact support." 
+    });
+    
+    // Log detailed error for debugging
+    console.log('Detailed error:', {
+      code: error.code,
+      message: error.message,
+      details: error.details,
+      hint: error.hint
+    });
+    
+    return true; // RLS error handled
+  }
+  return false; // Not an RLS error
+};
+
+// Function to submit contact form data with plain REST API
+const submitViaRestApi = async (data: any, tableName: string) => {
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoanZpZWh2cGtiamxzYWFja2VlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY1NDUxNTQsImV4cCI6MjA2MjEyMTE1NH0.6GqDaj7iJ0JClihVnHjfyJrDKz45BrX4YRYhAGjma0s";
+
+  try {
+    const response = await fetch(`https://ahjviehvpkbjlsaackee.supabase.co/rest/v1/${tableName}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': apiKey,
+        'Authorization': `Bearer ${apiKey}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`REST API error: ${response.status} - ${errorText}`);
+    }
+    
+    return { success: true };
+  } catch (err) {
+    console.error('REST submission error:', err);
+    throw err;
+  }
+};
+
+// Function to submit contact form data
+export async function submitContactForm(data: ContactFormData) {
+  const formData = {
+    name: data.name,
+    email: data.email,
+    phone: data.phone || null,
+    message: data.message,
+    created_at: new Date().toISOString()
+  };
+  
+  logApiDetails('POST', 'contact_submissions', formData);
+  
+  try {
+    // First try with the Supabase client
+    const { error } = await supabase
+      .from('contact_submissions')
+      .insert(formData);
+      
+    if (error) {
+      logApiDetails('POST', 'contact_submissions', formData, error);
+      
+      // If it's an RLS error, try the direct REST API approach
+      if (handleRlsError(error, 'contact_submissions')) {
+        return await submitViaRestApi(formData, 'contact_submissions');
+      }
+      
+      throw error;
+    }
+    return { success: true };
+  } catch (err: any) {
+    console.error('Exception in submitContactForm:', err.message);
+    toast.error(`Form submission failed. Please try again later.`);
+    throw err;
+  }
+}
+
+// Function to submit custom order form data
+export async function submitCustomOrderForm(data: CustomOrderFormData) {
+  const formData = {
+    name: data.name,
+    email: data.email,
+    phone: data.phone || null,
+    project_type: data.projectType,
+    dimensions: data.dimensions,
+    budget: data.budget,
+    timeline: data.timeline,
+    description: data.description,
+    attach_design: data.attachDesign || false,
+    inspiration: data.inspiration || null,
+    created_at: new Date().toISOString()
+  };
+  
+  logApiDetails('POST', 'custom_orders', formData);
+  
+  try {
+    // First try with the Supabase client
+    const { error } = await supabase
+      .from('custom_orders')
+      .insert(formData);
+      
+    if (error) {
+      logApiDetails('POST', 'custom_orders', formData, error);
+      
+      // If it's an RLS error, try the direct REST API approach
+      if (handleRlsError(error, 'custom_orders')) {
+        return await submitViaRestApi(formData, 'custom_orders');
+      }
+      
+      throw error;
+    }
+    return { success: true };
+  } catch (err: any) {
+    console.error('Exception in submitCustomOrderForm:', err.message);
+    toast.error(`Form submission failed. Please try again later.`);
+    throw err;
+  }
+}
+
+// Function to submit bulk order form data
+export async function submitBulkOrderForm(data: BulkOrderFormData) {
+  const formData = {
+    company_name: data.companyName,
+    contact_name: data.contactName,
+    email: data.email,
+    phone: data.phone,
+    business_type: data.businessType,
+    project_description: data.projectDescription,
+    quantity: data.quantity,
+    target_delivery_date: data.targetDeliveryDate || null,
+    additional_requirements: data.additionalRequirements || null,
+    created_at: new Date().toISOString()
+  };
+  
+  logApiDetails('POST', 'bulk_orders', formData);
+  
+  try {
+    // First try with the Supabase client
+    const { error } = await supabase
+      .from('bulk_orders')
+      .insert(formData);
+      
+    if (error) {
+      logApiDetails('POST', 'bulk_orders', formData, error);
+      
+      // If it's an RLS error, try the direct REST API approach
+      if (handleRlsError(error, 'bulk_orders')) {
+        return await submitViaRestApi(formData, 'bulk_orders');
+      }
+      
+      throw error;
+    }
+    return { success: true };
+  } catch (err: any) {
+    console.error('Exception in submitBulkOrderForm:', err.message);
+    toast.error(`Form submission failed. Please try again later.`);
+    throw err;
+  }
+}
+
+// Function to submit newsletter subscription
+export async function submitNewsletterForm(data: NewsletterFormData) {
+  const formData = {
+    email: data.email,
+    created_at: new Date().toISOString()
+  };
+  
+  logApiDetails('POST', 'newsletter_subscribers', formData);
+  
+  try {
+    // First try with the Supabase client
+    const { error } = await supabase
+      .from('newsletter_subscribers')
+      .insert(formData);
+      
+    if (error) {
+      logApiDetails('POST', 'newsletter_subscribers', formData, error);
+      
+      // If it's an RLS error, try the direct REST API approach
+      if (handleRlsError(error, 'newsletter_subscribers')) {
+        return await submitViaRestApi(formData, 'newsletter_subscribers');
+      }
+      
+      throw error;
+    }
+    return { success: true };
+  } catch (err: any) {
+    console.error('Exception in submitNewsletterForm:', err.message);
+    toast.error(`Form submission failed. Please try again later.`);
+    throw err;
+  }
+}

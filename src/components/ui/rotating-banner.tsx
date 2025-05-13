@@ -80,8 +80,8 @@ export function RotatingBanner({
             className="w-full h-full object-cover"
             style={{ objectPosition }}
           />
-          {/* Improved overlay for better text visibility */}
-          <div className="absolute inset-0 bg-black/40 z-[1]"></div>
+          {/* Enhanced gradient overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30 z-[1]"></div>
         </div>
       ))}
       

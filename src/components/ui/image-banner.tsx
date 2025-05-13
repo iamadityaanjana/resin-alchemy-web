@@ -44,12 +44,12 @@ export function ImageBanner({
         <OptimizedImage
           src={imageSrc}
           alt={alt}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-lg"
           style={{ objectPosition }}
           onLoad={() => setImageLoaded(true)}
         />
-        {/* Background overlay to improve text visibility */}
-        <div className="absolute inset-0 bg-black/20 z-[1] rounded-lg"></div>
+        {/* Enhanced gradient overlay for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/30 z-[1] rounded-lg"></div>
       </div>
     </div>
   );

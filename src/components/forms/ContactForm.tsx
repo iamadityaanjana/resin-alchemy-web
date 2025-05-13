@@ -46,7 +46,7 @@ export const ContactForm = () => {
     setIsSubmitting(true);
     
     try {
-      await handleFormSubmit(values, () => {
+      await handleFormSubmit(values, 'contact', () => {
         // Reset form on success
         form.reset();
       });

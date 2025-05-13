@@ -34,7 +34,7 @@ export const NewsletterForm = () => {
     setIsSubmitting(true);
     
     try {
-      await handleFormSubmit(values, () => {
+      await handleFormSubmit(values, 'newsletter', () => {
         // Reset form on success
         form.reset();
       });

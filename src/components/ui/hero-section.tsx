@@ -40,16 +40,37 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        "relative min-h-[25vh] flex items-center justify-center pt-16 bg-cover bg-center",
+        "relative min-h-[25vh] flex items-center justify-center pt-16 overflow-hidden",
         className
       )}
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "center 30%"
-      }}
     >
-      {/* Overlay for better text readability */}
-      {overlay && <div className="absolute inset-0 bg-black/50"></div>}
+      {/* Background image with proper positioning */}
+      <div className="absolute inset-0 z-0">
+        {bgImage.endsWith('.png') && bgImage.includes('lovable-uploads') ? (
+          <picture>
+            <source srcSet={`${bgImage.replace('.png', '.avif')}`} type="image/avif" />
+            <source srcSet={`${bgImage.replace('.png', '.webp')}`} type="image/webp" />
+            <img 
+              src={bgImage} 
+              alt="Background" 
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "center 30%" }}
+            />
+          </picture>
+        ) : (
+          <img 
+            src={bgImage} 
+            alt="Background" 
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 30%" }}
+          />
+        )}
+      </div>
+      
+      {/* Enhanced overlay for better text readability with gradient */}
+      {overlay && (
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50 z-0"></div>
+      )}
 
       <div className="container mx-auto px-4 relative z-10">
         <div className={cn(

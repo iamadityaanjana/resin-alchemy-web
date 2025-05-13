@@ -65,7 +65,7 @@ export const BulkOrderForm = () => {
     setIsSubmitting(true);
     
     try {
-      await handleFormSubmit(values, () => {
+      await handleFormSubmit(values, 'bulk-order', () => {
         // Reset form on success
         form.reset();
       });

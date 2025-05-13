@@ -166,13 +166,39 @@ const FormMessage = React.forwardRef<
 })
 FormMessage.displayName = "FormMessage"
 
-// Handle form submissions with a simulated API call
-const handleFormSubmit = (data: any, onSuccess?: () => void): Promise<any> => {
-  // Simulate API call
-  return new Promise((resolve) => {
-    // Simulate network delay
-    setTimeout(() => {
-      console.log("Form submitted successfully:", data);
+// Handle form submissions with Supabase integration
+const handleFormSubmit = (data: any, formType: 'contact' | 'custom-order' | 'bulk-order' | 'newsletter', onSuccess?: () => void): Promise<any> => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      // Import dynamically to avoid circular dependencies
+      const { 
+        submitContactForm, 
+        submitCustomOrderForm, 
+        submitBulkOrderForm, 
+        submitNewsletterForm 
+      } = await import('@/lib/supabase');
+      
+      let result;
+      
+      console.log(`Submitting ${formType} form:`, data);
+      
+      // Route to the appropriate submission handler based on form type
+      switch (formType) {
+        case 'contact':
+          result = await submitContactForm(data);
+          break;
+        case 'custom-order':
+          result = await submitCustomOrderForm(data);
+          break;
+        case 'bulk-order':
+          result = await submitBulkOrderForm(data);
+          break;
+        case 'newsletter':
+          result = await submitNewsletterForm(data);
+          break;
+        default:
+          console.log("Form submitted (no handler):", data);
+      }
       
       // Show success message
       toast.success("Form submitted successfully!", {
@@ -180,13 +206,25 @@ const handleFormSubmit = (data: any, onSuccess?: () => void): Promise<any> => {
         duration: 5000,
       });
       
-      // Call success callback if provided
+      // Execute success callback if provided
       if (onSuccess) {
         onSuccess();
       }
       
-      resolve({ success: true });
-    }, 1000);
+      resolve(result || { success: true });
+    } catch (error: any) {
+      console.error("Error submitting form:", error);
+      
+      // Show more detailed error message for debugging
+      const errorMessage = error?.message || "Unknown error";
+      const errorDetails = error?.details || "";
+      
+      toast.error(`Form submission failed: ${errorMessage}`, {
+        description: errorDetails || "Please try again later.",
+        duration: 8000,
+      });
+      reject(error);
+    }
   });
 };
 

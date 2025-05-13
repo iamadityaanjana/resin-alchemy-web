@@ -10,6 +10,7 @@ import { PagePreviewSection } from "@/components/ui/page-preview";
 import { FAQSection } from "@/components/ui/expanded-faq";
 import { ImageBanner } from "@/components/ui/image-banner";
 import { RotatingBanner } from "@/components/ui/rotating-banner";
+import { PureThreeModelViewer } from "@/components/ui/pure-three-model-viewer";
 import {
   Carousel,
   CarouselContent,
@@ -261,6 +262,44 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 3D Model Showcase Section */}
+      <section className="py-20 px-4 bg-neutral-color">
+        <div className="container mx-auto">
+          <SectionHeading 
+            title="Interactive 3D Preview" 
+            subtitle="Explore our table design in 3D - rotate, zoom, and see every detail" 
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="md:order-2">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <PureThreeModelViewer 
+                  modelPath="Table_0513153013_texture.stl" 
+                  height="500px"
+                  rotation={[-Math.PI / 2, 0, 0]}
+                  cameraPosition={[0, 5, 10]}
+                />
+              </div>
+            </div>
+            <div className="md:order-1">
+              <h3 className="text-2xl font-bold mb-4 font-playfair">Experience Our Craftsmanship in 3D</h3>
+              <p className="mb-6 text-gray-600">
+                This interactive 3D model showcases the intricate design and beautiful curves of our signature resin table. Use your mouse or touch to rotate, zoom, and explore every angle of this stunning piece.
+              </p>
+              <p className="mb-6 text-gray-600">
+                Each of our tables is meticulously crafted to balance artistic expression with practical functionality. The flowing resin patterns create a unique piece of art that's also a durable, everyday-use table.
+              </p>
+              <Button 
+                asChild 
+                className="bg-[#D4AF37] hover:bg-[#D4AF37]/80"
+              >
+                <Link to="/custom-orders">Create Your Own Design</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

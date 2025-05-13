@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 interface ProductCardProps {
-  image: string;
+  imageSrc: string; // Changed from 'image' to 'imageSrc' to match usage in Gallery.tsx
   title: string;
   description?: string;
   price?: string;
@@ -14,7 +14,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({
-  image,
+  imageSrc, // Changed from 'image' to 'imageSrc'
   title,
   description,
   price,
@@ -36,7 +36,7 @@ export function ProductCard({
     >
       <div className="aspect-square overflow-hidden">
         <img
-          src={image}
+          src={imageSrc} // Changed from 'image' to 'imageSrc'
           alt={title}
           className={cn(
             "w-full h-full object-cover transition-transform duration-500",

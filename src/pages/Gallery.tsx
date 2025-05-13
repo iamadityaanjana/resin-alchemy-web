@@ -24,6 +24,7 @@ interface CategoryDescription {
 }
 
 const products: Product[] = [
+  // Coffee tables
   {
     id: 1,
     title: "Azure Ocean Coffee Table",
@@ -33,22 +34,6 @@ const products: Product[] = [
     href: "/gallery/azure-ocean-coffee-table",
   },
   {
-    id: 2,
-    title: "Emerald Forest Dining Table",
-    description: "8-seater rectangular dining table with emerald resin inlays mimicking a forest stream.",
-    image: "/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png",
-    category: "rectangle-tables",
-    href: "/gallery/emerald-forest-dining-table",
-  },
-  {
-    id: 3,
-    title: "Amber Glow Bar Counter",
-    description: "A conversation-starting bar counter with warm amber resin that catches and refracts light.",
-    image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-    category: "bar-tables",
-    href: "/gallery/amber-glow-bar-counter",
-  },
-  {
     id: 5,
     title: "Turquoise Dream End Table",
     description: "Compact end table with vibrant turquoise resin detail perfect for small spaces.",
@@ -56,6 +41,48 @@ const products: Product[] = [
     category: "coffee-tables",
     href: "/gallery/turquoise-dream-end-table",
   },
+  {
+    id: 17,
+    title: "Lime Leaf Coffee Table",
+    description: "Small creative table with transparent green resin featuring preserved leaves and natural wood edges.",
+    image: "/lovable-uploads/e292399d-3418-4202-93fe-de8e0fe52439.png",
+    category: "coffee-tables",
+    href: "/gallery/lime-leaf-coffee-table",
+  },
+  {
+    id: 18,
+    title: "Ebony River Coffee Table",
+    description: "Contemporary black resin table with natural wood grain and streamlined metal frame.",
+    image: "/lovable-uploads/583ddc28-bd66-477a-9f4a-cfb511b0c735.png",
+    category: "coffee-tables",
+    href: "/gallery/ebony-river-coffee-table",
+  },
+  {
+    id: 19,
+    title: "Aqua Lagoon Center Table",
+    description: "Round coffee table with striking teal resin and natural wood pattern reminiscent of a lagoon.",
+    image: "/lovable-uploads/8ac60485-ec45-48b5-a00d-95ba57095d24.png",
+    category: "coffee-tables",
+    href: "/gallery/aqua-lagoon-center-table",
+  },
+  {
+    id: 20,
+    title: "Coastal Paradise Side Table",
+    description: "Beach-inspired side table with stunning turquoise resin resembling ocean waves meeting the shore.",
+    image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", 
+    category: "coffee-tables",
+    href: "/gallery/coastal-paradise-side-table",
+  },
+  {
+    id: 23,
+    title: "Turquoise Collection",
+    description: "Set of turquoise resin tables with natural wood, perfect for modern interiors.",
+    image: "/lovable-uploads/e135c701-eaea-44b6-97bc-4d25368f02c5.png",
+    category: "coffee-tables",
+    href: "/gallery/turquoise-collection",
+  },
+  
+  // Wall Art
   {
     id: 9,
     title: "Golden Waves Wall Art",
@@ -120,37 +147,15 @@ const products: Product[] = [
     category: "wall-art",
     href: "/gallery/teal-gold-calligraphy-collection",
   },
+  
+  // Rectangle Tables
   {
-    id: 17,
-    title: "Lime Leaf Coffee Table",
-    description: "Small creative table with transparent green resin featuring preserved leaves and natural wood edges.",
-    image: "/lovable-uploads/e292399d-3418-4202-93fe-de8e0fe52439.png",
-    category: "coffee-tables",
-    href: "/gallery/lime-leaf-coffee-table",
-  },
-  {
-    id: 18,
-    title: "Ebony River Coffee Table",
-    description: "Contemporary black resin table with natural wood grain and streamlined metal frame.",
-    image: "/lovable-uploads/583ddc28-bd66-477a-9f4a-cfb511b0c735.png",
-    category: "coffee-tables",
-    href: "/gallery/ebony-river-coffee-table",
-  },
-  {
-    id: 19,
-    title: "Aqua Lagoon Center Table",
-    description: "Round coffee table with striking teal resin and natural wood pattern reminiscent of a lagoon.",
-    image: "/lovable-uploads/8ac60485-ec45-48b5-a00d-95ba57095d24.png",
-    category: "coffee-tables",
-    href: "/gallery/aqua-lagoon-center-table",
-  },
-  {
-    id: 20,
-    title: "Coastal Paradise Side Table",
-    description: "Beach-inspired side table with stunning turquoise resin resembling ocean waves meeting the shore.",
-    image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", 
-    category: "coffee-tables",
-    href: "/gallery/coastal-paradise-side-table",
+    id: 2,
+    title: "Emerald Forest Dining Table",
+    description: "8-seater rectangular dining table with emerald resin inlays mimicking a forest stream.",
+    image: "/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png",
+    category: "rectangle-tables",
+    href: "/gallery/emerald-forest-dining-table",
   },
   {
     id: 21,
@@ -167,14 +172,6 @@ const products: Product[] = [
     image: "/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png",
     category: "rectangle-tables",
     href: "/gallery/golden-river-executive-desk",
-  },
-  {
-    id: 23,
-    title: "Turquoise Collection",
-    description: "Set of turquoise resin tables with natural wood, perfect for modern interiors.",
-    image: "/lovable-uploads/e135c701-eaea-44b6-97bc-4d25368f02c5.png",
-    category: "coffee-tables",
-    href: "/gallery/turquoise-collection",
   },
   {
     id: 24,
@@ -336,7 +333,8 @@ const products: Product[] = [
     category: "rectangle-tables",
     href: "/gallery/honeycomb-pattern-table",
   },
-  // Updated dining sets with new images
+  
+  // Dining sets
   {
     id: 101,
     title: "Outdoor Wooden Dining Set",
@@ -401,7 +399,50 @@ const products: Product[] = [
     category: "dining-sets",
     href: "/gallery/rustic-patio-set",
   },
-  // Updated kitchen units with new images
+  
+  // Update bar tables section with new images
+  {
+    id: 3,
+    title: "Purple LED Bar Counter",
+    description: "A conversation-starting bar counter with purple LED lighting embedded in the wood design.",
+    image: "/lovable-uploads/f8b4b021-5355-4dbf-b626-5cec94e8c7c6.png", // New image
+    category: "bar-tables",
+    href: "/gallery/purple-led-bar-counter",
+  },
+  {
+    id: 301,
+    title: "Glowing Aqua Conference Table",
+    description: "Stunning conference table with glowing blue resin that illuminates patterns across the surface.",
+    image: "/lovable-uploads/51c8dee7-d624-4bbd-a8cd-87e42f4f7597.png", // New image
+    category: "bar-tables",
+    href: "/gallery/glowing-aqua-conference-table",
+  },
+  {
+    id: 302,
+    title: "Ocean Wave Bar Counter",
+    description: "Beautiful curved bar counter featuring a stunning blue ocean wave design in resin.",
+    image: "/lovable-uploads/feee3db3-ad55-4660-b77c-52f4fff642de.png", // New image
+    category: "bar-tables",
+    href: "/gallery/ocean-wave-bar-counter",
+  },
+  {
+    id: 303,
+    title: "Natural Edge Bar Top",
+    description: "Elegant bar top made from natural wood with polished edges and glass shelf display.",
+    image: "/lovable-uploads/2deb2cbc-11ef-4845-a2e6-98414a3a6f77.png", // New image
+    category: "bar-tables",
+    href: "/gallery/natural-edge-bar-top",
+  },
+  {
+    id: 304,
+    title: "Live Edge Coffee Table",
+    description: "Stunning live edge coffee table with natural wood grain and modern metal base.",
+    image: "/lovable-uploads/2f387035-ee41-4db0-9dec-70074fd318a9.png", // New image
+    category: "bar-tables",
+    href: "/gallery/live-edge-coffee-table",
+  },
+  
+  // Kitchen units with new images
   {
     id: 201,
     title: "Modern Kitchen Island with Resin Countertop",

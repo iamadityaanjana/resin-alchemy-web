@@ -4,40 +4,37 @@ import { cn } from "@/lib/utils";
 interface SectionHeadingProps {
   title: string;
   subtitle?: string;
-  align?: "left" | "center" | "right";
+  description?: string; // Added description prop
   className?: string;
+  centered?: boolean;
 }
 
-export function SectionHeading({
-  title,
+export function SectionHeading({ 
+  title, 
   subtitle,
-  align = "center",
+  description, // Added description prop
   className,
+  centered = false 
 }: SectionHeadingProps) {
   return (
-    <div 
-      className={cn(
-        "mb-10",
-        align === "center" && "text-center",
-        align === "right" && "text-right",
-        className
-      )}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+    <div className={cn(
+      "mb-8",
+      centered && "text-center",
+      className
+    )}>
+      <h2 className="text-3xl font-bold font-playfair">{title}</h2>
       
       {subtitle && (
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg text-muted-foreground mt-2 max-w-2xl">
           {subtitle}
         </p>
       )}
       
-      <div 
-        className={cn(
-          "h-1 w-24 bg-resin-blue mt-4 rounded",
-          align === "center" && "mx-auto",
-          align === "right" && "ml-auto"
-        )}
-      ></div>
+      {description && (
+        <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
+          {description}
+        </p>
+      )}
     </div>
   );
 }

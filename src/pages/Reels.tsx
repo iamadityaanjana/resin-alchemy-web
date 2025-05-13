@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { Instagram, Play } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 // Sample reels data
 const reels = [
@@ -71,7 +72,7 @@ const Reels = () => {
             {reels.map((reel) => (
               <div key={reel.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative group">
-                  <img
+                  <OptimizedImage
                     src={reel.thumbnail}
                     alt={reel.title}
                     className="w-full h-64 object-cover"

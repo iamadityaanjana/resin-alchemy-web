@@ -3,6 +3,7 @@ import { ReactNode, useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { WhatsAppFloatingButton } from "@/components/ui/whatsapp-floating-button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface LayoutProps {
   children: ReactNode;

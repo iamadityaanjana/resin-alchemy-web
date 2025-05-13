@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import {
   Accordion,
   AccordionContent,
@@ -128,8 +129,8 @@ const FAQ = () => {
           
           <div className="max-w-3xl mx-auto mb-12">
             {/* Add contextual image for FAQ page */}
-            <img 
-              src="/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png" // 5th image for FAQ
+            <OptimizedImage 
+              src="/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png"
               alt="FAQ Contextual Image"
               className="w-full h-auto rounded-lg shadow-lg mb-10"
             />

@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const AboutUs = () => {
   return (
@@ -48,7 +49,7 @@ const AboutUs = () => {
             </div>
             
             <div className="order-1 md:order-2">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/0ff33cf4-2703-4c3b-8c94-0bbd1a527396.png" 
                 alt="Craftsmanship in resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
@@ -63,7 +64,7 @@ const AboutUs = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/259375d5-63bb-4c1a-be27-08bf75e2cf58.png" 
                 alt="Sustainable materials for resin furniture"
                 className="rounded-lg shadow-lg w-full h-auto" 
@@ -110,7 +111,7 @@ const AboutUs = () => {
             </div>
             
             <div className="order-1 md:order-2">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/f8ec4bff-6896-465a-8910-3c3bbbe58654.png" 
                 alt="Elegant resin dining table"
                 className="rounded-lg shadow-lg w-full h-auto" 

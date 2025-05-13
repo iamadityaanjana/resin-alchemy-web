@@ -10,6 +10,7 @@ import { Search, Clock, User, ArrowRight } from "lucide-react";
 import { blogPosts, getCategories } from "@/data/blogPosts";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -64,7 +65,7 @@ const Blog = () => {
           
           {/* Add contextual image for Blog */}
           <div className="mb-8">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/8ea13bf5-6e17-4378-aa45-0c419d0dbc73.png" // 6th image for Blog
               alt="Blog Contextual Image"
               className="w-full h-auto max-h-72 object-cover rounded-lg shadow-lg"
@@ -105,7 +106,7 @@ const Blog = () => {
               filteredPosts.map((post) => (
                 <div key={post.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-gray-100">
                   <div className="relative h-44 overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"

@@ -117,7 +117,7 @@ async function main() {
   <picture>
     <source srcset="/path/to/image.avif" type="image/avif" />
     <source srcset="/path/to/image.webp" type="image/webp" />
-    <img src="/path/to/image.png" alt="Description" loading="lazy" />
+    <OptimizedImage src="/path/to/image.png" alt="Description" loading="lazy" />
   </picture>
   `);
 }

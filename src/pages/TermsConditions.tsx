@@ -2,6 +2,7 @@
 import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const TermsConditions = () => {
   return (

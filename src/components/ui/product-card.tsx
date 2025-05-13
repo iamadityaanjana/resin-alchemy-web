@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 interface ProductCardProps {
   imageSrc: string; // Changed from 'image' to 'imageSrc' to match usage in Gallery.tsx
@@ -35,7 +36,7 @@ export function ProductCard({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="aspect-square overflow-hidden">
-        <img
+        <OptimizedImage
           src={imageSrc} // Changed from 'image' to 'imageSrc'
           alt={title}
           className={cn(

@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { HeroSection } from "@/components/ui/hero-section";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const Contact = () => {
   return (
@@ -18,7 +19,7 @@ const Contact = () => {
         <div className="container mx-auto">
           {/* Add contextual image for Contact */}
           <div className="mb-10 max-w-4xl mx-auto">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/de6da137-a790-4b37-8359-c385e19bb3ee.png" // 7th image for Contact
               alt="Contact Us"
               className="w-full h-auto rounded-lg shadow-lg"

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Youtube, Linkedin, BookOpen } from "lucide-react";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 export default function Footer() {
   return (
@@ -12,7 +13,7 @@ export default function Footer() {
           {/* Logo and About */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
                 alt="Resin Alchemy Logo" 
                 className="h-12 w-auto object-contain bg-white rounded-full p-1"
@@ -99,7 +100,7 @@ export default function Footer() {
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div>
                 <h4 className="text-sm font-medium mb-2">Guide</h4>
-                <img 
+                <OptimizedImage 
                   src="/lovable-uploads/707da0f9-2e78-49e4-8a9d-bb2182102b1e.png" 
                   alt="Guide QR" 
                   className="max-w-[80px] bg-white p-1 rounded"
@@ -107,7 +108,7 @@ export default function Footer() {
               </div>
               <div>
                 <h4 className="text-sm font-medium mb-2">Catalogue</h4>
-                <img 
+                <OptimizedImage 
                   src="/lovable-uploads/e3b10619-5439-427f-af6b-af27fa880e3b.png" 
                   alt="Catalogue QR" 
                   className="max-w-[80px] bg-white p-1 rounded"

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ImageBanner } from "@/components/ui/image-banner";
 import { ArrowLeft, Calendar, User, Clock, Tag, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { getPostBySlug, getRecentPosts, getFeaturedPosts } from "@/data/blogPosts";
 import Markdown from "react-markdown";
 import { Helmet } from "react-helmet";
@@ -134,7 +135,7 @@ const BlogPost = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedPosts.map((relatedPost) => (
                 <div key={relatedPost.id} className="bg-white rounded-lg overflow-hidden shadow border border-gray-100 hover:shadow-md transition-shadow">
-                  <img 
+                  <OptimizedImage 
                     src={relatedPost.image} 
                     alt={relatedPost.title}
                     className="w-full h-40 object-cover"
@@ -160,7 +161,7 @@ const BlogPost = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recentPosts.map((recentPost) => (
               <div key={recentPost.id} className="bg-white rounded-lg overflow-hidden shadow border border-gray-100 hover:shadow-md transition-shadow">
-                <img 
+                <OptimizedImage 
                   src={recentPost.image} 
                   alt={recentPost.title}
                   className="w-full h-40 object-cover"

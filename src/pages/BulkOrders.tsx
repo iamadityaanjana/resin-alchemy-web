@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/ui/hero-section";
 import { BulkOrderForm } from "@/components/forms/BulkOrderForm";
 import { Separator } from "@/components/ui/separator";
 import { Check } from "lucide-react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const BulkOrders = () => {
   return (
@@ -121,7 +122,7 @@ const BulkOrders = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
-                  <img 
+                  <OptimizedImage 
                     src="/lovable-uploads/b58de193-7363-4890-8b6f-d53a6dfb83f4.png"
                     alt="Corporate Minimalist Consoles" 
                     className="w-full h-48 object-cover rounded-md"
@@ -139,7 +140,7 @@ const BulkOrders = () => {
               
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
-                  <img 
+                  <OptimizedImage 
                     src="/lovable-uploads/29383c99-5232-46df-9434-46c62cb50d50.png"
                     alt="Executive Desks" 
                     className="w-full h-48 object-cover rounded-md"
@@ -157,7 +158,7 @@ const BulkOrders = () => {
               
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
-                  <img 
+                  <OptimizedImage 
                     src="/lovable-uploads/3ff7d57d-733e-435d-a396-6097c5bb7f89.png"
                     alt="Designer Workspace Tables" 
                     className="w-full h-48 object-cover rounded-md"

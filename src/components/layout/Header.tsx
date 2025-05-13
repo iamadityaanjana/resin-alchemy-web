@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown, QrCode } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -79,7 +80,7 @@ export default function Header() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img 
+          <OptimizedImage 
             src="/lovable-uploads/20607f1b-013a-4136-bf31-600a8dec7249.png" 
             alt="Resin Alchemy Logo" 
             className="h-12 w-auto object-contain"
@@ -156,7 +157,7 @@ export default function Header() {
                   </p>
                 </div>
                 <div className="flex justify-center">
-                  <img 
+                  <OptimizedImage 
                     src="/lovable-uploads/6c124be9-407a-4b86-81b7-457bbd44ea4f.png" 
                     alt="Catalogue QR" 
                     className="max-w-[180px]"

@@ -69,7 +69,7 @@ export function ProductCard({
             size="sm" 
             className="bg-resin-blue hover:bg-resin-blue/80 text-white"
           >
-            <a href={href}>Enquire Now</a>
+            <a href="https://api.whatsapp.com/message/S5YOTMXSYWR7N1">Enquire Now</a>
           </Button>
         </div>
       </div>

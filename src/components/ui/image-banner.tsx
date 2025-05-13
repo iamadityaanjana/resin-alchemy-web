@@ -1,6 +1,7 @@
 
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { OptimizedImage } from "./optimized-image";
 
 interface ImageBannerProps {
   imageSrc: string;
@@ -35,13 +36,18 @@ export function ImageBanner({
         )}
         style={{ 
           maxHeight: height,
-          backgroundImage: `url(${imageSrc})`,
-          backgroundSize: "cover",
-          backgroundPosition: objectPosition,
-          aspectRatio: "21/9"
+          aspectRatio: "21/9",
+          position: "relative"
         }}
-        aria-label={alt}
       >
+        {/* Use OptimizedImage for better performance */}
+        <OptimizedImage
+          src={imageSrc}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition }}
+          onLoad={() => setImageLoaded(true)}
+        />
         {/* Background overlay to improve text visibility */}
         <div className="absolute inset-0 bg-black/20 z-[1] rounded-lg"></div>
       </div>

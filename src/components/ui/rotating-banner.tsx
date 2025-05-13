@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { OptimizedImage } from "./optimized-image";
 
 interface RotatingBannerProps {
   images: string[];
@@ -71,15 +72,14 @@ export function RotatingBanner({
             "absolute inset-0 w-full h-full transition-opacity duration-1000",
             currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"
           )}
-          style={{
-            backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            backgroundPosition: objectPosition,
-            backgroundRepeat: "no-repeat",
-          }}
-          role="img"
           aria-hidden={currentIndex !== index}
         >
+          <OptimizedImage
+            src={image}
+            alt={`Banner image ${index + 1}`}
+            className="w-full h-full object-cover"
+            style={{ objectPosition }}
+          />
           {/* Improved overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/40 z-[1]"></div>
         </div>

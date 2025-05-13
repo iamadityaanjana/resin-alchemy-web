@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { PagePreviewSection } from "@/components/ui/page-preview";
 import { FAQSection } from "@/components/ui/expanded-faq";
 import { ImageBanner } from "@/components/ui/image-banner";
@@ -227,7 +228,7 @@ const Index = () => {
           />
           
           <div className="mb-12 flex justify-center">
-            <img 
+            <OptimizedImage 
               src="/lovable-uploads/22f3d297-f4cd-4644-9055-cbcbb559b907.png"
               alt="Gallery"
               className="max-w-full md:max-w-lg rounded-lg shadow-lg"
@@ -238,7 +239,7 @@ const Index = () => {
             {featuredGallery.map((item) => (
               <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                 <div className="relative overflow-hidden h-56">
-                  <img 
+                  <OptimizedImage 
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
@@ -346,7 +347,7 @@ const Index = () => {
                   <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
                       <div className="overflow-hidden rounded-lg">
-                        <img 
+                        <OptimizedImage 
                           src={image.src} 
                           alt={image.alt}
                           className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300"
@@ -399,7 +400,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="overflow-hidden rounded-lg relative group">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/91794f7b-efc7-4767-a4f6-349ed3be5318.png" 
                 alt="Instagram post" 
                 className="w-full aspect-square object-cover"
@@ -409,7 +410,7 @@ const Index = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/de6da137-a790-4b37-8359-c385e19bb3ee.png" 
                 alt="Instagram post" 
                 className="w-full aspect-square object-cover"
@@ -419,7 +420,7 @@ const Index = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/ca957c36-de0e-4fea-81a1-d434c507bc2e.png" 
                 alt="Instagram post" 
                 className="w-full aspect-square object-cover"
@@ -429,7 +430,7 @@ const Index = () => {
               </div>
             </div>
             <div className="overflow-hidden rounded-lg relative group">
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/e8dea159-a899-4ff7-a14f-0cf1f845a746.png" 
                 alt="Instagram post" 
                 className="w-full aspect-square object-cover"
@@ -467,7 +468,7 @@ const Index = () => {
             </div>
             <div className="md:w-1/3 flex justify-center">
               <div className="w-40 h-40 bg-white p-3 rounded-md shadow-md flex items-center justify-center">
-                <img 
+                <OptimizedImage 
                   src="/lovable-uploads/e3b10619-5439-427f-af6b-af27fa880e3b.png" 
                   alt="Catalogue QR Code" 
                   className="max-w-full max-h-full"
@@ -483,7 +484,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <img 
+              <OptimizedImage 
                 src="/lovable-uploads/6a54bace-3fbe-4d1c-9fbd-4e646db962a5.png"
                 alt="Contact Us"
                 className="rounded-lg shadow-lg w-full h-auto"

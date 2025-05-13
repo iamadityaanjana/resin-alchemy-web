@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
@@ -46,14 +47,6 @@ const products: Product[] = [
     image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
     category: "bar-tables",
     href: "/gallery/amber-glow-bar-counter",
-  },
-  {
-    id: 4,
-    title: "Desert Sunset Kitchen Island",
-    description: "Kitchen island top with gradient resin work inspired by desert sunset hues.",
-    image: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
-    category: "kitchen-units",
-    href: "/gallery/desert-sunset-kitchen-island",
   },
   {
     id: 5,
@@ -343,174 +336,111 @@ const products: Product[] = [
     category: "rectangle-tables",
     href: "/gallery/honeycomb-pattern-table",
   },
+  // Updated dining sets with new images
   {
     id: 101,
-    title: "Blue Circle Dining Set",
-    description: "Natural wood dining table with circular blue resin center and matching bench.",
-    image: "/lovable-uploads/174c3286-d510-4679-bceb-61db411e8934.png",
+    title: "Outdoor Wooden Dining Set",
+    description: "Natural wood outdoor dining table with matching benches, perfect for garden gatherings.",
+    image: "/lovable-uploads/7b0339f5-0aaa-4c5d-9e52-dd2350282ae7.png",
     category: "dining-sets",
-    href: "/gallery/blue-circle-dining-set",
+    href: "/gallery/outdoor-wooden-dining-set",
   },
   {
     id: 102,
-    title: "Glass River Dining Set",
-    description: "Elegant dining set featuring live edge wood with glass river center and matching benches.",
-    image: "/lovable-uploads/4d7cf703-e4c4-4f43-8afe-b6e395db5db3.png",
+    title: "Modern Resin Dining Collection",
+    description: "Contemporary dining set featuring sleek wood with resin accents and coordinated seating.",
+    image: "/lovable-uploads/b5aee2ad-1a45-40bf-8e18-8ecfc2a6e2bc.png",
     category: "dining-sets",
-    href: "/gallery/glass-river-dining-set",
+    href: "/gallery/modern-resin-dining-collection",
   },
   {
     id: 103,
-    title: "Turquoise Outdoor Set",
-    description: "Stunning outdoor table and bench with turquoise resin highlights, perfect for patios.",
-    image: "/lovable-uploads/1d9927c0-df6b-4d8c-8b70-f222f33186f9.png",
+    title: "Rustic Outdoor Table Set",
+    description: "Handcrafted wooden outdoor dining set with bench seating for casual al fresco dining.",
+    image: "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png",
     category: "dining-sets",
-    href: "/gallery/turquoise-outdoor-set",
+    href: "/gallery/rustic-outdoor-table-set",
   },
   {
     id: 104,
-    title: "Walnut Stream Dining Set",
-    description: "Rich walnut dining table with dark resin stream and matching bench for compact dining.",
-    image: "/lovable-uploads/f5ec5d7a-262d-402b-ba37-2e81297a638b.png",
+    title: "Blue Lake Dining Ensemble",
+    description: "Stunning dining set with blue resin 'lake' center and matching wooden benches.",
+    image: "/lovable-uploads/dc52b9cf-689c-421c-8d41-65b42b2543cb.png",
     category: "dining-sets",
-    href: "/gallery/walnut-stream-dining-set",
+    href: "/gallery/blue-lake-dining-ensemble",
   },
   {
     id: 105,
-    title: "Blue Lagoon Dining Collection",
-    description: "Vibrant blue resin dining table with coordinating bench, bringing ocean vibes to your dining space.",
-    image: "/lovable-uploads/4d779443-18bc-49ec-95a2-861a1d87ef26.png",
+    title: "Natural Wood Bench Set",
+    description: "Minimalist dining collection with natural wood finish and comfortable bench seating.",
+    image: "/lovable-uploads/70b91f96-438e-4e5e-9bc4-0599f1d248ed.png",
     category: "dining-sets",
-    href: "/gallery/blue-lagoon-dining-collection",
+    href: "/gallery/natural-wood-bench-set",
   },
   {
     id: 106,
-    title: "Black River Dining Ensemble",
-    description: "Sophisticated dining set with black resin river flowing through natural wood with matching seats.",
-    image: "/lovable-uploads/8cae1f6d-359e-4c4a-ae26-8c5985dd7b06.png",
+    title: "Outdoor Epoxy Table Collection",
+    description: "Weather-resistant outdoor dining set with epoxy-protected wood and matching seating.",
+    image: "/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png",
     category: "dining-sets",
-    href: "/gallery/black-river-dining-ensemble",
+    href: "/gallery/outdoor-epoxy-table-collection",
   },
   {
     id: 107,
-    title: "Clear Glass River Dining Set",
-    description: "Contemporary dining set with clear resin river flowing through natural wood edges with matching bench.",
-    image: "/lovable-uploads/58c950e7-1fef-445a-b948-1916bdfc4ab1.png",
+    title: "Garden Dining Experience",
+    description: "Complete outdoor dining experience with resin-sealed wood perfect for garden parties.",
+    image: "/lovable-uploads/43281c7b-9159-428d-8cdd-04e20884fed4.png",
     category: "dining-sets",
-    href: "/gallery/clear-glass-river-dining-set",
+    href: "/gallery/garden-dining-experience",
   },
   {
     id: 108,
-    title: "Blue Channel Dining Set",
-    description: "Modern dining table featuring blue resin channel through natural wood with coordinated bench.",
-    image: "/lovable-uploads/3689bb7a-5b2b-4910-82e9-7d90656a3cb8.png",
+    title: "Rustic Patio Set",
+    description: "Charming rustic outdoor dining set with bench seating ideal for cozy patio gatherings.",
+    image: "/lovable-uploads/ef48942c-59fd-47db-be16-cfa98c0db444.png",
     category: "dining-sets",
-    href: "/gallery/blue-channel-dining-set",
+    href: "/gallery/rustic-patio-set",
   },
-  // Updated kitchen units section with new images
+  // Updated kitchen units with new images
   {
     id: 201,
-    title: "Black Resin Kitchen Countertop",
-    description: "Modern kitchen countertop with black resin flowing through natural wood creating a striking contrast.",
-    image: "/lovable-uploads/0a23fd41-9891-47d5-a827-2c2a74fb3944.png",
+    title: "Modern Kitchen Island with Resin Countertop",
+    description: "Sleek kitchen island featuring a stunning resin countertop with dramatic black and white marbling.",
+    image: "/lovable-uploads/f6668249-2887-4fb2-b9aa-7e1672a95583.png",
     category: "kitchen-units",
-    href: "/gallery/black-resin-kitchen-countertop",
+    href: "/gallery/modern-kitchen-island",
   },
   {
     id: 202,
-    title: "Amber Flow Kitchen Counter",
-    description: "Elegant kitchen counter featuring warm amber resin flowing through natural wood grain.",
-    image: "/lovable-uploads/71ca9be2-06bf-46dc-bcd8-675f9da37282.png",
+    title: "Marble Effect Resin Kitchen Counter",
+    description: "Elegant kitchen counter with sophisticated marble-effect resin top and modern cabinetry.",
+    image: "/lovable-uploads/5ca2b50e-80a1-4682-8723-1939d0448c2e.png",
     category: "kitchen-units",
-    href: "/gallery/amber-flow-kitchen-counter",
+    href: "/gallery/marble-effect-resin-counter",
   },
   {
     id: 203,
-    title: "Gold Wave Kitchen Cabinetry",
-    description: "Complete kitchen cabinet set with stunning gold resin wave patterns throughout the wood.",
-    image: "/lovable-uploads/511b8022-7425-401d-a905-7401d58edd01.png",
+    title: "Luxury Resin Kitchen Worktop",
+    description: "Premium kitchen worktop featuring stunning resin detail and coordinated cabinetry design.",
+    image: "/lovable-uploads/0e079e63-5b8b-4caa-b566-4424ed5f344b.png",
     category: "kitchen-units",
-    href: "/gallery/gold-wave-kitchen-cabinetry",
+    href: "/gallery/luxury-resin-kitchen-worktop",
   },
   {
     id: 204,
-    title: "Illuminated Wood & Resin Kitchen",
-    description: "Modern kitchen unit with backlit wood and black resin combination creating a dramatic effect.",
-    image: "/lovable-uploads/55cedf1f-9dd3-4b9b-9ccd-31cdf770ea12.png",
+    title: "Contemporary Kitchen Installation",
+    description: "Full modern kitchen installation with resin countertops and integrated appliances.",
+    image: "/lovable-uploads/bd247dcf-3dcd-444f-bff4-81199eaa1a36.png",
     category: "kitchen-units",
-    href: "/gallery/illuminated-wood-resin-kitchen",
+    href: "/gallery/contemporary-kitchen-installation",
   },
   {
     id: 205,
-    title: "Turquoise River Breakfast Bar",
-    description: "L-shaped breakfast bar with stunning turquoise resin river flowing through natural wood.",
-    image: "/lovable-uploads/12f98c8a-0537-4552-8f6c-242107ab67ee.png",
+    title: "Premium Kitchen Design",
+    description: "High-end kitchen design featuring custom resin countertops and premium finishes throughout.",
+    image: "/lovable-uploads/6a327655-e4d2-4a4e-b9ef-a28275b3faba.png",
     category: "kitchen-units",
-    href: "/gallery/turquoise-river-breakfast-bar",
-  },
-  {
-    id: 9,
-    title: "Golden Waves Wall Art",
-    description: "Stunning resin wall art with golden wave patterns in warm brown and white colors.",
-    image: "/lovable-uploads/fa145c3c-bea1-4a78-a6bf-9dc6d72d5abc.png",
-    category: "wall-art",
-    href: "/gallery/golden-waves-wall-art",
-  },
-  {
-    id: 10,
-    title: "Gold Crystal Geode Wall Panel",
-    description: "Beautiful wall art capturing the essence of geodes with gold and crystal resin details.",
-    image: "/lovable-uploads/b4033e46-655e-4288-b5cc-43a0ff560249.png",
-    category: "wall-art",
-    href: "/gallery/gold-crystal-geode-wall-panel",
-  },
-  {
-    id: 11,
-    title: "Crystalline Diptych Panel",
-    description: "Two-piece wall art with striking black and white design featuring crystal embellishments.",
-    image: "/lovable-uploads/9cd32064-d572-4f9a-98c0-620e725c317d.png",
-    category: "wall-art",
-    href: "/gallery/crystalline-diptych-panel",
-  },
-  {
-    id: 12,
-    title: "Onyx & Crystal Wall Art",
-    description: "Modern wall art with deep black resin complemented by crystal and gold accents.",
-    image: "/lovable-uploads/17c8daac-9845-4292-8272-5c4e56373151.png",
-    category: "wall-art",
-    href: "/gallery/onyx-crystal-wall-art",
-  },
-  {
-    id: 13,
-    title: "Arabic Calligraphy Resin Art",
-    description: "Elegant black and gold calligraphy art featuring crystal embellishments and intricate details.",
-    image: "/lovable-uploads/d6d5efab-e76e-4a45-8e85-3fe0bcb34ae4.png",
-    category: "wall-art",
-    href: "/gallery/arabic-calligraphy-resin-art",
-  },
-  {
-    id: 14,
-    title: "Blue Waves Calligraphy Panel",
-    description: "Contemporary calligraphy art with blue resin waves and elegant gold detailing.",
-    image: "/lovable-uploads/b7ce7c71-672b-41a4-a0b8-335b5811324a.png",
-    category: "wall-art",
-    href: "/gallery/blue-waves-calligraphy-panel",
-  },
-  {
-    id: 15,
-    title: "Marble & Gold Scripture Art",
-    description: "Round scripture art with stunning white marble effect and gold crystal accents.",
-    image: "/lovable-uploads/48ea1a3c-ba41-47a1-8413-50d3a06a781f.png",
-    category: "wall-art",
-    href: "/gallery/marble-gold-scripture-art",
-  },
-  {
-    id: 16,
-    title: "Teal & Gold Calligraphy Collection",
-    description: "Set of elegant calligraphy pieces with teal resin, gold accents and crystal details.",
-    image: "/lovable-uploads/9ce6f34b-2701-49f0-bffb-352e1be7e5dc.png",
-    category: "wall-art",
-    href: "/gallery/teal-gold-calligraphy-collection",
+    href: "/gallery/premium-kitchen-design",
   },
 ];
 
@@ -600,4 +530,60 @@ const Gallery = () => {
     setCurrentCategoryDesc(categoryDesc);
   }, [activeCategory]);
   
-  const handleCategoryChange = (category
+  const handleCategoryChange = (category: string) => {
+    navigate(`/gallery?category=${category}`);
+  };
+  
+  return (
+    <Layout>
+      <HeroSection
+        title="Our Gallery"
+        description="Explore our collection of handcrafted resin furniture and art pieces"
+        imageUrl="/lovable-uploads/096d7f0b-cf84-4135-a7b0-5f7d869d968f.png"
+        centered
+      />
+      
+      <div className="container mx-auto px-4 py-8">
+        <Tabs defaultValue={activeCategory} value={activeCategory} onValueChange={handleCategoryChange} className="w-full">
+          <TabsList className="w-full overflow-x-auto flex flex-nowrap justify-start gap-1 sm:justify-center mb-8 pb-2">
+            {categories.map((category) => (
+              <TabsTrigger
+                key={category.id}
+                value={category.id}
+                className="px-3 py-2 text-sm whitespace-nowrap"
+              >
+                {category.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          <div className="mb-10">
+            <SectionHeading
+              title={currentCategoryDesc.title}
+              description={currentCategoryDesc.description}
+              centered
+            />
+          </div>
+          
+          {categories.map((category) => (
+            <TabsContent key={category.id} value={category.id} className="mt-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProducts.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    title={product.title}
+                    description={product.description}
+                    imageSrc={product.image}
+                    href={product.href}
+                  />
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </Layout>
+  );
+};
+
+export default Gallery;

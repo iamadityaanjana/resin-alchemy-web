@@ -1,7 +1,7 @@
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 interface CallToAction {
   text: string;
@@ -32,10 +32,35 @@ export function HeroSection({
   secondaryCta,
   overlay = true,
   className,
-  centered = false, // Added centered prop with default false
+  centered = true, // Added centered prop with default false
 }: HeroSectionProps) {
-  // Use imageUrl if provided, otherwise use backgroundImage
-  const bgImage = imageUrl || backgroundImage;
+  const [imageSrc, setImageSrc] = useState<string>(imageUrl || backgroundImage);
+  const [imageError, setImageError] = useState<boolean>(false);
+  
+  // Default fallback images to try if the primary image fails to load
+  const fallbackImages = [
+    "/lovable-uploads/8e853f09-f459-484b-ba3b-360a73565bc0.png", // Default hero image
+    "/images/gallery-fallback.jpg",
+    "/images/default-background.jpg"
+  ];
+  
+  useEffect(() => {
+    // Reset error state when props change
+    setImageError(false);
+    setImageSrc(imageUrl || backgroundImage);
+  }, [imageUrl, backgroundImage]);
+
+  const handleImageError = () => {
+    console.log("Image failed to load:", imageSrc);
+    setImageError(true);
+    
+    // Try to find a fallback that isn't the current failed image
+    const nextFallback = fallbackImages.find(img => img !== imageSrc);
+    if (nextFallback) {
+      console.log("Trying fallback image:", nextFallback);
+      setImageSrc(nextFallback);
+    }
+  };
   
   return (
     <section
@@ -46,23 +71,25 @@ export function HeroSection({
     >
       {/* Background image with proper positioning */}
       <div className="absolute inset-0 z-0">
-        {bgImage.endsWith('.png') && bgImage.includes('lovable-uploads') ? (
+        {!imageError && imageSrc.endsWith('.png') && imageSrc.includes('lovable-uploads') ? (
           <picture>
-            <source srcSet={`${bgImage.replace('.png', '.avif')}`} type="image/avif" />
-            <source srcSet={`${bgImage.replace('.png', '.webp')}`} type="image/webp" />
+            <source srcSet={`${imageSrc.replace('.png', '.avif')}`} type="image/avif" />
+            <source srcSet={`${imageSrc.replace('.png', '.webp')}`} type="image/webp" />
             <img 
-              src={bgImage} 
+              src={imageSrc} 
               alt="Background" 
               className="w-full h-full object-cover"
               style={{ objectPosition: "center 30%" }}
+              onError={handleImageError}
             />
           </picture>
         ) : (
           <img 
-            src={bgImage} 
+            src={imageSrc} 
             alt="Background" 
             className="w-full h-full object-cover"
             style={{ objectPosition: "center 30%" }}
+            onError={handleImageError}
           />
         )}
       </div>
@@ -77,7 +104,7 @@ export function HeroSection({
           "max-w-3xl text-white",
           centered ? "mx-auto text-center" : ""
         )}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-playfair">
+          <h1 className="text-4xl mt-10 md:text-5xl lg:text-6xl font-bold mb-6 font-playfair">
             {title}
           </h1>
           {subtitle && (
@@ -106,7 +133,7 @@ export function HeroSection({
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white/20"
+                  className="border-white text-black hover:bg-white/20 mb-10"
                 >
                   <Link to={secondaryCta.href}>{secondaryCta.text}</Link>
                 </Button>

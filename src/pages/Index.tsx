@@ -128,7 +128,7 @@ const Index = () => {
         primaryCta={{ text: "Explore Our Collection", href: "/gallery" }}
         secondaryCta={{ text: "Start Your Custom Order", href: "/custom-orders" }}
       />
-
+<div className="mt-[4px]"></div>
       {/* Rotating Banner with reduced height for mobile */}
       <RotatingBanner 
         images={bannerImages} 

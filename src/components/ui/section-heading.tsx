@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface SectionHeadingProps {
   title: string;
   subtitle?: string;
-  description?: string; // Added description prop
+  description?: string;
   className?: string;
   centered?: boolean;
 }
@@ -12,7 +12,7 @@ interface SectionHeadingProps {
 export function SectionHeading({ 
   title, 
   subtitle,
-  description, // Added description prop
+  description,
   className,
   centered = false 
 }: SectionHeadingProps) {

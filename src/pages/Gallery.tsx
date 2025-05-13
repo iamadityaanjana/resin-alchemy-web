@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
@@ -64,14 +63,6 @@ const products: Product[] = [
     image: "/lovable-uploads/8ac60485-ec45-48b5-a00d-95ba57095d24.png",
     category: "coffee-tables",
     href: "/gallery/aqua-lagoon-center-table",
-  },
-  {
-    id: 20,
-    title: "Coastal Paradise Side Table",
-    description: "Beach-inspired side table with stunning turquoise resin resembling ocean waves meeting the shore.",
-    image: "/lovable-uploads/2298da00-a213-4b1b-8b87-fe32a440d71c.png", 
-    category: "coffee-tables",
-    href: "/gallery/coastal-paradise-side-table",
   },
   {
     id: 23,
@@ -148,31 +139,7 @@ const products: Product[] = [
     href: "/gallery/teal-gold-calligraphy-collection",
   },
   
-  // Rectangle Tables
-  {
-    id: 2,
-    title: "Emerald Forest Dining Table",
-    description: "8-seater rectangular dining table with emerald resin inlays mimicking a forest stream.",
-    image: "/lovable-uploads/af7c5e1e-1e91-487d-9997-07263135a0b2.png",
-    category: "rectangle-tables",
-    href: "/gallery/emerald-forest-dining-table",
-  },
-  {
-    id: 21,
-    title: "Royal Blue Dining Table",
-    description: "Elegant rectangular dining table with deep blue resin flowing through natural wood grains.",
-    image: "/lovable-uploads/4378aba4-5c03-4826-899f-bf9d479d58f0.png",
-    category: "rectangle-tables",
-    href: "/gallery/royal-blue-dining-table",
-  },
-  {
-    id: 22,
-    title: "Golden River Executive Desk",
-    description: "Luxurious executive desk with golden resin river flowing through exotic hardwood.",
-    image: "/lovable-uploads/86236631-f0fa-4820-aa2b-363014a7ad0f.png",
-    category: "rectangle-tables",
-    href: "/gallery/golden-river-executive-desk",
-  },
+  // Rectangle Tables - Removing first 3 images (IDs: 2, 21, 22)
   {
     id: 24,
     title: "Natural Edge Live Edge Dining Table",
@@ -334,115 +301,83 @@ const products: Product[] = [
     href: "/gallery/honeycomb-pattern-table",
   },
   
-  // Dining sets
+  // Updated Dining sets with images from previous prompt (keeping IDs)
   {
     id: 101,
-    title: "Outdoor Wooden Dining Set",
-    description: "Natural wood outdoor dining table with matching benches, perfect for garden gatherings.",
-    image: "/lovable-uploads/7b0339f5-0aaa-4c5d-9e52-dd2350282ae7.png",
+    title: "Glass & Wood Edge Dining Table",
+    description: "Beautiful dining table with glass top and natural wood live edge, perfect for elegant dining spaces.",
+    image: "/lovable-uploads/152ced57-9091-4112-9465-e45b21a7a5c0.png",
     category: "dining-sets",
-    href: "/gallery/outdoor-wooden-dining-set",
+    href: "/gallery/glass-wood-edge-dining-table",
   },
   {
     id: 102,
-    title: "Modern Resin Dining Collection",
-    description: "Contemporary dining set featuring sleek wood with resin accents and coordinated seating.",
-    image: "/lovable-uploads/b5aee2ad-1a45-40bf-8e18-8ecfc2a6e2bc.png",
+    title: "Blue Conference Table",
+    description: "Striking conference table with blue resin center perfect for professional meeting spaces.",
+    image: "/lovable-uploads/531ec820-10b9-4127-a28c-46c9e2d00adf.png",
     category: "dining-sets",
-    href: "/gallery/modern-resin-dining-collection",
+    href: "/gallery/blue-conference-table",
   },
   {
     id: 103,
-    title: "Rustic Outdoor Table Set",
-    description: "Handcrafted wooden outdoor dining set with bench seating for casual al fresco dining.",
-    image: "/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png",
+    title: "Turquoise Accent Coffee Table",
+    description: "Stunning coffee table with vibrant turquoise resin flowing through solid wood.",
+    image: "/lovable-uploads/10ea8268-068b-4ff9-83b1-e62d204462ce.png", 
     category: "dining-sets",
-    href: "/gallery/rustic-outdoor-table-set",
+    href: "/gallery/turquoise-accent-table",
   },
   {
     id: 104,
-    title: "Blue Lake Dining Ensemble",
-    description: "Stunning dining set with blue resin 'lake' center and matching wooden benches.",
-    image: "/lovable-uploads/dc52b9cf-689c-421c-8d41-65b42b2543cb.png",
+    title: "Black & Gold Accent Table",
+    description: "Elegant accent table with bold black resin and golden wood grain pattern.",
+    image: "/lovable-uploads/33c495bf-1070-4b2c-a346-522115ffd9d2.png",
     category: "dining-sets",
-    href: "/gallery/blue-lake-dining-ensemble",
+    href: "/gallery/black-gold-accent-table",
   },
   {
     id: 105,
-    title: "Natural Wood Bench Set",
-    description: "Minimalist dining collection with natural wood finish and comfortable bench seating.",
-    image: "/lovable-uploads/70b91f96-438e-4e5e-9bc4-0599f1d248ed.png",
-    category: "dining-sets",
-    href: "/gallery/natural-wood-bench-set",
-  },
-  {
-    id: 106,
-    title: "Outdoor Epoxy Table Collection",
-    description: "Weather-resistant outdoor dining set with epoxy-protected wood and matching seating.",
-    image: "/lovable-uploads/ca5df8d8-243a-4d09-a016-7e4d701b246d.png",
-    category: "dining-sets",
-    href: "/gallery/outdoor-epoxy-table-collection",
-  },
-  {
-    id: 107,
-    title: "Garden Dining Experience",
-    description: "Complete outdoor dining experience with resin-sealed wood perfect for garden parties.",
-    image: "/lovable-uploads/43281c7b-9159-428d-8cdd-04e20884fed4.png",
-    category: "dining-sets",
-    href: "/gallery/garden-dining-experience",
-  },
-  {
-    id: 108,
-    title: "Rustic Patio Set",
-    description: "Charming rustic outdoor dining set with bench seating ideal for cozy patio gatherings.",
-    image: "/lovable-uploads/ef48942c-59fd-47db-be16-cfa98c0db444.png",
-    category: "dining-sets",
-    href: "/gallery/rustic-patio-set",
-  },
-  
-  // Update bar tables section with new images
-  {
-    id: 3,
-    title: "Purple LED Bar Counter",
-    description: "A conversation-starting bar counter with purple LED lighting embedded in the wood design.",
-    image: "/lovable-uploads/f8b4b021-5355-4dbf-b626-5cec94e8c7c6.png", // New image
-    category: "bar-tables",
-    href: "/gallery/purple-led-bar-counter",
-  },
-  {
-    id: 301,
-    title: "Glowing Aqua Conference Table",
-    description: "Stunning conference table with glowing blue resin that illuminates patterns across the surface.",
-    image: "/lovable-uploads/51c8dee7-d624-4bbd-a8cd-87e42f4f7597.png", // New image
-    category: "bar-tables",
-    href: "/gallery/glowing-aqua-conference-table",
-  },
-  {
-    id: 302,
-    title: "Ocean Wave Bar Counter",
-    description: "Beautiful curved bar counter featuring a stunning blue ocean wave design in resin.",
-    image: "/lovable-uploads/feee3db3-ad55-4660-b77c-52f4fff642de.png", // New image
-    category: "bar-tables",
-    href: "/gallery/ocean-wave-bar-counter",
-  },
-  {
-    id: 303,
-    title: "Natural Edge Bar Top",
-    description: "Elegant bar top made from natural wood with polished edges and glass shelf display.",
-    image: "/lovable-uploads/2deb2cbc-11ef-4845-a2e6-98414a3a6f77.png", // New image
-    category: "bar-tables",
-    href: "/gallery/natural-edge-bar-top",
-  },
-  {
-    id: 304,
     title: "Live Edge Coffee Table",
-    description: "Stunning live edge coffee table with natural wood grain and modern metal base.",
-    image: "/lovable-uploads/2f387035-ee41-4db0-9dec-70074fd318a9.png", // New image
-    category: "bar-tables",
+    description: "Natural wood coffee table with stunning live edge and elegant detailing.",
+    image: "/lovable-uploads/e8728b06-bf24-464c-87e1-d9a78b7163f0.png",
+    category: "dining-sets",
     href: "/gallery/live-edge-coffee-table",
   },
   
-  // Kitchen units with new images
+  // Updated Bar tables with new images
+  {
+    id: 3,
+    title: "Minimalist Console with Black Resin",
+    description: "Elegant console with light wood and sleek black resin inlay perfect for entryway or home office.",
+    image: "/lovable-uploads/b58de193-7363-4890-8b6f-d53a6dfb83f4.png",
+    category: "bar-tables",
+    href: "/gallery/minimalist-console-black-resin",
+  },
+  {
+    id: 301,
+    title: "Black Pattern Office Desk",
+    description: "Modern office desk with striking black resin pattern and wooden base, perfect for a stylish workspace.",
+    image: "/lovable-uploads/29383c99-5232-46df-9434-46c62cb50d50.png", 
+    category: "bar-tables",
+    href: "/gallery/black-pattern-office-desk",
+  },
+  {
+    id: 302,
+    title: "Teal Wave Desk",
+    description: "Stunning workspace desk featuring a teal blue resin wave flowing through beautiful natural wood.",
+    image: "/lovable-uploads/3ff7d57d-733e-435d-a396-6097c5bb7f89.png",
+    category: "bar-tables",
+    href: "/gallery/teal-wave-desk",
+  },
+  {
+    id: 303,
+    title: "Glass Accent Dining Table",
+    description: "Live edge dining table with glass accent and natural wood, perfect for modern dining spaces.",
+    image: "/lovable-uploads/152ced57-9091-4112-9465-e45b21a7a5c0.png",
+    category: "bar-tables",
+    href: "/gallery/glass-accent-dining-table",
+  },
+  
+  // Updated Kitchen units with new images
   {
     id: 201,
     title: "Modern Kitchen Island with Resin Countertop",
@@ -482,6 +417,48 @@ const products: Product[] = [
     image: "/lovable-uploads/6a327655-e4d2-4a4e-b9ef-a28275b3faba.png",
     category: "kitchen-units",
     href: "/gallery/premium-kitchen-design",
+  },
+  
+  // Updated Workspace Tables with new images
+  {
+    id: 401,
+    title: "Minimalist Wood Console",
+    description: "Sleek minimalist console with light wood and black resin inlay, perfect for entry or office spaces.",
+    image: "/lovable-uploads/b58de193-7363-4890-8b6f-d53a6dfb83f4.png",
+    category: "workspace-tables",
+    href: "/gallery/minimalist-wood-console",
+  },
+  {
+    id: 402,
+    title: "Dark Pattern Office Desk",
+    description: "Executive desk with striking dark resin pattern flowing through natural wood grain.",
+    image: "/lovable-uploads/29383c99-5232-46df-9434-46c62cb50d50.png",
+    category: "workspace-tables",
+    href: "/gallery/dark-pattern-office-desk",
+  },
+  {
+    id: 403,
+    title: "Teal Resin Computer Desk",
+    description: "Beautiful workspace desk with teal blue resin river and natural live edge design.",
+    image: "/lovable-uploads/3ff7d57d-733e-435d-a396-6097c5bb7f89.png",
+    category: "workspace-tables",
+    href: "/gallery/teal-resin-computer-desk",
+  },
+  {
+    id: 404,
+    title: "Natural Edge Glass Desk",
+    description: "Stunning desk featuring natural wood edge with glass and resin accents.",
+    image: "/lovable-uploads/152ced57-9091-4112-9465-e45b21a7a5c0.png",
+    category: "workspace-tables",
+    href: "/gallery/natural-edge-glass-desk",
+  },
+  {
+    id: 405,
+    title: "Blue Conference Table",
+    description: "Premium conference table with blue resin river flowing through natural wood planks.",
+    image: "/lovable-uploads/531ec820-10b9-4127-a28c-46c9e2d00adf.png",
+    category: "workspace-tables",
+    href: "/gallery/blue-conference-table-workspace",
   },
 ];
 

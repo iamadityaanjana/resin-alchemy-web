@@ -12,7 +12,7 @@ const BulkOrders = () => {
       <HeroSection
         title="Bulk Orders"
         subtitle="Premium resin furniture solutions for commercial spaces, hospitality venues, and residential projects"
-        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png" // Last image
+        backgroundImage="/lovable-uploads/ca8b310e-1143-40ef-a0e2-ba0cb1813938.png"
       />
 
       <section className="py-16 px-4">
@@ -111,7 +111,7 @@ const BulkOrders = () => {
             </div>
           </div>
           
-          {/* Case Studies - Updated with contextual images */}
+          {/* Case Studies - Updated with workspace tables images */}
           <div className="mt-16">
             <h2 className="text-2xl font-bold mb-6 font-playfair text-center">Our Bulk Order Projects</h2>
             <p className="text-gray-600 max-w-3xl mx-auto text-center mb-10">
@@ -122,54 +122,54 @@ const BulkOrders = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/96e8787d-a166-4dae-9978-99fb42708def.png" // 3rd image for Bulk Order
-                    alt="Luxury Hotel Project" 
+                    src="/lovable-uploads/b58de193-7363-4890-8b6f-d53a6dfb83f4.png"
+                    alt="Corporate Minimalist Consoles" 
                     className="w-full h-48 object-cover rounded-md"
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Luxury Hotel Project</h3>
+                <h3 className="text-lg font-bold mb-2">Corporate Office Consoles</h3>
                 <p className="text-gray-600 text-sm mb-3">
-                  Created 25 custom dining tables for a five-star hotel in Mumbai, featuring ocean-inspired blue resin designs.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Hospitality</span>
-                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Dining Tables</span>
-                </div>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <div className="mb-4 overflow-hidden rounded-md">
-                  <img 
-                    src="/lovable-uploads/45cb99ce-102c-4b65-978d-29864da5ad4f.png" // 2nd image from Custom Order
-                    alt="Corporate Office" 
-                    className="w-full h-48 object-cover rounded-md"
-                  />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Corporate Office</h3>
-                <p className="text-gray-600 text-sm mb-3">
-                  Designed and produced 12 conference tables and 30 desk units for a tech company in Bangalore.
+                  Created 15 matching minimalist console desks with black resin detail for a corporate headquarters in Delhi.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Corporate</span>
-                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Conference Tables</span>
+                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Console Desks</span>
                 </div>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <div className="mb-4 overflow-hidden rounded-md">
                   <img 
-                    src="/lovable-uploads/277a8397-cb02-443a-be8b-47d52d58bcd9.png" // 1st image from Gallery
-                    alt="Residential Complex" 
+                    src="/lovable-uploads/29383c99-5232-46df-9434-46c62cb50d50.png"
+                    alt="Executive Desks" 
                     className="w-full h-48 object-cover rounded-md"
                   />
                 </div>
-                <h3 className="text-lg font-bold mb-2">Residential Complex</h3>
+                <h3 className="text-lg font-bold mb-2">Executive Office Suite</h3>
                 <p className="text-gray-600 text-sm mb-3">
-                  Supplied 40 matching coffee tables for a luxury apartment complex in Delhi NCR.
+                  Designed and produced 12 premium executive desks with distinctive black resin pattern for a financial firm in Mumbai.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Residential</span>
-                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Coffee Tables</span>
+                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Executive</span>
+                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Office Desks</span>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="mb-4 overflow-hidden rounded-md">
+                  <img 
+                    src="/lovable-uploads/3ff7d57d-733e-435d-a396-6097c5bb7f89.png"
+                    alt="Designer Workspace Tables" 
+                    className="w-full h-48 object-cover rounded-md"
+                  />
+                </div>
+                <h3 className="text-lg font-bold mb-2">Creative Agency Workspaces</h3>
+                <p className="text-gray-600 text-sm mb-3">
+                  Supplied 20 teal resin river desks for a creative agency's new office in Bangalore.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Creative</span>
+                  <span className="bg-gray-100 px-2 py-1 rounded-full text-xs font-medium">Designer Desks</span>
                 </div>
               </div>
             </div>

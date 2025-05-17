@@ -85,7 +85,7 @@ export default function Header() {
             alt="Resin Alchemy Logo" 
             className="h-12 w-auto object-contain"
           />
-          <span className="ml-2 text-xl font-playfair font-semibold text-[#d4dce0]">
+          <span className="ml-2 text-xl font-playfair font-semibold text-[#0d3c54]">
             Resin Alchemy
           </span>
         </Link>
@@ -100,7 +100,7 @@ export default function Header() {
                     onClick={() => toggleSubmenu(link.name)}
                     className={cn(
                       "px-3 py-2 flex items-center text-sm font-medium transition-colors",
-                      location.pathname === link.href ? "text-[#D4AF37]" :  "text-[#e8dede] hover:text-[#888d8e]"
+                      location.pathname === link.href ? "text-[#D4AF37]" :  "text-[#8e7b7b] hover:text-[#888d8e]"
                     )}
                   >
                     {link.name}
@@ -130,7 +130,7 @@ export default function Header() {
                   to={link.href} 
                   className={cn(
                     "px-3 py-2 text-sm font-medium transition-colors",
-                    location.pathname === link.href ? "text-[#D4AF37]" : "text-[#e8dede] hover:text-[#888d8e]"
+                    location.pathname === link.href ? "text-[#D4AF37]" : "text-[#8e7b7b] hover:text-[#888d8e]"
                   )}
                 >
                   {link.name}
